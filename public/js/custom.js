@@ -1,11 +1,14 @@
+const productsDOM = document.querySelector(".products");
+const loadingDOM = document.querySelector(".loading-text");
+const formDOM = document.querySelector(".product-form");
+const productInputDOM = document.querySelector(".product-input");
+const formAlertDOM = document.querySelector(".form-alert");
 var w = 0;
 var limit = 16;
 var page = 1;
 var pagination = 4;
 var discount = false;
 
-const authorization =
-  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NDA1ODlkYmQyNTA5NTgzMDVkNjc5MTFiMjBiMDY5ZSIsImp0aSI6IjE2YjhiZjc2YmYxMDgyNDA4YjBjNDRjMTI3ZGM1NTRhYmY0Y2E3ZGE2M2NjMDM1MDBlYTllY2E1NDgzZTI4NTk3MWRhYjhhYTJlMWQ5MjA4NWM4N2U4NzJlYjY0OWY4ZjBkNDMxZTNkNWVmNzNlN2EwOTkzZTQ1NGM0OWJkMGM2YThkMWJiYWE5YmZkNTIxYTYwYTRmZTZiMzM0NDQ0NWYiLCJpYXQiOjE3NDAzOTQ2NTYsIm5iZiI6MTc0MDM5NDY1NiwiZXhwIjoxODk4MTc5NDE2LCJzdWIiOiIxODc5MTAyIiwic2NvcGVzIjpbIm9yZGVyczpyZWFkIiwib3JkZXJzOndyaXRlIiwicHJvZHVjdHM6cmVhZCIsInByb2R1Y3RzOndyaXRlIiwic2hpcHBpbmdzOnJlYWQiLCJzaGlwcGluZ3M6d3JpdGUiLCJkaXNjb3VudHM6cmVhZCIsImRpc2NvdW50czp3cml0ZSIsInBheW91dHM6cmVhZCIsInJlZnVuZHM6cmVhZCIsInJlZnVuZHM6d3JpdGUiLCJzaG9wOnJlYWQiLCJzaG9wOndyaXRlIl19.Bij3RbmTc_2xcYEdsVEOCw3lcQHzSmsD4x1lBrBgM01jjvg6g2IwyvWuLaAtgQYOZW-9kd37Nwc_hXWwZBnVEwICLaiwsPq6mUwUBIfhNCApUXJRxpLgnNMI5miIZp0m324Cev_qLVhLZcdup65nwiNKp6q3F_ypcNxnxykzPw1riSgkBUl9DEVmhviWt7eG_jopmIskG3zt6fou1aIFtNgm6q0rGpO6mUsOSK8AwC73UM9upDWtBlO3xB_grH40ZQ9fLhy5EZpM1QwEuEMBiJtp2acuEXGl-Z3NjS3Q6xivuzLsMfShMz6ov1xaf0FODOx3LpuoBBvNwYsCvTsjqg";
 const KADINid = "9c8c7c2a75b3c676";
 const AYAKKABIid = "bdce94fb95dd9db1";
 
@@ -115,32 +118,6 @@ $(function () {
   ) {
     var productId = localStorage.getItem("productId");
     console.log(productId);
-
-    getOne(productId);
-  }
-  if (
-    document.location.pathname == "/man-shop.html" ||
-    document.location.pathname == "/man-shoe-shop.html"
-  ) {
-    // do some special stuff on this page!
-    filterBy(AYAKKABIid, KADINid, ÇANTAid);
-  }
-  if (
-    document.location.pathname == "/woman-shop.html" ||
-    document.location.pathname == "/woman-shoe-shop.html"
-  ) {
-    // do some special stuff on this page!
-    axiosRequest();
-  }
-  if (document.location.pathname == "/bag-shop.html") {
-    // do some special stuff on this page!
-    getby(ÇANTAid);
-  }
-  /*------------ navbar ---------*/
-
-  if (document.location.pathname == "/accessories-shop.html") {
-    // do some special stuff on this page!
-    getby(AKSESUARid);
   }
 
   /*------------ Page items limit ---------*/
@@ -502,533 +479,86 @@ $(function () {
 
 /* http requests */
 
-/* Axios requests */
-function axiosRequest() {
-  const options = {
-    method: "GET",
-    url: "http://localhost:8080/https://api.shopier.com/v1/products?categoryId=9c8c7c2a75b3c676&categoryId=bdce94fb95dd9db&limit=50&page=1&sort=dateDesc",
-    headers: {
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-
-  axios
-    .request(options)
-    .then((res) => {
-      console.log(res.data);
-      for (x of res.data) {
-        $("#product").append(
-          $("<div>")
-            .addClass("featured-product mb-25")
-            .append(
-              $("<div>")
-                .addClass("product-img transition mb-15")
-                .attr({ id: x.id })
-                .append(
-                  $("<a>")
-                    .attr({ href: "product-detail.html", id: x.id })
-                    .append(
-                      $("<img>").addClass("transition").attr({
-                        src: x.media[0].url,
-                        alt: "product",
-                        id: "product-link",
-                      })
-                    )
-                )
-                .append(
-                  $("<div>")
-                    .addClass(
-                      "product-details-btn text-uppercase text-center transition"
-                    )
-                    .attr({ id: x.id })
-                    .append(
-                      $("<a>")
-                        .addClass("quick-popup")
-                        .attr({ href: "product-quick-view.html" })
-                        .text("Ön İzleme")
-                    )
-                )
-            )
-
-            .append(
-              $("<div>")
-                .addClass("product-desc")
-                .attr({ id: x.id })
-                .append(
-                  $("<a>")
-                    .addClass("product-name text-uppercase")
-                    .attr({ href: "product-detail.html", id: "product-link" })
-                    .text(x.title)
-                )
-                .append(
-                  $("<span>")
-                    .addClass("product-price")
-                    .text(~~x.priceData.price + " ₺")
-                )
-            )
-        );
-      }
-    })
-    .catch((err) => console.error(err));
-
-  //add to html
-}
-
-/* get all function */
-
-function getall() {
-  const settings = {
-    async: true,
-    crossDomain: true,
-
-    url: `http://localhost:8080/https://api.shopier.com/v1/products?discount=${discount}&limit=${limit}&page=${page}&sort=dateDesc`,
-    method: "GET",
-    headers: {
-      AccessControlAllowOrigin: "origin",
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-
-  $.ajax(settings).done((res) => {
-    console.log(res);
-    for (x of res) {
-      $("#product").append(
-        $("<div>")
-          .addClass("featured-product mb-25")
-          .append(
-            $("<div>")
-              .addClass("product-img transition mb-15")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .attr({ href: "product-detail.html", id: x.id })
-                  .append(
-                    $("<img>").addClass("transition").attr({
-                      src: x.media[0].url,
-                      alt: "product",
-                      id: "product-link",
-                    })
-                  )
-              )
-              .append(
-                $("<div>")
-                  .addClass(
-                    "product-details-btn text-uppercase text-center transition"
-                  )
-                  .attr({ id: x.id })
-                  .append(
-                    $("<a>")
-                      .addClass("quick-popup")
-                      .attr({ href: "product-quick-view.html" })
-                      .text("Ön İzleme")
-                  )
-              )
-          )
-
-          .append(
-            $("<div>")
-              .addClass("product-desc")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .addClass("product-name text-uppercase")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .text(x.title)
-              )
-              .append(
-                $("<span>")
-                  .addClass("product-price")
-                  .text(~~x.priceData.price + " ₺")
-              )
-          )
-      );
+// Load products from /api/products
+const showproducts = async () => {
+  loadingDOM.style.visibility = "visible";
+  try {
+    const {
+      data: { products },
+    } = await axios.get("/api/v1/products");
+    if (products.length < 1) {
+      productsDOM.innerHTML =
+        '<h5 class="empty-list">No products in your list</h5>';
+      loadingDOM.style.visibility = "hidden";
+      return;
     }
-  });
-}
+    const allproducts = products
+      .map((product) => {
+        const { completed, _id: productID, name } = product;
+        return `<div class="single-product ${completed && "product-completed"}">
+<h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
+<div class="product-links">
 
-/* get by function */
-/* its overloaded up to 5 queries */
 
-function getby(c1, c2, c3, c4, c5) {
-  var query = "categoryId=" + c1;
-  var responses = [];
 
-  for (let i = 0; i < 5; i++) {
-    const settings = {
-      async: true,
-      crossDomain: true,
-
-      url: `http://localhost:8080/https://api.shopier.com/v1/products?${query}&limit=50&page=${page}&sort=dateDesc`,
-      method: "GET",
-      headers: {
-        AccessControlAllowOrigin: "origin",
-        accept: "application/json",
-        authorization: authorization,
-      },
-    };
-
-    // filter each filter and save, then print all
-    $.ajax(settings).done((res) => {
-      responses.push(...res);
-      page = page + 1;
-    });
+<!-- edit link -->
+<a href="product.html?id=${productID}"  class="edit-link">
+<i class="fas fa-edit"></i>
+</a>
+<!-- delete btn -->
+<button type="button" class="delete-btn" data-id="${productID}">
+<i class="fas fa-trash"></i>
+</button>
+</div>
+</div>`;
+      })
+      .join("");
+    productsDOM.innerHTML = allproducts;
+  } catch (error) {
+    productsDOM.innerHTML =
+      '<h5 class="empty-list">There was an error, please try later....</h5>';
   }
-  const settings = {
-    async: true,
-    crossDomain: true,
+  loadingDOM.style.visibility = "hidden";
+};
 
-    url: `http://localhost:8080/https://api.shopier.com/v1/products?${query}&limit=50&page=${page}&sort=dateDesc`,
-    method: "GET",
-    headers: {
-      AccessControlAllowOrigin: "origin",
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-  // filter each filter and save, then print all
-  $.ajax(settings).done((res) => {
-    responses.push(...res);
-    responses = filter(responses, c1);
-    //use filter to remove items
-    if (typeof c2 !== "undefined") {
-      responses = filter(responses, c2);
-    }
-    if (typeof c3 !== "undefined") {
-      responses = filter(responses, c3);
-    }
-    if (typeof c4 !== "undefined") {
-      responses = filter(responses, c4);
-    }
-    if (typeof c5 !== "undefined") {
-      responses = filter(responses, c5);
-    }
-    page = 1;
-    console.log(responses);
-    for (x of responses) {
-      $("#product").append(
-        $("<div>")
-          .addClass("featured-product mb-25")
-          .append(
-            $("<div>")
-              .addClass("product-img transition mb-15")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .append(
-                    $("<img>").addClass("transition").attr({
-                      src: x.media[0].url,
-                      alt: "product",
-                      id: "product-link",
-                    })
-                  )
-              )
-              .append(
-                $("<div>")
-                  .addClass(
-                    "product-details-btn text-uppercase text-center transition"
-                  )
-                  .attr({ id: x.id })
-                  .append(
-                    $("<a>")
-                      .addClass("quick-popup")
-                      .attr({ href: "product-quick-view.html" })
-                      .text("Ön İzleme")
-                  )
-              )
-          )
+showproducts();
 
-          .append(
-            $("<div>")
-              .addClass("product-desc")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .addClass("product-name text-uppercase")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .text(x.title)
-              )
-              .append(
-                $("<span>")
-                  .addClass("product-price")
-                  .text(~~x.priceData.price + " ₺")
-              )
-          )
-      );
+// delete product /api/products/:id
+
+productsDOM.addEventListener("click", async (e) => {
+  const el = e.target;
+  if (el.parentElement.classList.contains("delete-btn")) {
+    loadingDOM.style.visibility = "visible";
+    const id = el.parentElement.dataset.id;
+    try {
+      await axios.delete(`/api/v1/products/${id}`);
+      showproducts();
+    } catch (error) {
+      console.log(error);
     }
-  });
-}
-/* filterby function */
-/* its overloaded up to 4 queries */
-function filterBy(c1, c2, c3, c4, c5) {
-  var query = "categoryId=" + c1;
-  var responses = [];
-
-  for (let i = 0; i < 5; i++) {
-    const settings = {
-      async: true,
-      crossDomain: true,
-
-      url: `http://localhost:8080/https://api.shopier.com/v1/products?${query}&limit=50&page=${page}&sort=dateDesc`,
-      method: "GET",
-      headers: {
-        AccessControlAllowOrigin: "origin",
-        accept: "application/json",
-        authorization: authorization,
-      },
-    };
-
-    // filter each filter and save, then print all
-    $.ajax(settings).done((res) => {
-      responses.push(...res);
-      page = page + 1;
-    });
   }
-  //use filter to remove items
-  page = 1;
-  const settings = {
-    async: true,
-    crossDomain: true,
+  loadingDOM.style.visibility = "hidden";
+});
 
-    url: `http://localhost:8080/https://api.shopier.com/v1/products?${query}&limit=50&page=${page}&sort=dateDesc`,
-    method: "GET",
-    headers: {
-      AccessControlAllowOrigin: "origin",
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-  // filter each filter and save, then print all
+// form
 
-  //buradayım, TERSTEN GITMEYI DENE
-  $.ajax(settings).done((res) => {
-    responses = removalFilter(responses, c2);
+formDOM.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = productInputDOM.value;
 
-    //use filter to remove items
-    if (typeof c3 !== "undefined") {
-      responses = removalFilter(responses, c3);
-    }
-    if (typeof c4 !== "undefined") {
-      responses = removalFilter(responses, c4);
-    }
-    if (typeof c5 !== "undefined") {
-      responses = removalFilter(responses, c5);
-    }
-
-    console.log(responses);
-    for (x of responses) {
-      $("#product").append(
-        $("<div>")
-          .addClass("featured-product mb-25")
-          .append(
-            $("<div>")
-              .addClass("product-img transition mb-15")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .append(
-                    $("<img>").addClass("transition").attr({
-                      src: x.media[0].url,
-                      alt: "product",
-                      id: "product-link",
-                    })
-                  )
-              )
-              .append(
-                $("<div>")
-                  .addClass(
-                    "product-details-btn text-uppercase text-center transition"
-                  )
-                  .attr({ id: x.id })
-                  .append(
-                    $("<a>")
-                      .addClass("quick-popup")
-                      .attr({ href: "product-quick-view.html" })
-                      .text("Ön İzleme")
-                  )
-              )
-          )
-
-          .append(
-            $("<div>")
-              .addClass("product-desc")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .addClass("product-name text-uppercase")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .text(x.title)
-              )
-              .append(
-                $("<span>")
-                  .addClass("product-price")
-                  .text(~~x.priceData.price + " ₺")
-              )
-          )
-      );
-    }
-  });
-}
-
-function filter(res, filter) {
-  var filtered = [];
-  res.forEach((element) => {
-    element.categories.forEach((element2) => {
-      if (element2.id == filter) {
-        filtered.push(element);
-      }
-    });
-  });
-
-  return filtered;
-
-  // return filtered array
-}
-function removalFilter(res, filterId) {
-  //remove item with id=2
-
-  //print result
-
-  res = res.filter(function (el) {
-    return el.categories[0].id !== filterId;
-  });
-  console.log(res);
-  res = res.filter(function (el) {
-    return el.categories[1] !== undefined;
-  });
-  console.log(res);
-  res = res.filter(function (el) {
-    return el.categories[1].id !== filterId;
-  });
-  console.log(res);
-
-  res = res.filter(function (el) {
-    return el.categories[2] !== undefined;
-  });
-  res = res.filter(function (el) {
-    return el.categories[2].id !== filterId;
-  });
-  res = res.filter(function (el) {
-    return el.categories[3] !== undefined;
-  });
-  res = res.filter(function (el) {
-    return el.categories[3].id !== filterId;
-  });
-  res = res.filter(function (el) {
-    return el.categories[4] !== undefined;
-  });
-  res = res.filter(function (el) {
-    return el.categories[4].id !== filterId;
-  });
-
-  console.log(res);
-  return res;
-}
-
-// return filtered array
-
-/* Filter by function */
-/* its overloaded up to 4 queries */
-
-function getOne(id) {
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: `http://localhost:8080/https://api.shopier.com/v1/products/${id}`,
-    method: "GET",
-    headers: {
-      AccessControlAllowOrigin: "origin",
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-
-  $.ajax(settings).done((res) => {
-    $("#product-info").append(res.description);
-    $("#product-title").text(res.title);
-    $("#img1").attr("src", res.media[0].url);
-    if (res.media[1].url !== undefined) {
-      $("#img2").attr("src", res.media[1].url);
-    }
-
-    if (res.media[2].url !== undefined) {
-      $("#img3").attr("src", res.media[2].url);
-    }
-    if (res.media[3].url !== undefined) {
-      $("#img4").attr("src", res.media[3].url);
-    }
-    console.log(res);
-  });
-}
-
-function printRes(response) {
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: `http://localhost:8080/https://api.shopier.com/v1/products?limit=10&page=${page}&sort=dateDesc`,
-    method: "GET",
-    headers: {
-      AccessControlAllowOrigin: "origin",
-      accept: "application/json",
-      authorization: authorization,
-    },
-  };
-
-  $.ajax(settings).done((res) => {
-    for (x of response) {
-      $("#product").append(
-        $("<div>")
-          .addClass("featured-product mb-25")
-          .append(
-            $("<div>")
-              .addClass("product-img transition mb-15")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .attr({ href: "product-detail.html", id: x.id })
-                  .append(
-                    $("<img>").addClass("transition").attr({
-                      src: x.media[0].url,
-                      alt: "product",
-                      id: "product-link",
-                    })
-                  )
-              )
-              .append(
-                $("<div>")
-                  .addClass(
-                    "product-details-btn text-uppercase text-center transition"
-                  )
-                  .attr({ id: x.id })
-                  .append(
-                    $("<a>")
-                      .addClass("quick-popup")
-                      .attr({ href: "product-quick-view.html" })
-                      .text("Ön İzleme")
-                  )
-              )
-          )
-
-          .append(
-            $("<div>")
-              .addClass("product-desc")
-              .attr({ id: x.id })
-              .append(
-                $("<a>")
-                  .addClass("product-name text-uppercase")
-                  .attr({ href: "product-detail.html", id: "product-link" })
-                  .text(x.title)
-              )
-              .append(
-                $("<span>")
-                  .addClass("product-price")
-                  .text(~~x.priceData.price + " ₺")
-              )
-          )
-      );
-    }
-  });
-}
+  try {
+    await axios.post("/api/v1/products", { name });
+    showproducts();
+    productInputDOM.value = "";
+    formAlertDOM.style.display = "block";
+    formAlertDOM.textContent = `success, product added`;
+    formAlertDOM.classList.add("text-success");
+  } catch (error) {
+    formAlertDOM.style.display = "block";
+    formAlertDOM.innerHTML = `error, please try again`;
+  }
+  setTimeout(() => {
+    formAlertDOM.style.display = "none";
+    formAlertDOM.classList.remove("text-success");
+  }, 3000);
+});
