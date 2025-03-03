@@ -16,9 +16,13 @@ const getAllproducts = asyncWrapper(async (req, res) => {
     .request(options)
     .then((res) => console.log(res.data))
     .catch((err) => console.error(err));
+  const Products = res.data;
+  if (!Products) {
+    return next(createCustomError(`No Products `, 404));
+  }
 
-  const Product = res.data;
-  res.status(200).json({ Product });
+  const Products = res.data;
+  res.status(200).json({ Products });
 });
 
 const getProduct = asyncWrapper(async (req, res, next) => {
