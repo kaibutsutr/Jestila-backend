@@ -1,4 +1,4 @@
-const productsDOM = document.querySelector(".products");
+const productsDOM = document.querySelector("#product");
 const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".product-form");
 const productInputDOM = document.querySelector(".product-input");
@@ -118,6 +118,10 @@ $(function () {
   ) {
     var productId = localStorage.getItem("productId");
     console.log(productId);
+  }
+  if (document.location.pathname == "/woman-shop.html");
+  {
+    showproducts();
   }
 
   /*------------ Page items limit ---------*/
@@ -481,7 +485,6 @@ $(function () {
 
 // Load products from /api/products
 const showproducts = async () => {
-  loadingDOM.style.visibility = "visible";
   try {
     const {
       data: { products },
@@ -520,45 +523,3 @@ const showproducts = async () => {
   }
   loadingDOM.style.visibility = "hidden";
 };
-
-showproducts();
-
-// delete product /api/products/:id
-
-productsDOM.addEventListener("click", async (e) => {
-  const el = e.target;
-  if (el.parentElement.classList.contains("delete-btn")) {
-    loadingDOM.style.visibility = "visible";
-    const id = el.parentElement.dataset.id;
-    try {
-      await axios.delete(`/api/v1/products/${id}`);
-      showproducts();
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  loadingDOM.style.visibility = "hidden";
-});
-
-// form
-
-formDOM.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const name = productInputDOM.value;
-
-  try {
-    await axios.post("/api/v1/products", { name });
-    showproducts();
-    productInputDOM.value = "";
-    formAlertDOM.style.display = "block";
-    formAlertDOM.textContent = `success, product added`;
-    formAlertDOM.classList.add("text-success");
-  } catch (error) {
-    formAlertDOM.style.display = "block";
-    formAlertDOM.innerHTML = `error, please try again`;
-  }
-  setTimeout(() => {
-    formAlertDOM.style.display = "none";
-    formAlertDOM.classList.remove("text-success");
-  }, 3000);
-});
