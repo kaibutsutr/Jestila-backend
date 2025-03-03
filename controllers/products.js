@@ -3,6 +3,7 @@ const Bearer =
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 const getAllproducts = asyncWrapper(async (req, res) => {
+  let Products = [];
   const options = {
     method: "GET",
     url: "https://api.shopier.com/v1/products?limit=50&page=1&sort=dateDesc",
@@ -14,15 +15,14 @@ const getAllproducts = asyncWrapper(async (req, res) => {
 
   axios
     .request(options)
-    .then((res) => console.log(res.data))
+    .res.status(200)
+    .json({ res })
     .catch((err) => console.error(err));
-  const Products = res.data;
-  if (!Products) {
+
+  if (!res.data) {
     return next(createCustomError(`No Products `, 404));
   }
-
-  const Products = res.data;
-  res.status(200).json({ Products });
+  console.log(res.data);
 });
 
 const getProduct = asyncWrapper(async (req, res, next) => {
