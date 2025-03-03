@@ -3,13 +3,13 @@ const router = express.Router();
 
 const {
   getAllproducts,
-  createTask,
-  getTask,
-  updateTask,
-  deleteTask,
+  createProduct,
+  getProduct,
+  updateProduct,
+  deleteProduct,
 } = require("../controllers/products");
 
-router.route("/").get(getAllproducts).post(createTask);
-router.route("/:id").get(getTask).patch(updateTask).delete(deleteTask);
+router.route("/").get(getAllproducts).post(createProduct);
+router.route("/:id").get(getProduct).patch(updateProduct).delete(deleteProduct);
 
 module.exports = router;

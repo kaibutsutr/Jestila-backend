@@ -1,52 +1,52 @@
-const Task = require("../models/Task");
+const Product = require("../models/Product");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 const getAllproducts = asyncWrapper(async (req, res) => {
-  const products = await Task.find({});
+  const products = await Product.find({});
   res.status(200).json({ products });
 });
 
-const createTask = asyncWrapper(async (req, res) => {
-  const task = await Task.create(req.body);
-  res.status(201).json({ task });
+const createProduct = asyncWrapper(async (req, res) => {
+  const Product = await Product.create(req.body);
+  res.status(201).json({ Product });
 });
 
-const getTask = asyncWrapper(async (req, res, next) => {
-  const { id: taskID } = req.params;
-  const task = await Task.findOne({ _id: taskID });
-  if (!task) {
-    return next(createCustomError(`No task with id : ${taskID}`, 404));
+const getProduct = asyncWrapper(async (req, res, next) => {
+  const { id: ProductID } = req.params;
+  const Product = await Product.findOne({ _id: ProductID });
+  if (!Product) {
+    return next(createCustomError(`No Product with id : ${ProductID}`, 404));
   }
 
-  res.status(200).json({ task });
+  res.status(200).json({ Product });
 });
-const deleteTask = asyncWrapper(async (req, res, next) => {
-  const { id: taskID } = req.params;
-  const task = await Task.findOneAndDelete({ _id: taskID });
-  if (!task) {
-    return next(createCustomError(`No task with id : ${taskID}`, 404));
+const deleteProduct = asyncWrapper(async (req, res, next) => {
+  const { id: ProductID } = req.params;
+  const Product = await Product.findOneAndDelete({ _id: ProductID });
+  if (!Product) {
+    return next(createCustomError(`No Product with id : ${ProductID}`, 404));
   }
-  res.status(200).json({ task });
+  res.status(200).json({ Product });
 });
-const updateTask = asyncWrapper(async (req, res, next) => {
-  const { id: taskID } = req.params;
+const updateProduct = asyncWrapper(async (req, res, next) => {
+  const { id: ProductID } = req.params;
 
-  const task = await Task.findOneAndUpdate({ _id: taskID }, req.body, {
+  const Product = await Product.findOneAndUpdate({ _id: ProductID }, req.body, {
     new: true,
     runValidators: true,
   });
 
-  if (!task) {
-    return next(createCustomError(`No task with id : ${taskID}`, 404));
+  if (!Product) {
+    return next(createCustomError(`No Product with id : ${ProductID}`, 404));
   }
 
-  res.status(200).json({ task });
+  res.status(200).json({ Product });
 });
 
 module.exports = {
   getAllproducts,
-  createTask,
-  getTask,
-  updateTask,
-  deleteTask,
+  createProduct,
+  getProduct,
+  updateProduct,
+  deleteProduct,
 };
