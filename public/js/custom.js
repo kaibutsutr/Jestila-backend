@@ -495,28 +495,60 @@ const showproducts = async () => {
       loadingDOM.style.visibility = "hidden";
       return;
     }
-    const allproducts = products
-      .map((product) => {
-        const { completed, _id: productID, name } = product;
-        return `<div class="single-product ${completed && "product-completed"}">
-<h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
-<div class="product-links">
+    console.log(products);
+    //entry here
+    for (x of products) {
+      $("#product").append(
+        $("<div>")
+          .addClass("featured-product mb-25")
+          .append(
+            $("<div>")
+              .addClass("product-img transition mb-15")
+              .attr({ id: x.id })
+              .append(
+                $("<a>")
+                  .attr({ href: "product-detail.html", id: "product-link" })
+                  .append(
+                    $("<img>").addClass("transition").attr({
+                      src: x.media[0].url,
+                      alt: "product",
+                      id: "product-link",
+                    })
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass(
+                    "product-details-btn text-uppercase text-center transition"
+                  )
+                  .attr({ id: x.id })
+                  .append(
+                    $("<a>")
+                      .addClass("quick-popup")
+                      .attr({ href: "product-quick-view.html" })
+                      .text("Ön İzleme")
+                  )
+              )
+          )
 
-
-
-<!-- edit link -->
-<a href="product.html?id=${productID}"  class="edit-link">
-<i class="fas fa-edit"></i>
-</a>
-<!-- delete btn -->
-<button type="button" class="delete-btn" data-id="${productID}">
-<i class="fas fa-trash"></i>
-</button>
-</div>
-</div>`;
-      })
-      .join("");
-    productsDOM.innerHTML = allproducts;
+          .append(
+            $("<div>")
+              .addClass("product-desc")
+              .attr({ id: x.id })
+              .append(
+                $("<a>")
+                  .addClass("product-name text-uppercase")
+                  .attr({ href: "product-detail.html", id: "product-link" })
+                  .text(x.title)
+              )
+              .append(
+                $("<span>")
+                  .addClass("product-price")
+                  .text(~~x.priceData.price + " ₺")
+              )
+          )
+      );
+    }
   } catch (error) {
     productsDOM.innerHTML =
       '<h5 class="empty-list">There was an error, please try later....</h5>';
