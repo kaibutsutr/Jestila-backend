@@ -569,8 +569,10 @@ const getOneProduct = async (productId) => {
       product = response.data;
       console.log(product);
 
-      $("#product-info").append(product.description);
-      $("#product-title").text(product.title);
+      $("#product-info").append(product.data.description);
+      $("#product-title").text(product.data.title);
+      $("#product-price").text(~~product.data.priceData.price + " ₺");
+
       $("#img1").attr("src", product.data.media[0].url);
 
       if (product.data.media[1] !== undefined) {
