@@ -6,7 +6,6 @@ const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
 const getAllproducts = (req, res) => {
-  products = [];
   const options = {
     method: "GET",
     url: "https://api.shopier.com/v1/products?limit=10&page=1&sort=dateDesc",
@@ -19,13 +18,15 @@ const getAllproducts = (req, res) => {
 
   axios
     .request(options)
-    .then((res) => (products = res.data))
+    .then((response) => {
+      const contentType = response.headers["content-type"];
+      const data = response.data;
+      res.status(200).json({ data }); //send json object with success true and people array
+      console.log(data);
+    })
     .catch((err) => console.error(err));
 
   //GET
-
-  console.log(products);
-  res.status(200).json({ success: true, data: products }); //send json object with success true and people array
 };
 
 module.exports = {
