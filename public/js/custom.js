@@ -1,4 +1,4 @@
-const { getOneProduct } = require("../../controllers/products");
+
 
 const productsDOM = document.querySelector("#product");
 const loadingDOM = document.querySelector(".loading-text");
@@ -120,7 +120,7 @@ $(function () {
   ) {
     var productId = localStorage.getItem("productId");
     console.log(productId);
-    getOneProduct();
+    getOneProduct(productId);
   }
   if (
     document.location.pathname == "/woman-shop.html" ||
@@ -499,7 +499,11 @@ const getProducts = async () => {
       console.log(products);
 
       //iterate over objects
-      for (let object in products) {
+      
+    }).catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+    for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
             $("<div>")
@@ -559,7 +563,28 @@ const getProducts = async () => {
           );
         }
       }
-    })
+};
+
+const getOneProduct = async (id) => {
+  
+
+const options = {
+  method: 'GET',
+  url: `https://api.shopier.com/v1/products/${id}`,
+  headers: {
+    accept: 'application/json',
+    authorization: authorization
+  }
+};
+
+axios
+  .request(options)
+  .then(res => console.log(res.data))
+  .catch(err => console.error(err));
+
+      //iterate over objects
+      
+   
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
