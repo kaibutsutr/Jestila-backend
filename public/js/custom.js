@@ -530,6 +530,7 @@ const getProducts = async () => {
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
+                          .last()
                           .addClass("quick-popup")
                           .attr({ href: "product-quick-view.html" })
                           .text("Ön İzleme")
