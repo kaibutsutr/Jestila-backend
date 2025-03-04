@@ -121,7 +121,7 @@ $(function () {
   }
   if (document.location.pathname == "/woman-shop.html");
   {
-    // getData();
+    getProducts();
   }
 
   /*------------ Page items limit ---------*/
@@ -556,11 +556,13 @@ const showproducts = async () => {
   loadingDOM.style.visibility = "hidden";
 };
 
-axios
-  .get("/api/v1/products")
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
+const getProducts = async () => {
+  axios
+    .get("/api/v1/products")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
