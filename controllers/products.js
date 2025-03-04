@@ -29,8 +29,8 @@ const getAllproducts = (req, res) => {
 };
 
 const getOneProduct = (req, res, next) => {
-  const { user } = req.query; // read the user value from query
-  if (user) {
+  const { id } = req.query; // read the user value from query
+  if (id) {
     // if it has user data, set it as req.user so we can record and use it
     req.user = user;
     console.log(user);

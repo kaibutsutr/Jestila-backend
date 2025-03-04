@@ -1,3 +1,4 @@
+const axios = require("axios");
 const productsDOM = document.querySelector("#product");
 const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".product-form");
@@ -119,7 +120,10 @@ $(function () {
     var productId = localStorage.getItem("productId");
     console.log(productId);
   }
-  if (document.location.pathname == "/woman-shop.html");
+  if (
+    document.location.pathname == "/woman-shop.html" ||
+    document.location.pathname == "/man-shop.html"
+  );
   {
     getProducts();
   }
@@ -484,7 +488,7 @@ $(function () {
 /* http requests */
 
 // Load products from /api/products
-11;
+
 const getProducts = async () => {
   axios
     .get("/api/v1/products")
