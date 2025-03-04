@@ -5,7 +5,7 @@ const Bearer =
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
-const getPeople = (req, res) => {
+const getAllproducts = (req, res) => {
   products = [];
   const options = {
     method: "GET",
@@ -27,3 +27,7 @@ const getPeople = (req, res) => {
   console.log(products);
   res.status(200).json({ success: true, data: products }); //send json object with success true and people array
 };
+
+module.exports = {
+  getAllproducts,
+}; // export and object with functions
