@@ -476,15 +476,16 @@ $(function () {
   /* ---- Quick Popup JS ---- */
 
   /* ---- Quick Popup JS ---- */
-  if ($(".quick-popup").length > 0) {
-    $(".quick-popup").magnificPopup({
-      type: "iframe",
+  if (
+    $(".quick-popup").click(function () {
+      $(".quick-popup").magnificPopup({
+        type: "iframe",
+      });
+    })
+  )
+    $(document).ready(function () {
+      responsive_dropdown();
     });
-  }
-
-  $(document).ready(function () {
-    responsive_dropdown();
-  });
 });
 
 /* http requests */
