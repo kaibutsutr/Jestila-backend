@@ -477,14 +477,13 @@ $(function () {
 
   /* ---- Quick Popup JS ---- */
 
-  $(".quick-popup").click(function () {
-    $(".quick-popup").magnificPopup({
-      type: "iframe",
-    });
-  });
-
   $(document).ready(function () {
     responsive_dropdown();
+    if ($(".quick-popup").length > 0) {
+      $(".quick-popup").magnificPopup({
+        type: "iframe",
+      });
+    }
   });
 });
 
