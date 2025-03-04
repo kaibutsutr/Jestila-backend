@@ -1,4 +1,5 @@
-const axios = require("axios");
+const { getOneProduct } = require("../../controllers/products");
+
 const productsDOM = document.querySelector("#product");
 const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".product-form");
@@ -119,6 +120,7 @@ $(function () {
   ) {
     var productId = localStorage.getItem("productId");
     console.log(productId);
+    getOneProduct();
   }
   if (
     document.location.pathname == "/woman-shop.html" ||
