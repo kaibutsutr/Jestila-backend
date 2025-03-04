@@ -9,17 +9,6 @@ var page = 1;
 var pagination = 4;
 var discount = false;
 
-Object.defineProperty(Object.prototype, Symbol.iterator, {
-  enumerable: false,
-  value: function* () {
-    for (let key in this) {
-      if (this.hasOwnProperty(key)) {
-        yield [key, this[key]];
-      }
-    }
-  },
-});
-
 const KADINid = "9c8c7c2a75b3c676";
 const AYAKKABIid = "bdce94fb95dd9db1";
 
@@ -572,21 +561,23 @@ const getProducts = async () => {
     .get("/api/v1/products")
     .then((response) => {
       console.log(response.data);
+      let products = response.data;
+      console.log(products);
 
-      for (x of response.data) {
+      [...products2].forEach(function (product) {
         $("#product").append(
           $("<div>")
             .addClass("featured-product mb-25")
             .append(
               $("<div>")
                 .addClass("product-img transition mb-15")
-                .attr({ id: x.id })
+                .attr({ id: product.id })
                 .append(
                   $("<a>")
                     .attr({ href: "product-detail.html", id: "product-link" })
                     .append(
                       $("<img>").addClass("transition").attr({
-                        src: x.media[0].url,
+                        src: product.media[0].url,
                         alt: "product",
                         id: "product-link",
                       })
@@ -597,7 +588,7 @@ const getProducts = async () => {
                     .addClass(
                       "product-details-btn text-uppercase text-center transition"
                     )
-                    .attr({ id: x.id })
+                    .attr({ id: product.id })
                     .append(
                       $("<a>")
                         .addClass("quick-popup")
@@ -610,24 +601,23 @@ const getProducts = async () => {
             .append(
               $("<div>")
                 .addClass("product-desc")
-                .attr({ id: x.id })
+                .attr({ id: product.id })
                 .append(
                   $("<a>")
                     .addClass("product-name text-uppercase")
                     .attr({ href: "product-detail.html", id: "product-link" })
-                    .text(x.title)
+                    .text(product.title)
                 )
                 .append(
                   $("<span>")
                     .addClass("product-price")
-                    .text(~~x.priceData.price + " ₺")
+                    .text(~~product.priceData.price + " ₺")
                 )
             )
         );
-      }
+      });
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
 };
-getProducts();
