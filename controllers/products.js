@@ -27,10 +27,14 @@ const getAllproducts = (req, res) => {
   //GET
 };
 
-const getOneProduct = async (id) => {
+const getOneProduct = async (req, res) => {
+  const {
+    params: { id: productId },
+  } = req;
+
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products/${id}`,
+    url: `https://api.shopier.com/v1/products/${productId}`,
     headers: {
       accept: "application/json",
       authorization: Bearer,
@@ -39,7 +43,12 @@ const getOneProduct = async (id) => {
 
   axios
     .request(options)
-    .then((res) => console.log(res.data))
+    .then((response) => {
+      const contentType = response.headers["content-type"];
+      const data = response.data;
+      console.log(data);
+      res.status(200).json({ data }); //send json object with success true and  array
+    })
     .catch((err) => console.error(err));
 };
 
