@@ -44,4 +44,5 @@ const getOneProduct = (req, res, next) => {
 
 module.exports = {
   getAllproducts,
+  getOneProduct,
 }; // export and object with functions

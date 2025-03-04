@@ -5,6 +5,7 @@ const {
   getAllproducts,
 
   getProduct,
+  getOneProduct,
 } = require("../controllers/products");
 
 router.route("/").get(getAllproducts);
