@@ -563,7 +563,7 @@ const getProducts = async () => {
     });
 };
 
-const getProducts = async (id) => {
+const getOneProduct = async (id) => {
   axios
     .get(`/api/v1/products/${id}`)
     .then((response) => {
