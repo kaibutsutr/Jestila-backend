@@ -568,6 +568,21 @@ const getOneProduct = async (productId) => {
     .then((response) => {
       product = response.data;
       console.log(product);
+for
+      $("#product-info").append(product.description);
+      $("#product-title").text(product.title);
+      $("#img1").attr("src", product.media[0].url);
+
+      if (product.media[1].url !== undefined) {
+        $("#img2").attr("src", product.media[1].url);
+      }
+
+      if (product.media[2].url !== undefined) {
+        $("#img3").attr("src", product.media[2].url);
+      }
+      if (product.media[3].url !== undefined) {
+        $("#img4").attr("src", product.media[3].url);
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
