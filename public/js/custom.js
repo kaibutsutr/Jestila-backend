@@ -490,6 +490,7 @@ const getProducts = async () => {
     .get("/api/v1/products")
     .then((response) => {
       products = response.data;
+      console.log(products);
     })
     .catch((error) => {
       console.error("Error fetching data:", error);

@@ -22,7 +22,6 @@ const getAllproducts = (req, res) => {
       const contentType = response.headers["content-type"];
       const data = response.data;
       res.status(200).json({ data }); //send json object with success true and people array
-      console.log(data);
     })
     .catch((err) => console.error(err));
 
