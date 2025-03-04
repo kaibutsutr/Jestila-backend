@@ -123,8 +123,7 @@ $(function () {
   if (
     document.location.pathname == "/woman-shop.html" ||
     document.location.pathname == "/man-shop.html"
-  );
-  {
+  ) {
     getProducts();
   }
 
