@@ -1,5 +1,3 @@
-
-
 const productsDOM = document.querySelector("#product");
 const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".product-form");
@@ -499,11 +497,7 @@ const getProducts = async () => {
       console.log(products);
 
       //iterate over objects
-      
-    }).catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-    for (let object in products) {
+      for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
             $("<div>")
@@ -563,28 +557,19 @@ const getProducts = async () => {
           );
         }
       }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
 };
 
-const getOneProduct = async (id) => {
-  
-
-const options = {
-  method: 'GET',
-  url: `https://api.shopier.com/v1/products/${id}`,
-  headers: {
-    accept: 'application/json',
-    authorization: authorization
-  }
-};
-
-axios
-  .request(options)
-  .then(res => console.log(res.data))
-  .catch(err => console.error(err));
-
-      //iterate over objects
-      
-   
+const getProducts = async (id) => {
+  axios
+    .get(`/api/v1/products/${id}`)
+    .then((response) => {
+      product = response.data;
+      console.log(product);
+    })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
