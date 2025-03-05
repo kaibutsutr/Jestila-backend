@@ -121,7 +121,7 @@ $(function () {
     getOneProduct(productId);
   }
   if (
-    document.location.pathname == "/womanshop.html" ||
+    document.location.pathname == "/woman-shop.html" ||
     document.location.pathname == "/man-shop.html"
   ) {
     getProducts();
