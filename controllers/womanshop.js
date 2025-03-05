@@ -2,11 +2,12 @@ const axios = require("axios");
 
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
+const constants = require("../constants");
 
 const getAllproducts = (req, res) => {
   const options = {
     method: "GET",
-    url: "https://api.shopier.com/v1/products?limit=50&page=1&sort=dateDesc",
+    url: `https://api.shopier.com/v1/products?categoryId=${constants.KADINid}&limit=50&page=1&sort=dateDesc`,
     headers: {
       accept: "application/json",
       authorization: Bearer,
