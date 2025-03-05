@@ -495,8 +495,6 @@ const getProductsList = async (apiUrl, page, limit) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-
-      //iterate over objects
       for (let object in products) {
         for (let key in products[object]) {
           $("#productList").append(
@@ -507,13 +505,16 @@ const getProductsList = async (apiUrl, page, limit) => {
               .append(
                 $("<div>")
                   .addClass("product-img transition")
+                  .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .attr({ href: "index.html" })
+                      .attr({ href: "product-detail.html", id: "product-link" })
                       .append(
-                        $("<img>")
-                          .addClass("transition")
-                          .attr({ src: "images/product-1.jpg", alt: "product" })
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
                       )
                   )
                   .append(
@@ -536,15 +537,17 @@ const getProductsList = async (apiUrl, page, limit) => {
                     $("<a>")
                       .addClass("product-name text-uppercase")
                       .attr({ href: "product-detail.html" })
-                      .text("Ürün Adı")
+                      .text(products[object][key].title)
                   )
                   .append(
-                    $("<span>").addClass("product-price").text("10.000 ₺")
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
                   )
                   .append(
-                    $("<p>")
-                      .addClass("product-detail-desc")
-                      .text("Ürün Açıklaması")
+                    $("<div>")
+                      .addClass("product-info")
+                      .append(products[object][key].description)
                   )
                   .append(
                     $("<div>")
@@ -584,6 +587,7 @@ const getProductsList = async (apiUrl, page, limit) => {
         }
       }
     })
+
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
