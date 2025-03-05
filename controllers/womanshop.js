@@ -10,7 +10,7 @@ const getAllproducts = (req, res) => {
     url: `https://api.shopier.com/v1/products?categoryId=${constants.KADINid}&limit=50&page=1&sort=dateDesc`,
     headers: {
       accept: "application/json",
-      authorization: Bearer,
+      authorization: constants.Bearer,
     },
   };
 
