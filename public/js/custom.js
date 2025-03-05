@@ -584,7 +584,10 @@ const getProductsList = async (apiUrl, page, limit) => {
                       .append(
                         $("<a>")
                           .addClass("quick-popup")
-                          .attr({ href: "product-quick-view.html" })
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
                           .text("Ön İzleme")
                       )
                   )
@@ -595,7 +598,7 @@ const getProductsList = async (apiUrl, page, limit) => {
                   .append(
                     $("<a>")
                       .addClass("product-name text-uppercase")
-                      .attr({ href: "product-detail.html" })
+                      .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
                   .append(
@@ -617,11 +620,12 @@ const getProductsList = async (apiUrl, page, limit) => {
                             $("<li>").append(
                               $("<a>")
                                 .addClass("btn btn-color")
-                                .attr({ href: "cart.html" })
+                                .attr({ href: "cart.html", id: "product-link" })
                                 .append(
                                   $("<img>").attr({
                                     src: "images/shop-bag.png",
                                     alt: "bag",
+                                    id: "product-link",
                                   })
                                 )
                                 .append($("<span>").text("sepete ekle"))
