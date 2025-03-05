@@ -220,9 +220,9 @@ $(function () {
     });
 
     /*------------ Responsive Cart Dropdown ---------*/
-    $(".cart-menu").on("click", function () {
-      $(".cart-dropdown").toggleClass("open");
-    });
+    // $(".cart-menu").on("click", function () {
+    //   $(".cart-dropdown").toggleClass("open");
+    // });
 
     /* ---- For Mobile Menu Dropdown JS Start ---- */
     $(".menu span.opener").on("click", function () {
