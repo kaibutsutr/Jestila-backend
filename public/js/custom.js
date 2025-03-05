@@ -8,6 +8,7 @@ var limit = 16;
 var page = 1;
 var pagination = 4;
 var discount = false;
+url = "womanshop";
 
 /*------------ glasscase ---------*/
 
@@ -23,29 +24,29 @@ $(function () {
     getOneProduct(productId);
   }
   if (document.location.pathname == "/woman-shop.html") {
-    getProducts("womanshop");
+    getProducts(url, page, limit);
   }
 
   /*------------ Page items limit ---------*/
 
   $("#limit")
     .val("16")
-    .click(function () {
+    .change(function () {
       $("#product").empty();
       if ($(this).val() == "16") {
         $("#limit option[value=16]").attr("selected", true);
         limit = 16;
-        getall();
+        getProducts(url, page, limit);
       }
       if ($(this).val() == "24") {
         $("#limit option[value=24]").attr("selected", true);
         limit = 24;
-        getall();
+        getProducts(url, page, limit);
       }
       if ($(this).val() == "32") {
         $("#limit option[value=32]").attr("selected", true);
         limit = 32;
-        getall();
+        getProducts(url, page, limit);
       }
     });
 
@@ -57,26 +58,25 @@ $(function () {
       $("#product").empty();
       if ($(this).val() == "1") {
         $("#product option[value=1]").attr("selected", true);
-        getall();
+        getProducts(url, page, limit);
       }
       if ($(this).val() == "2") {
         $("#product option[value=2]").attr("selected", true);
         discount = true;
         // add discount
-        getall();
+        getProducts(url, page, limit);
+
         discount = false;
       }
       if ($(this).val() == "3") {
         $("#product option[value=3]").attr("selected", true);
-        getall();
+        getProducts(url, page, limit);
       }
       if ($(this).val() == "4") {
         $("#product option[value=4]").attr("selected", true);
-        getall();
       }
       if ($(this).val() == "5") {
         $("#product option[value=5]").attr("selected", true);
-        getall();
       }
     });
 
@@ -89,7 +89,7 @@ $(function () {
     });
     $("#product").empty();
     page = 1;
-    getall();
+    getProducts(url, page, limit);
   });
   $("#pagination-2").click(function () {
     $(".pagination").on("click", "li", function () {
@@ -97,8 +97,7 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
-    page = 2;
-    getall();
+    getProducts(url, page + 1, limit);
   });
   $("#pagination-3").click(function () {
     $(".pagination").on("click", "li", function () {
@@ -106,8 +105,7 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
-    page = 3;
-    getall();
+    getProducts(url, page + 2, limit);
   });
   $("#pagination-next").click(function () {
     $(".pagination").on("click", "li", function () {
@@ -115,8 +113,8 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
-    page = pagination;
-    getall();
+    getProducts(url, pagination, limit);
+
     pagination++;
   });
 
@@ -389,9 +387,15 @@ $(function () {
 
 // Load products from /api/products
 
-const getProducts = async (apiUrl) => {
+const getProducts = async (apiUrl, page, limit) => {
+  if (page == undefined) {
+    page = 1;
+  }
+  if (limit === undefined) {
+    limit = 50;
+  }
   axios
-    .get(`/api/v1/${apiUrl}`)
+    .get(`/api/v1/${apiUrl}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
