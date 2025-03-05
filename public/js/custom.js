@@ -592,7 +592,7 @@ const getOneProduct = async (productId) => {
       if (product.data.media[3] !== undefined) {
         $("#img4").attr("src", product.data.media[3].url);
       }
-      // gc
+      // gc fix//
       $("#glasscase").glassCase({
         thumbsPosition: "bottom",
         widthDisplayPerc: 100,
