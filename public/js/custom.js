@@ -159,6 +159,7 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
+    page = 2;
     if (list == true) {
       getProductsList(url, page, limit);
     } else {
@@ -171,6 +172,7 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
+    page = 3;
     if (list == true) {
       getProductsList(url, page, limit);
     } else {
@@ -183,6 +185,7 @@ $(function () {
       $(this).addClass("active");
     });
     $("#product").empty();
+    page = pagination;
     if (list == true) {
       getProductsList(url, page, limit);
     } else {
