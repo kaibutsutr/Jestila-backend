@@ -26,6 +26,9 @@ $(function () {
   if (document.location.pathname == "/woman-shop.html") {
     getProducts(url, page, limit);
   }
+  if (document.location.pathname == "/woman-shop-list.html") {
+    getProductsList(url, page, limit);
+  }
   if (document.location.pathname == "/man-shop.html") {
     url = "manshop";
     getProducts(url, page, limit);
@@ -478,6 +481,114 @@ const getProducts = async (apiUrl, page, limit) => {
     });
 };
 
+/* get as a list view*/
+
+const getProductsList = async (apiUrl, page, limit) => {
+  if (page == undefined) {
+    page = 1;
+  }
+  if (limit === undefined) {
+    limit = 50;
+  }
+  axios
+    .get(`/api/v1/${apiUrl}?page=${page}&limit=${limit}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+
+      //iterate over objects
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#productList").append(
+            $("<div>")
+              .addClass(
+                "featured-product featured-product-list align-flax mb-25"
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-img transition")
+                  .append(
+                    $("<a>")
+                      .attr({ href: "index.html" })
+                      .append(
+                        $("<img>")
+                          .addClass("transition")
+                          .attr({ src: "images/product-1.jpg", alt: "product" })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass(
+                        "product-details-btn text-uppercase text-center transition"
+                      )
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+                          .attr({ href: "product-quick-view.html" })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({ href: "product-detail.html" })
+                      .text("Ürün Adı")
+                  )
+                  .append(
+                    $("<span>").addClass("product-price").text("10.000 ₺")
+                  )
+                  .append(
+                    $("<p>")
+                      .addClass("product-detail-desc")
+                      .text("Ürün Açıklaması")
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-action")
+                      .append(
+                        $("<ul>")
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("btn btn-color")
+                                .attr({ href: "cart.html" })
+                                .append(
+                                  $("<img>").attr({
+                                    src: "images/shop-bag.png",
+                                    alt: "bag",
+                                  })
+                                )
+                                .append($("<span>").text("sepete ekle"))
+                            )
+                          )
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("btn")
+                                .attr({ href: "wishlist.html" })
+                                .append(
+                                  $("<i>")
+                                    .addClass("fa fa-heart")
+                                    .attr({ "aria-hidden": "true" })
+                                )
+                            )
+                          )
+                      )
+                  )
+              )
+          );
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
 const getOneProduct = async (productId) => {
   axios
     .get(`/api/v1/products/${productId}`)
@@ -514,3 +625,5 @@ const getOneProduct = async (productId) => {
       console.error("Error fetching data:", error);
     });
 };
+
+//append stuff
