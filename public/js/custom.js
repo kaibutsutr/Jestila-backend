@@ -666,11 +666,12 @@ const getProductsList = async (apiUrl, page, limit) => {
           );
         }
       }
+
+      $(".product-info h3").remove();
+      $(".product-info ul").remove();
       $(".quick-popup").magnificPopup({
         type: "iframe",
       });
-      $(".product-info h3").remove();
-      $(".product-info ul").remove();
     })
 
     .catch((error) => {
@@ -690,11 +691,7 @@ const getOneProduct = async (productId) => {
       $("#product-info").append(product.data.description);
       $("#product-title").text(product.data.title);
       $("#product-price").text(~~product.data.priceData.price + " ₺");
-      $("#buyProduct")
-        .magnificPopup({
-          type: "iframe",
-        })
-        .attr("href", product.data.url);
+      $("#buyProduct").attr("href", product.data.url);
 
       $("#img1").attr("src", product.data.media[0].url);
 
@@ -713,6 +710,11 @@ const getOneProduct = async (productId) => {
         thumbsPosition: "bottom",
         widthDisplayPerc: 100,
         isDownloadEnabled: false,
+      });
+
+      // popup fix?
+      $(".quick-popup").magnificPopup({
+        type: "iframe",
       });
     })
     .catch((error) => {
