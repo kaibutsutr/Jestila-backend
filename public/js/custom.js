@@ -479,11 +479,11 @@ $(function () {
 
   $(document).ready(function () {
     responsive_dropdown();
-    if ($(".quick-popup").length > 0) {
+    $(".quick-popup").click(function () {
       $(".quick-popup").magnificPopup({
         type: "iframe",
       });
-    }
+    });
   });
 });
 
@@ -530,10 +530,9 @@ const getProducts = async () => {
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
+                          .addClass("quick-popup")
                           .attr({ href: "product-quick-view.html" })
                           .text("Ön İzleme")
-                          .last()
-                          .addClass("quick-popup")
                       )
                   )
               )
