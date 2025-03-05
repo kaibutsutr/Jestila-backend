@@ -539,9 +539,11 @@ const getProducts = async (apiUrl, page, limit) => {
           );
         }
       }
-      $(".quick-popup").magnificPopup({
-        type: "iframe",
-      });
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -635,9 +637,7 @@ const getProductsList = async (apiUrl, page, limit) => {
                                   href: products[object][key].url,
                                   id: "product-link",
                                 })
-                                .magnificPopup({
-                                  type: "iframe",
-                                })
+
                                 .append(
                                   $("<img>").attr({
                                     src: "images/shop-bag.png",
@@ -669,9 +669,11 @@ const getProductsList = async (apiUrl, page, limit) => {
 
       $(".product-info h3").remove();
       $(".product-info ul").remove();
-      $(".quick-popup").magnificPopup({
-        type: "iframe",
-      });
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
     })
 
     .catch((error) => {
@@ -713,9 +715,11 @@ const getOneProduct = async (productId) => {
       });
 
       // popup fix?
-      $(".quick-popup").magnificPopup({
-        type: "iframe",
-      });
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
