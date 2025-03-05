@@ -682,6 +682,7 @@ const getOneProduct = async (productId) => {
       $("#product-info").append(product.data.description);
       $("#product-title").text(product.data.title);
       $("#product-price").text(~~product.data.priceData.price + " ₺");
+      $(".product-action ul li a").attr("src", product.data.media[0].url);
 
       $("#img1").attr("src", product.data.media[0].url);
 
