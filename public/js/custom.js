@@ -26,7 +26,7 @@ $(function () {
   if (document.location.pathname == "/woman-shop.html") {
     getProducts(url, page, limit);
   }
-  if (document.location.pathname == "/woman-shop-list.html") {
+  if (document.location.pathname == "/woman-shop/list.html") {
     getProductsList(url, page, limit);
   }
   if (document.location.pathname == "/man-shop.html") {
@@ -47,7 +47,11 @@ $(function () {
       if ($(this).val() == "16") {
         $("#limit option[value=16]").attr("selected", true);
         limit = 16;
-        getProducts(url, page, limit);
+        if (document.location.pathname == "/list.html") {
+          getProductsList(url, page, limit);
+        } else {
+          getProducts(url, page, limit);
+        }
       }
       if ($(this).val() == "24") {
         $("#limit option[value=24]").attr("selected", true);
