@@ -37,6 +37,11 @@ $(function () {
     url = "manshop";
     getProducts(url, page, limit);
   }
+  if (document.location.pathname == "/man-shop-list.html") {
+    var list = true;
+    url = "manshop";
+    getProductsList(url, page, limit);
+  }
   if (document.location.pathname == "/accessories-shop.html") {
     url = "accessoriesshop";
     getProducts(url, page, limit);
@@ -638,6 +643,8 @@ const getProductsList = async (apiUrl, page, limit) => {
                   )
               )
           );
+          $(".product-info h3").remove();
+          $(".product-info ul").remove();
         }
       }
     })
