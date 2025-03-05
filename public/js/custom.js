@@ -26,6 +26,10 @@ $(function () {
   if (document.location.pathname == "/woman-shop.html") {
     getProducts(url, page, limit);
   }
+  if (document.location.pathname == "/man-shop.html") {
+    url = "manshop";
+    getProducts(url, page, limit);
+  }
 
   /*------------ Page items limit ---------*/
 
