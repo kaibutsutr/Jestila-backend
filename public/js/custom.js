@@ -510,9 +510,7 @@ const getProducts = async (apiUrl, page, limit) => {
                       .append(
                         $("<a>")
                           .addClass("quick-popup")
-                          .magnificPopup({
-                            type: "iframe",
-                          })
+
                           .attr({ href: "product-quick-view.html" })
                           .text("Ön İzleme")
                       )
@@ -541,6 +539,9 @@ const getProducts = async (apiUrl, page, limit) => {
           );
         }
       }
+      $(".quick-popup").magnificPopup({
+        type: "iframe",
+      });
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -592,9 +593,7 @@ const getProductsList = async (apiUrl, page, limit) => {
                       .append(
                         $("<a>")
                           .addClass("quick-popup")
-                          .magnificPopup({
-                            type: "iframe",
-                          })
+
                           .attr({
                             href: "product-quick-view.html",
                             id: "product-link",
@@ -667,6 +666,9 @@ const getProductsList = async (apiUrl, page, limit) => {
           );
         }
       }
+      $(".quick-popup").magnificPopup({
+        type: "iframe",
+      });
       $(".product-info h3").remove();
       $(".product-info ul").remove();
     })
