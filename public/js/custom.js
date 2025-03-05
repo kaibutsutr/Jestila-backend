@@ -48,7 +48,7 @@ $(function () {
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
     url = "accessoriesshop";
-    getProductList(url, page, limit);
+    getProductsList(url, page, limit);
   }
 
   /*------------ Page items limit ---------*/
