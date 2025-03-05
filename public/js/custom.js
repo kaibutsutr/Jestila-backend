@@ -588,9 +588,13 @@ const getProductsList = async (apiUrl, page, limit) => {
                       .addClass(
                         "product-details-btn text-uppercase text-center transition"
                       )
+                      .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
                           .addClass("quick-popup")
+                          .magnificPopup({
+                            type: "iframe",
+                          })
                           .attr({
                             href: "product-quick-view.html",
                             id: "product-link",
@@ -602,6 +606,7 @@ const getProductsList = async (apiUrl, page, limit) => {
               .append(
                 $("<div>")
                   .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
                       .addClass("product-name text-uppercase")
