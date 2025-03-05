@@ -46,6 +46,10 @@ $(function () {
     url = "accessoriesshop";
     getProducts(url, page, limit);
   }
+  if (document.location.pathname == "/accessories-shop-list.html") {
+    url = "accessoriesshop";
+    getProductList(url, page, limit);
+  }
 
   /*------------ Page items limit ---------*/
 
@@ -647,10 +651,10 @@ const getProductsList = async (apiUrl, page, limit) => {
                   )
               )
           );
-          $(".product-info h3").remove();
-          $(".product-info ul").remove();
         }
       }
+      $(".product-info h3").remove();
+      $(".product-info ul").remove();
     })
 
     .catch((error) => {
