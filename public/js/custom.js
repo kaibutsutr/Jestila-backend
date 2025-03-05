@@ -497,7 +497,7 @@ const getProductsList = async (apiUrl, page, limit) => {
       console.log(products);
       for (let object in products) {
         for (let key in products[object]) {
-          $("#products").append(
+          $("#product").append(
             $("<div>")
               .addClass(
                 "featured-product featured-product-list align-flax mb-25"
