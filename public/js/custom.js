@@ -22,11 +22,8 @@ $(function () {
     console.log(productId);
     getOneProduct(productId);
   }
-  if (
-    document.location.pathname == "/woman-shop.html" ||
-    document.location.pathname == "/man-shop.html"
-  ) {
-    getProducts();
+  if (document.location.pathname == "/woman-shop.html") {
+    getProducts("womanshop");
   }
 
   /*------------ Page items limit ---------*/
@@ -392,9 +389,9 @@ $(function () {
 
 // Load products from /api/products
 
-const getProducts = async () => {
+const getProducts = async (apiUrl) => {
   axios
-    .get("/api/v1/products")
+    .get(`/api/v1/${apiUrl}`)
     .then((response) => {
       products = response.data;
       console.log(products);
