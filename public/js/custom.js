@@ -30,6 +30,10 @@ $(function () {
     url = "manshop";
     getProducts(url, page, limit);
   }
+  if (document.location.pathname == "/accessories-shop.html") {
+    url = "accessoriesshop";
+    getProducts(url, page, limit);
+  }
 
   /*------------ Page items limit ---------*/
 
