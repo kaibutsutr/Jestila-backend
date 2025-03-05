@@ -633,12 +633,6 @@ const getOneProduct = async (productId) => {
       if (product.data.media[3] !== undefined) {
         $("#img4").attr("src", product.data.media[3].url);
       }
-
-      $("ul").glassCase({
-        thumbsPosition: "bottom",
-        widthDisplayPerc: 100,
-        isDownloadEnabled: false,
-      });
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
