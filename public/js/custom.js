@@ -631,8 +631,14 @@ const getProductsList = async (apiUrl, page, limit) => {
                           .append(
                             $("<li>").append(
                               $("<a>")
-                                .addClass("btn btn-color")
-                                .attr({ href: "cart.html", id: "product-link" })
+                                .addClass("quick-popup btn btn-color")
+                                .attr({
+                                  href: products[object][key].url,
+                                  id: "product-link",
+                                })
+                                .magnificPopup({
+                                  type: "iframe",
+                                })
                                 .append(
                                   $("<img>").attr({
                                     src: "images/shop-bag.png",
