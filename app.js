@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use("/api/v1/products", products);
 app.use("/api/v1/womanshop", womanshop);
-app.use("/api/v1/womanshop", manshop);
+app.use("/api/v1/manshop", manshop);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
