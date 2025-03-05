@@ -474,8 +474,8 @@ $(function () {
   });
 
   /* ---- Quick Popup JS ---- */
-  $(".quick-popup").click(function () {
-    $("#quick-popup").magnificPopup({
+  $('a[href$="product-quick-view.html"]').click(function () {
+    $('a[href$="product-quick-view.html"]').magnificPopup({
       type: "iframe",
     });
   });
@@ -532,7 +532,6 @@ const getProducts = async () => {
                           .addClass("quick-popup")
                           .attr({
                             href: "product-quick-view.html",
-                            id: "quick-popup",
                           })
                           .text("Ön İzleme")
                       )
