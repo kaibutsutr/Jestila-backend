@@ -474,11 +474,11 @@ $(function () {
   });
 
   /* ---- Quick Popup JS ---- */
-  $('a[href$="product-quick-view.html"]').click(function () {
-    $('a[href$="product-quick-view.html"]').magnificPopup({
+  if ($(".quick-popup").length > 0) {
+    $(".quick-popup").magnificPopup({
       type: "iframe",
     });
-  });
+  }
   /* ---- Quick Popup JS ---- */
 
   $(document).ready(function () {
@@ -530,9 +530,10 @@ const getProducts = async () => {
                       .append(
                         $("<a>")
                           .addClass("quick-popup")
-                          .attr({
-                            href: "product-quick-view.html",
+                          .magnificPopup({
+                            type: "iframe",
                           })
+                          .attr({ href: "product-quick-view.html" })
                           .text("Ön İzleme")
                       )
                   )
