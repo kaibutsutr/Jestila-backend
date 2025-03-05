@@ -575,47 +575,6 @@ const getOneProduct = async (productId) => {
       console.log(product);
 
       //append
-      $("#product").append(
-        $("<ul>")
-          .addClass("gc-start")
-          .attr({ id: "glasscase" })
-          .append(
-            $("<li>").append(
-              $("<img>").attr({
-                src: "images/12.jpg",
-                alt: "product",
-                id: "img1",
-              })
-            )
-          )
-          .append(
-            $("<li>").append(
-              $("<img>").attr({
-                src: "images/13.jpg",
-                alt: "product",
-                id: "img2",
-              })
-            )
-          )
-          .append(
-            $("<li>").append(
-              $("<img>").attr({
-                src: "images/14.jpg",
-                alt: "product",
-                id: "img3",
-              })
-            )
-          )
-          .append(
-            $("<li>").append(
-              $("<img>").attr({
-                src: "images/15.jpg",
-                alt: "product",
-                id: "img4",
-              })
-            )
-          )
-      );
 
       $("#product-info").append(product.data.description);
       $("#product-title").text(product.data.title);
