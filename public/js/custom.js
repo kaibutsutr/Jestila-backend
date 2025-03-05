@@ -574,6 +574,49 @@ const getOneProduct = async (productId) => {
       product = response.data;
       console.log(product);
 
+      //append
+      $("#product").append(
+        $("<ul>")
+          .addClass("gc-start")
+          .attr({ id: "glasscase" })
+          .append(
+            $("<li>").append(
+              $("<img>").attr({
+                src: "images/12.jpg",
+                alt: "product",
+                id: "img1",
+              })
+            )
+          )
+          .append(
+            $("<li>").append(
+              $("<img>").attr({
+                src: "images/13.jpg",
+                alt: "product",
+                id: "img2",
+              })
+            )
+          )
+          .append(
+            $("<li>").append(
+              $("<img>").attr({
+                src: "images/14.jpg",
+                alt: "product",
+                id: "img3",
+              })
+            )
+          )
+          .append(
+            $("<li>").append(
+              $("<img>").attr({
+                src: "images/15.jpg",
+                alt: "product",
+                id: "img4",
+              })
+            )
+          )
+      );
+
       $("#product-info").append(product.data.description);
       $("#product-title").text(product.data.title);
       $("#product-price").text(~~product.data.priceData.price + " ₺");
@@ -590,6 +633,12 @@ const getOneProduct = async (productId) => {
       if (product.data.media[3] !== undefined) {
         $("#img4").attr("src", product.data.media[3].url);
       }
+
+      $("ul").glassCase({
+        thumbsPosition: "bottom",
+        widthDisplayPerc: 100,
+        isDownloadEnabled: false,
+      });
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
