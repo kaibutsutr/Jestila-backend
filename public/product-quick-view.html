@@ -156,20 +156,5 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="js/custom.js"></script>
-    <script>
-      $(document).ready(function () {
-        setTimeout(function () {
-          $(document).trigger("afterready");
-        }, 1);
-      });
-
-      $(document).bind("afterready", function () {
-        $("#glasscase").glassCase({
-          thumbsPosition: "bottom",
-          widthDisplayPerc: 100,
-          isDownloadEnabled: false,
-        });
-      }); // call your code here that you want to run after all $(document).ready() calls have run
-    </script>
   </body>
 </html>
