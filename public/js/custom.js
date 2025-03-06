@@ -29,49 +29,49 @@ $(function () {
     console.log(brandName);
     url = "brand-shop";
 
-    getProductsByQuery(url, page, limit);
+    getProductsByQuery(query);
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
-    getProducts(url, page, limit);
+    getProducts();
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
-    getProductsList(url, page, limit);
+    getProductsList();
   }
   if (document.location.pathname == "/man-shop.html") {
     var list = false;
     url = "manshop";
-    getProducts(url, page, limit);
+    getProducts();
   }
   if (document.location.pathname == "/man-shop-list.html") {
     var list = true;
     url = "manshop";
-    getProductsList(url, page, limit);
+    getProductsList();
   }
   if (document.location.pathname == "/accessories-shop.html") {
     url = "accessoriesshop";
-    getProducts(url, page, limit);
+    getProducts();
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
     url = "accessoriesshop";
-    getProductsList(url, page, limit);
+    getProductsList();
   }
   if (document.location.pathname == "/jewelry-shop.html") {
     url = "jewelryshop";
-    getProducts(url, page, limit);
+    getProducts();
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
     url = "jewelryshop";
-    getProductsList(url, page, limit);
+    getProductsList();
   }
   if (document.location.pathname == "/bag-shop.html") {
     url = "bagshop";
-    getProducts(url, page, limit);
+    getProducts();
   }
   if (document.location.pathname == "/bag-shop-list.html") {
     url = "bagshop";
-    getProductsList(url, page, limit);
+    getProductsList();
   }
 
   /*------------ Page items limit ---------*/
@@ -494,15 +494,9 @@ $(function () {
 
 // Load products from /api/products
 
-const getProducts = async (apiUrl, page, limit) => {
-  if (page == undefined) {
-    page = 1;
-  }
-  if (limit === undefined) {
-    limit = 50;
-  }
+const getProducts = async () => {
   axios
-    .get(`/api/v1/${apiUrl}?page=${page}&limit=${limit}`)
+    .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
@@ -585,15 +579,9 @@ const getProducts = async (apiUrl, page, limit) => {
 
 /* get as a list view*/
 
-const getProductsList = async (apiUrl, page, limit) => {
-  if (page == undefined) {
-    page = 1;
-  }
-  if (limit === undefined) {
-    limit = 50;
-  }
+const getProductsList = async () => {
   axios
-    .get(`/api/v1/${apiUrl}?page=${page}&limit=${limit}`)
+    .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
@@ -761,17 +749,9 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByQuery = async (apiUrl, page, limit) => {
-  if (brand == undefined) {
-    brand = "";
-  } else {
-    brand = "category=" + brand + "&";
-  }
-  if (limit === undefined) {
-    limit = 50;
-  }
+const getProductsByQuery = async (query) => {
   axios
-    .get(`/api/v1/${apiUrl}?${brand}page=${page}&limit=${limit}`)
+    .get(`/api/v1/${url}&&page=${page}&limit=${limit}/${query}`)
     .then((response) => {
       products = response.data;
       console.log(products);
