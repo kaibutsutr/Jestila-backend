@@ -50,6 +50,14 @@ $(function () {
     url = "accessoriesshop";
     getProductsList(url, page, limit);
   }
+  if (document.location.pathname == "/jewelry-shop.html") {
+    url = "jewelryshop";
+    getProducts(url, page, limit);
+  }
+  if (document.location.pathname == "/jewelry-shop-list.html") {
+    url = "jewelryshop";
+    getProductsList(url, page, limit);
+  }
 
   /*------------ Page items limit ---------*/
 
