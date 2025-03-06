@@ -58,6 +58,14 @@ $(function () {
     url = "jewelryshop";
     getProductsList(url, page, limit);
   }
+  if (document.location.pathname == "/bag-shop.html") {
+    url = "bagshop";
+    getProducts(url, page, limit);
+  }
+  if (document.location.pathname == "/bag-shop-list.html") {
+    url = "bagshop";
+    getProductsList(url, page, limit);
+  }
 
   /*------------ Page items limit ---------*/
 
@@ -519,7 +527,10 @@ const getProducts = async (apiUrl, page, limit) => {
                         $("<a>")
                           .addClass("quick-popup")
 
-                          .attr({ href: "product-quick-view.html" })
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
                           .text("Ön İzleme")
                       )
                   )
