@@ -27,9 +27,9 @@ $(function () {
   if (document.location.pathname == "/brand-shop.html") {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
-    url = "brand-shop";
+    url = "brandshop";
 
-    getProductsByQuery(query);
+    getProductsByQuery(brandName);
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
@@ -751,7 +751,7 @@ const getOneProduct = async (productId) => {
 
 const getProductsByQuery = async (query) => {
   axios
-    .get(`/api/v1/${url}&&page=${page}&limit=${limit}/${query}`)
+    .get(`/api/v1/${url}/${query}`)
     .then((response) => {
       products = response.data;
       console.log(products);
