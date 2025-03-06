@@ -28,8 +28,9 @@ $(function () {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
     url = "brandshop";
+    idString = "c7826925739164b2";
 
-    getProductsByQuery(brandName);
+    getProductsByQuery(idString);
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
