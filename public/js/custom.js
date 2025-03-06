@@ -28,8 +28,8 @@ $(function () {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
     url = "brand-shop";
-    category = brandName;
-    getProductsByQuery(url, page, limit, category);
+
+    getProductsByQuery(url, page, limit);
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
@@ -761,17 +761,17 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByQuery = async (apiUrl, page, limit, category) => {
-  if (category == undefined) {
-    category = "";
+const getProductsByQuery = async (apiUrl, page, limit) => {
+  if (brand == undefined) {
+    brand = "";
   } else {
-    category = "categoryId=" + category;
+    brand = "category=" + brand + "&";
   }
   if (limit === undefined) {
     limit = 50;
   }
   axios
-    .get(`/api/v1/${apiUrl}?${category}&page=${page}&limit=${limit}`)
+    .get(`/api/v1/${apiUrl}?${brand}page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
