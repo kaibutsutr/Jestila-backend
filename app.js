@@ -22,6 +22,7 @@ app.use("/api/v1/products", products);
 app.use("/api/v1/womanshop", womanshop);
 app.use("/api/v1/manshop", manshop);
 app.use("/api/v1/accessoriesshop", accessoriesshop);
+app.use("/api/v1/jewelryshop", jewelryshop);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
