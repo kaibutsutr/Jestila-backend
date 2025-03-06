@@ -31,6 +31,7 @@ $(function () {
     idString = "c7826925739164b2";
 
     getProductsByQuery(idString);
+    // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
@@ -752,7 +753,7 @@ const getOneProduct = async (productId) => {
 
 const getProductsByQuery = async (query) => {
   axios
-    .get(`/api/v1/${url}/${query}`)
+    .get(`/api/v1/${url}/${query}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
