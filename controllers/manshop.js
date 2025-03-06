@@ -7,7 +7,7 @@ const constants = require("../constants");
 const getAllproducts = (req, res) => {
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products?categoryId=${constants.AYAKKABIid}&categoryId=${constants.AKSESUARid}&limit=${req.query.limit}&page=${req.query.page}&sort=dateDesc`,
+    url: `https://api.shopier.com/v1/products?categoryId=${constants.AYAKKABIid}&limit=${req.query.limit}&page=${req.query.page}&sort=dateDesc`,
     headers: {
       accept: "application/json",
       authorization: constants.Bearer,
