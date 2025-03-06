@@ -8,6 +8,7 @@ module.exports = {
   ÇANTAid: "6f6880c7106a0b37",
 
   AKSESUARid: "51495dc1b7425b77",
+
   TAKIid: "8a4bd2da24265fd0",
 
   BOTid: "a028bb132a02daaa",
