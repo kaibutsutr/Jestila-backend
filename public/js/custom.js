@@ -342,7 +342,7 @@ $(function () {
   if ($(".brand-salider").length > 0) {
     $(".brand-salider").owlCarousel({
       loop: true,
-      dots: false,
+      dots: true,
       nav: true,
       items: 9,
       mouseDrag: false,
