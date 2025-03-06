@@ -24,10 +24,12 @@ $(function () {
     console.log(productId);
     getOneProduct(productId);
   }
-  if (document.location.pathname == "/brands.html") {
+  if (document.location.pathname == "/brand-shop.html") {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
-    getOneProduct(brandName);
+    url = "brand-shop";
+    category = brandName;
+    getProductsByQuery(url, page, limit, category);
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
@@ -226,7 +228,7 @@ $(function () {
   });
 
   /*------------ get brand and go to brand shop page ---------*/
-  $(".brand-box text-center > a").on("click", function () {
+  $(".brand-name").on("click", function () {
     var brandName = $(this).closest("a").attr("id");
     localStorage.setItem("brandName", brandName);
     console.log(brandName);
@@ -757,4 +759,95 @@ const getOneProduct = async (productId) => {
     });
 };
 
-//append stuff
+//get by query
+
+const getProductsByQuery = async (apiUrl, page, limit, category) => {
+  if (category == undefined) {
+    category = "";
+  } else {
+    category = "categoryId=" + category;
+  }
+  if (limit === undefined) {
+    limit = 50;
+  }
+  axios
+    .get(`/api/v1/${apiUrl}?${category}&page=${page}&limit=${limit}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+
+      //iterate over objects
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#product").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass(
+                        "product-details-btn text-uppercase text-center transition"
+                      )
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
+                  )
+              )
+          );
+        }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
