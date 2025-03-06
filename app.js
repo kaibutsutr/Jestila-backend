@@ -6,7 +6,7 @@ const womanshop = require("./routes/womanshop");
 const manshop = require("./routes/manshop");
 const accessoriesshop = require("./routes/accessoriesshop");
 const jewelryshop = require("./routes/jewelryshop");
-const jewelryshop = require("./routes/bagshop");
+const bagshop = require("./routes/bagshop");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
