@@ -24,6 +24,11 @@ $(function () {
     console.log(productId);
     getOneProduct(productId);
   }
+  if (document.location.pathname == "/brands.html") {
+    var brandName = localStorage.getItem("brandName");
+    console.log(brandName);
+    getOneProduct(brandName);
+  }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
     getProducts(url, page, limit);
@@ -218,6 +223,13 @@ $(function () {
     var productId = $(this).closest("div").attr("id");
     localStorage.setItem("productId", productId);
     console.log(productId);
+  });
+
+  /*------------ get brand and go to brand shop page ---------*/
+  $(".brand-box text-center > a").on("click", function () {
+    var brandName = $(this).closest("a").attr("id");
+    localStorage.setItem("brandName", brandName);
+    console.log(brandName);
   });
 
   /*------------ Sticky Header Slider ---------*/
