@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
-const constants = require("../constants");
+const constants = require("../public/js/constants");
 
 const getAllproducts = (req, res) => {
   const {
