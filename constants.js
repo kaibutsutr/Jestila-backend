@@ -102,7 +102,26 @@ const constants = {
   SAINTid: "76cf79a1f712f9cf",
 
   TOMFORDid: "befff5a702a09d16",
+
   UGGid: "7b6d706cfa92ce96",
+
   VANSid: "57f47d53b58a7e90",
+
+  S36id: "6e39a3314808ede5",
+  S37id: "6b8d6b3793d5d475",
+  S38id: "83195dc0849d33c9",
+  S39id: "a287aef049f3b77c",
+  S40id: "29bfd98d4e9d3740",
+  S41id: "45d4e764828fc5cb",
+  S42id: "051ead05ff07974d",
+  S43id: "53c48cf62f3f62ba",
+  S44id: "96d8e54d13164048",
+  S45id: "80e231f54917d0cc",
+  GREENid: "8575a1eb5520784c",
+  BLUEid: "3a674bc353f7eee8",
+  REDid: "d6b08731331de007",
+  BROWNid: "ff8ff76dcc3be5ca",
+  BLACKid: "8730898f4b2f3d63",
+  WHİTEid: "aa6461d283b05659",
 };
 module.exports = constants;
