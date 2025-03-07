@@ -3,6 +3,7 @@ const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".product-form");
 const productInputDOM = document.querySelector(".product-input");
 const formAlertDOM = document.querySelector(".form-alert");
+const constants = require("../../constants");
 var w = 0;
 var limit = 16;
 var page = 1;
@@ -28,9 +29,8 @@ $(function () {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
     url = "brandshop";
-    brandId = "c7826925739164b2";
 
-    getProductsByBrand(brandId);
+    getProductsByBrand(constants.brandId);
     // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {
