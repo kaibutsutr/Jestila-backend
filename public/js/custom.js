@@ -154,11 +154,9 @@ $(function () {
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
-    url = "brandshop";
-    categoryId = constants.KADINAYAKKABIid;
-    console.log(categoryId);
+    url = "womanshop";
 
-    getProductsByCategory();
+    getProducts();
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
