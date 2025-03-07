@@ -11,13 +11,13 @@ const getAllproducts = (req, res) => {
 
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products?categoryId=${categoryId}&limit=${limit}&page=${page}&sort=dateDesc`,
+    url: `https://api.shopier.com/v1/products`,
     headers: {
       accept: "application/json",
       authorization: constants.Bearer,
     },
+    params: { categoryId: categoryId, limit: limit, page: page },
   };
-  console.log(options.url);
 
   axios
     .request(options)
