@@ -378,24 +378,28 @@ $(function () {
 
   /*------------ Only one checkbox is selected ---------*/
   $(document).ready(function () {
-    $("#check-box1").on("change", function () {
-      $("#check-box1").not(this).prop("checked", false);
+    $("#check-box1 .checkbox").on("change", function () {
+      $("#check-box1 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
     });
-    $("#check-box2").on("change", function () {
-      $("#check-box2").not(this).prop("checked", false);
+    $("#check-box2 .checkbox").on("change", function () {
+      $("#check-box2 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
     });
-    $("#check-box3").on("change", function () {
-      $("#check-box3").not(this).prop("checked", false);
+    $("#check-box3 .checkbox").on("change", function () {
+      $("#check-box3 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
     });
+  });
+  /*------------ Remove all checkboxes ---------*/
+  $(".btn-filter").on("click", function () {
+    $("input[type=checkbox]").prop("checked", false);
   });
   /*------------ Sticky Header Slider ---------*/
   $(window).scroll(function () {
