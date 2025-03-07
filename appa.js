@@ -38,11 +38,6 @@ app.use(notFound);
 app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 5000;
 
-app.get("/hello", (req, res) => {
-  res.set("Content-Type", "text/html");
-  res.status(200).send("<h1>Hello GFG Learner!</h1>");
-});
-
 const start = async () => {
   try {
     app.listen(port, () =>
