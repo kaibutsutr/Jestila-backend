@@ -136,7 +136,7 @@ $(function () {
     let categoryName = localStorage.getItem("brandName");
     url = "brandshop";
     categoryId = constants[categoryName];
-    console.log(categoryName);
+    console.log(categoryId);
 
     getProductsByCategory();
   }
@@ -145,15 +145,15 @@ $(function () {
     let categoryName = localStorage.getItem("brandName");
     url = "brandshop";
     categoryId = constants[categoryName];
-    console.log(categoryName);
+    console.log(categoryId);
 
     getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
     url = "brandshop";
-    categoryId = constants[categoryName];
-    console.log(categoryName);
+    categoryId = constants.KADINAYAKKABIid;
+    console.log(categoryId);
 
     getProductsByCategory();
   }
