@@ -1,6 +1,9 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+const url = require("url");
+const querystring = require("querystring");
 const products = require("./routes/products");
 const womanshop = require("./routes/womanshop");
 const manshop = require("./routes/manshop");
@@ -15,6 +18,8 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 
 app.use(express.static("./public"));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // routes
 
