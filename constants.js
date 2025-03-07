@@ -55,7 +55,7 @@ const constants = {
 
   CÜZDANid: "03d01082d7419554",
 
-  GÖZLÜid: "615bb27af6325400",
+  GÖZLÜKid: "615bb27af6325400",
 
   KOLYEid: "4202e7acda95f301",
 
@@ -71,7 +71,7 @@ const constants = {
 
   PARISid: "d7ee3aef1457381e",
 
-  BALENCIAGid: "6a9b8ae494b7f685",
+  BALENCIAGAid: "6a9b8ae494b7f685",
 
   BOTTEGAid: "0fcd7e8e14821dc9",
 

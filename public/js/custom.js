@@ -85,7 +85,7 @@ const constants = {
 
   PARISid: "d7ee3aef1457381e",
 
-  BALENCIAGid: "6a9b8ae494b7f685",
+  BALENCIAGAid: "6a9b8ae494b7f685",
 
   BOTTEGAid: "0fcd7e8e14821dc9",
 
