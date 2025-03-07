@@ -13,9 +13,6 @@ const bagshop = require("./routes/bagshop");
 const brandshop = require("./routes/brandshop");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
-app.use(notFound);
-app.use(errorHandlerMiddleware);
-const port = process.env.PORT || 5000;
 
 // middleware
 
@@ -27,6 +24,8 @@ app.use(bodyParser.json());
 
 // routes
 
+//
+
 app.use("/api/v1/products", products);
 app.use("/api/v1/womanshop", womanshop);
 app.use("/api/v1/manshop", manshop);
@@ -35,9 +34,11 @@ app.use("/api/v1/jewelryshop", jewelryshop);
 app.use("/api/v1/bagshop", bagshop);
 app.use("/api/v1/brandshop", brandshop);
 
-// test
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+const port = process.env.PORT || 5000;
 
-app.get("/api", (req, res) => {
+app.get("/hello", (req, res) => {
   res.set("Content-Type", "text/html");
   res.status(200).send("<h1>Hello GFG Learner!</h1>");
 });
@@ -53,4 +54,3 @@ const start = async () => {
 };
 
 start();
-export default app;
