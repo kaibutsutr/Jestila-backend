@@ -9,7 +9,8 @@ var page = 1;
 var pagination = 4;
 var discount = false;
 var list = false;
-url = "womanshop";
+var categoryName = "";
+var url = "womanshop";
 
 const constants = {
   Bearer:
@@ -131,14 +132,12 @@ $(function () {
     getOneProduct(productId);
   }
   if (document.location.pathname == "/brand-shop.html") {
-    var brandName = localStorage.getItem("brandName");
-    console.log(brandName);
-    var brandID = constants[brandName];
-    console.log(brandID);
+    categoryName = localStorage.getItem("brandName");
+    console.log(categoryName);
+
     url = "brandshop";
 
-    getProductsByBrand(brandID);
-    // hardcode constants here!
+    getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
@@ -858,10 +857,12 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByBrand = async (brandId) => {
+const getProductsByCategory = async () => {
+  var categoryId = constants[categoryName];
+  console.log(categoryId);
   axios
     .get(`/api/v1/${url}`, {
-      params: { categoryId: brandId, limit: limit, page: page },
+      params: { categoryId: categoryId, limit: limit, page: page },
     })
     .then((response) => {
       products = response.data;
