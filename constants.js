@@ -102,5 +102,6 @@ const constants = {
   SAINTid: "76cf79a1f712f9cf",
 
   TOMFORDid: "befff5a702a09d16",
+  VANSid: "57f47d53b58a7e90",
 };
 module.exports = constants;
