@@ -5,12 +5,9 @@ const { createCustomError } = require("../errors/custom-error");
 const constants = require("../constants");
 
 const getAllproducts = (req, res) => {
-  const {
-    params: { categoryId: categoryId, limit: limit, page: page },
-  } = req;
-
-  console.log(categoryId);
-
+  const categoryId = req.query.categoryId;
+  const limit = req.query.limit;
+  const page = req.query.page;
   const options = {
     method: "GET",
     url: `https://api.shopier.com/v1/products`,
@@ -18,7 +15,11 @@ const getAllproducts = (req, res) => {
       accept: "application/json",
       authorization: constants.Bearer,
     },
-    params: { categoryId: categoryId, limit: limit, page: page },
+    params: {
+      categoryId: categoryId,
+      limit: limit,
+      page: page,
+    },
   };
   console.log(options.url);
 
