@@ -925,8 +925,9 @@
     margin-bottom: 15px;
   }
   .product-list .featured-product {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    /*---- Müşteri bir sayfada 2 ürün görmek istedi, orijinali %100 -----*/
   }
   .product-img {
     text-align: center;

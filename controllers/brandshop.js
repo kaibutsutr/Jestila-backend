@@ -6,18 +6,19 @@ const constants = require("../constants");
 
 const getAllproducts = (req, res) => {
   const {
-    params: { id: brandId },
+    params: { categoryId: categoryId, limit: limit, page: page },
   } = req;
 
-  console.log(brandId);
+  console.log(categoryId);
 
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products?categoryId=${brandId}&limit=${req.query.limit}&page=${req.query.page}&sort=dateDesc`,
+    url: `https://api.shopier.com/v1/products`,
     headers: {
       accept: "application/json",
       authorization: constants.Bearer,
     },
+    params: { categoryId: categoryId, limit: limit, page: page },
   };
   console.log(options.url);
 

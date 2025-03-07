@@ -28,9 +28,9 @@ $(function () {
     var brandName = localStorage.getItem("brandName");
     console.log(brandName);
     url = "brandshop";
-    idString = "c7826925739164b2";
+    brandId = "c7826925739164b2";
 
-    getProductsByQuery(idString);
+    getProductsByBrand(brandId);
     // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {
@@ -751,9 +751,11 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByQuery = async (query) => {
+const getProductsByBrand = async (brandId) => {
   axios
-    .get(`/api/v1/${url}/${query}?page=${page}&limit=${limit}`)
+    .get(`/api/v1/${url}`, {
+      params: { categoryId: brandId, limit: limit, page: page },
+    })
     .then((response) => {
       products = response.data;
       console.log(products);
