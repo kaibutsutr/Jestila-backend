@@ -9,7 +9,7 @@ var page = 1;
 var pagination = 4;
 var discount = false;
 var list = false;
-var categoryName = "";
+var categoryId = "";
 var url = "womanshop";
 
 const constants = {
@@ -132,16 +132,30 @@ $(function () {
     getOneProduct(productId);
   }
   if (document.location.pathname == "/brand-shop.html") {
-    categoryName = localStorage.getItem("brandName");
+    var list = false;
+    let categoryName = localStorage.getItem("brandName");
+    url = "brandshop";
+    categoryId = constants[categoryName];
     console.log(categoryName);
 
+    getProductsByCategory();
+  }
+  if (document.location.pathname == "/brand-shop-list.html") {
+    var list = true;
+    let categoryName = localStorage.getItem("brandName");
     url = "brandshop";
+    categoryId = constants[categoryName];
+    console.log(categoryName);
 
     getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
-    getProducts();
+    url = "brandshop";
+    categoryId = constants[categoryName];
+    console.log(categoryName);
+
+    getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
@@ -858,7 +872,6 @@ const getOneProduct = async (productId) => {
 //get by query
 
 const getProductsByCategory = async () => {
-  var categoryId = constants[categoryName];
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}`, {
