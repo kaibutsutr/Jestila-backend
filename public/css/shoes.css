@@ -628,7 +628,7 @@ _______________________________________________________*/
   padding-bottom: 10px;
 }
 .cart-menu > .cart-icon {
-  background: #363535;
+  background: #ffffff;
   display: block;
   border-radius: 100%;
   height: 50px;
@@ -638,7 +638,7 @@ _______________________________________________________*/
   overflow: hidden;
 }
 .cart-menu:hover > .cart-icon {
-  background: #000;
+  background: #ffffff;
 }
 .cart-menu > .cart-icon img {
   top: 0;
