@@ -413,7 +413,7 @@ $(function () {
   /*------------ get product id and save on local ---------*/
   $(document).on("click", "#product-link", function () {
     var productId = $(this).closest("div").attr("id");
-    localStorage.removeItem(categoryName);
+    localStorage.removeItem("categoryName");
     console.log("removed");
     localStorage.setItem("productId", productId);
     console.log(productId);
@@ -431,7 +431,7 @@ $(function () {
     console.log(categoryName);
   });
   $(".remove-category").on("click", function () {
-    localStorage.removeItem(categoryName);
+    localStorage.removeItem("categoryName");
     console.log("removed");
   });
 
