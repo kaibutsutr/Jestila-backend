@@ -1,4 +1,4 @@
-module.exports = {
+const constants = {
   Bearer:
     "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NDA1ODlkYmQyNTA5NTgzMDVkNjc5MTFiMjBiMDY5ZSIsImp0aSI6IjE2YjhiZjc2YmYxMDgyNDA4YjBjNDRjMTI3ZGM1NTRhYmY0Y2E3ZGE2M2NjMDM1MDBlYTllY2E1NDgzZTI4NTk3MWRhYjhhYTJlMWQ5MjA4NWM4N2U4NzJlYjY0OWY4ZjBkNDMxZTNkNWVmNzNlN2EwOTkzZTQ1NGM0OWJkMGM2YThkMWJiYWE5YmZkNTIxYTYwYTRmZTZiMzM0NDQ0NWYiLCJpYXQiOjE3NDAzOTQ2NTYsIm5iZiI6MTc0MDM5NDY1NiwiZXhwIjoxODk4MTc5NDE2LCJzdWIiOiIxODc5MTAyIiwic2NvcGVzIjpbIm9yZGVyczpyZWFkIiwib3JkZXJzOndyaXRlIiwicHJvZHVjdHM6cmVhZCIsInByb2R1Y3RzOndyaXRlIiwic2hpcHBpbmdzOnJlYWQiLCJzaGlwcGluZ3M6d3JpdGUiLCJkaXNjb3VudHM6cmVhZCIsImRpc2NvdW50czp3cml0ZSIsInBheW91dHM6cmVhZCIsInJlZnVuZHM6cmVhZCIsInJlZnVuZHM6d3JpdGUiLCJzaG9wOnJlYWQiLCJzaG9wOndyaXRlIl19.Bij3RbmTc_2xcYEdsVEOCw3lcQHzSmsD4x1lBrBgM01jjvg6g2IwyvWuLaAtgQYOZW-9kd37Nwc_hXWwZBnVEwICLaiwsPq6mUwUBIfhNCApUXJRxpLgnNMI5miIZp0m324Cev_qLVhLZcdup65nwiNKp6q3F_ypcNxnxykzPw1riSgkBUl9DEVmhviWt7eG_jopmIskG3zt6fou1aIFtNgm6q0rGpO6mUsOSK8AwC73UM9upDWtBlO3xB_grH40ZQ9fLhy5EZpM1QwEuEMBiJtp2acuEXGl-Z3NjS3Q6xivuzLsMfShMz6ov1xaf0FODOx3LpuoBBvNwYsCvTsjqg",
 
@@ -55,7 +55,7 @@ module.exports = {
 
   CÜZDANid: "03d01082d7419554",
 
-  GÖZLÜid: "615bb27af6325400",
+  GÖZLÜKid: "615bb27af6325400",
 
   KOLYEid: "4202e7acda95f301",
 
@@ -71,7 +71,7 @@ module.exports = {
 
   PARISid: "d7ee3aef1457381e",
 
-  BALENCIAGid: "6a9b8ae494b7f685",
+  BALENCIAGAid: "6a9b8ae494b7f685",
 
   BOTTEGAid: "0fcd7e8e14821dc9",
 
@@ -102,4 +102,30 @@ module.exports = {
   SAINTid: "76cf79a1f712f9cf",
 
   TOMFORDid: "befff5a702a09d16",
+
+  UGGid: "7b6d706cfa92ce96",
+
+  VANSid: "57f47d53b58a7e90",
+
+  S36id: "6e39a3314808ede5",
+  S37id: "6b8d6b3793d5d475",
+  S38id: "83195dc0849d33c9",
+  S39id: "a287aef049f3b77c",
+  S40id: "29bfd98d4e9d3740",
+  S41id: "45d4e764828fc5cb",
+  S42id: "051ead05ff07974d",
+  S43id: "53c48cf62f3f62ba",
+  S44id: "96d8e54d13164048",
+  S45id: "80e231f54917d0cc",
+  GREENid: "8575a1eb5520784c",
+  BLUEid: "3a674bc353f7eee8",
+  REDid: "d6b08731331de007",
+  BROWNid: "ff8ff76dcc3be5ca",
+  BLACKid: "8730898f4b2f3d63",
+  WHITEid: "aa6461d283b05659",
+  PINKid: "b34caac1880178ce",
+  ORANGEid: "bd4f95906d776060",
+  YELLOWid: "edf8b1b1cf0b7dcc",
+  NEUTRALid: "18d197319dfbd6a6",
 };
+module.exports = constants;

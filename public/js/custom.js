@@ -12,117 +12,18 @@ var discount = false;
 var list = false;
 url = "womanshop";
 
-const constants = {
-  Bearer:
-    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NDA1ODlkYmQyNTA5NTgzMDVkNjc5MTFiMjBiMDY5ZSIsImp0aSI6IjE2YjhiZjc2YmYxMDgyNDA4YjBjNDRjMTI3ZGM1NTRhYmY0Y2E3ZGE2M2NjMDM1MDBlYTllY2E1NDgzZTI4NTk3MWRhYjhhYTJlMWQ5MjA4NWM4N2U4NzJlYjY0OWY4ZjBkNDMxZTNkNWVmNzNlN2EwOTkzZTQ1NGM0OWJkMGM2YThkMWJiYWE5YmZkNTIxYTYwYTRmZTZiMzM0NDQ0NWYiLCJpYXQiOjE3NDAzOTQ2NTYsIm5iZiI6MTc0MDM5NDY1NiwiZXhwIjoxODk4MTc5NDE2LCJzdWIiOiIxODc5MTAyIiwic2NvcGVzIjpbIm9yZGVyczpyZWFkIiwib3JkZXJzOndyaXRlIiwicHJvZHVjdHM6cmVhZCIsInByb2R1Y3RzOndyaXRlIiwic2hpcHBpbmdzOnJlYWQiLCJzaGlwcGluZ3M6d3JpdGUiLCJkaXNjb3VudHM6cmVhZCIsImRpc2NvdW50czp3cml0ZSIsInBheW91dHM6cmVhZCIsInJlZnVuZHM6cmVhZCIsInJlZnVuZHM6d3JpdGUiLCJzaG9wOnJlYWQiLCJzaG9wOndyaXRlIl19.Bij3RbmTc_2xcYEdsVEOCw3lcQHzSmsD4x1lBrBgM01jjvg6g2IwyvWuLaAtgQYOZW-9kd37Nwc_hXWwZBnVEwICLaiwsPq6mUwUBIfhNCApUXJRxpLgnNMI5miIZp0m324Cev_qLVhLZcdup65nwiNKp6q3F_ypcNxnxykzPw1riSgkBUl9DEVmhviWt7eG_jopmIskG3zt6fou1aIFtNgm6q0rGpO6mUsOSK8AwC73UM9upDWtBlO3xB_grH40ZQ9fLhy5EZpM1QwEuEMBiJtp2acuEXGl-Z3NjS3Q6xivuzLsMfShMz6ov1xaf0FODOx3LpuoBBvNwYsCvTsjqg",
-
-  KADINAYAKKABIid: "97fa66025e772afe",
-  AYAKKABIid: "4d1670e409f3277d",
-
-  ÇANTAid: "6f6880c7106a0b37",
-
-  AKSESUARid: "51495dc1b7425b77",
-
-  TAKIid: "8a4bd2da24265fd0",
-
-  BOTid: "a028bb132a02daaa",
-
-  ÇİZMEid: "daf6c42241ab73ae",
-
-  TOPUKLUid: "d4e8e12b8d4acf0a",
-
-  SNEAKERid: "fcb536309c0fc0ad",
-
-  LOAFERid: "0c9726f6c32dafa8",
-
-  SPORAYAKKABIid: "747fc695c3418ef8",
-
-  YÜRÜYÜŞid: "b891eec49ea4ace2",
-
-  KOŞUid: "1952499236d237ea",
-
-  BABETid: "bb6f615d3356080b",
-
-  SANDALETid: "90d109df9461a6cf",
-
-  ÇAPRAZid: "785458d81fb0b298",
-
-  ELÇANTASIid: "0b8db0567a8a82df",
-
-  HASIRid: "efda71a715860529",
-
-  OMUZid: "4296fcc9d6cc13ef",
-
-  KOLÇANTASIid: "0111f4af1a801b83",
-
-  ATKIid: "134fdc424de0b935",
-
-  KÜPEid: "b2deafa09752b401",
-
-  BEREid: "6bbfd1725f2ca491",
-
-  SAATid: "5bf616c78306fb15",
-
-  BİLEKLİKid: "ada093572986ec58",
-
-  YÜZÜKid: "5681ea3be7719654",
-
-  CÜZDANid: "03d01082d7419554",
-
-  GÖZLÜid: "615bb27af6325400",
-
-  KOLYEid: "4202e7acda95f301",
-
-  ADIDASid: "c7826925739164b2",
-
-  CONVERSEid: "7cfe8749ab9ae6e5",
-
-  NIKEid: "9158b9d1390e7297",
-
-  JORDANid: "2e8e1b3ea68d7032",
-
-  MCQUEENid: "27158d122dcad430",
-
-  PARISid: "d7ee3aef1457381e",
-
-  BALENCIAGid: "6a9b8ae494b7f685",
-
-  BOTTEGAid: "0fcd7e8e14821dc9",
-
-  BVLGARIid: "a53c580b3b8abe76",
-
-  CHANELid: "180b726c3cc37a09",
-
-  CELINEid: "30b112d9fbb6604d",
-
-  GOOSEid: "54746a624a15bc23",
-
-  GOYARDid: "85deaa6306167356",
-
-  GUCCIid: "fa81888aad8d0f9a",
-
-  HERMESid: "90867aa79b51202c",
-
-  JACQUEMUSid: "3b67ce2f30adcd90",
-
-  PIANAid: "a85d41f154450da8",
-
-  MIUid: "7fd953b21d329ce2",
-
-  PRADAid: "cae93ef53349ecf3",
-
-  POLENEid: "ed7a46cc75c49904",
-
-  SAINTid: "76cf79a1f712f9cf",
-
-  TOMFORDid: "befff5a702a09d16",
-};
-
-/*------------ glasscase ---------*/
+/*------------ glasscase -----------*/
 
 $(function () {
   ("use strict");
   /*------------ Navigation ---------*/
+  /*------------ index ---------*/
+  if (document.location.pathname == "/index.html") {
+    getFeaturedProducts();
+    //finish tabs and bottom part!
+    //1234
+  }
+
   if (
     document.location.pathname == "/product-detail.html" ||
     document.location.pathname == "/product-quick-view.html"
@@ -131,55 +32,174 @@ $(function () {
     console.log(productId);
     getOneProduct(productId);
   }
+  /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
-    var brandName = localStorage.getItem("brandName");
-    console.log(brandName);
+    list = false;
+    brandName = localStorage.getItem("brandName");
     url = "brandshop";
+    brandId = "c7826925739164b2";
 
-    getProductsByBrand(constants.brandName);
+    getProductsByBrand(brandId);
     // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {
-    var list = false;
-    getProducts();
+    list = false;
+    url = "womanshop";
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
-    var list = true;
-    getProductsList();
+    list = true;
+
+    url = "womanshop";
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
+  /*------------ manshop --------123-*/
   if (document.location.pathname == "/man-shop.html") {
-    var list = false;
+    list = false;
     url = "manshop";
-    getProducts();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/man-shop-list.html") {
-    var list = true;
+    list = true;
+
     url = "manshop";
-    getProductsList();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
+  /*------------ accshop --------123-*/
   if (document.location.pathname == "/accessories-shop.html") {
+    list = false;
     url = "accessoriesshop";
-    getProducts();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
+    list = true;
+
     url = "accessoriesshop";
-    getProductsList();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
+  /*------------ jewelryshop --------123-*/
   if (document.location.pathname == "/jewelry-shop.html") {
+    list = false;
     url = "jewelryshop";
-    getProducts();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
+    list = true;
+
     url = "jewelryshop";
-    getProductsList();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
+  /*------------ bagshop --------123-*/
   if (document.location.pathname == "/bag-shop.html") {
+    list = false;
     url = "bagshop";
-    getProducts();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/bag-shop-list.html") {
+    list = true;
+
     url = "bagshop";
-    getProductsList();
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
 
   /*------------ Page items limit ---------*/
@@ -331,6 +351,8 @@ $(function () {
   /*------------ get product id and save on local ---------*/
   $(document).on("click", "#product-link", function () {
     var productId = $(this).closest("div").attr("id");
+    localStorage.removeItem("categoryName");
+    console.log("removed");
     localStorage.setItem("productId", productId);
     console.log(productId);
   });
@@ -341,7 +363,41 @@ $(function () {
     localStorage.setItem("brandName", brandName);
     console.log(brandName);
   });
+  $(".category-name").on("click", function () {
+    var categoryName = $(this).closest("a").attr("id");
+    localStorage.setItem("categoryName", categoryName);
+    console.log(categoryName);
+  });
+  $(".remove-category").on("click", function () {
+    localStorage.removeItem("categoryName");
+    console.log("removed");
+  });
 
+  /*------------ Only one checkbox is selected ---------*/
+  $(document).ready(function () {
+    $("#check-box1 .checkbox").on("change", function () {
+      $("#check-box1 .checkbox").not(this).prop("checked", false);
+      $("#result").html($(this).data("id"));
+      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
+      else $("#result").html("Empty...!");
+    });
+    $("#check-box2 .checkbox").on("change", function () {
+      $("#check-box2 .checkbox").not(this).prop("checked", false);
+      $("#result").html($(this).data("id"));
+      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
+      else $("#result").html("Empty...!");
+    });
+    $("#check-box3 .checkbox").on("change", function () {
+      $("#check-box3 .checkbox").not(this).prop("checked", false);
+      $("#result").html($(this).data("id"));
+      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
+      else $("#result").html("Empty...!");
+    });
+  });
+  /*------------ Remove all checkboxes ---------*/
+  $(".btn-filter").on("click", function () {
+    $("input[type=checkbox]").prop("checked", false);
+  });
   /*------------ Sticky Header Slider ---------*/
   $(window).scroll(function () {
     if ($(this).scrollTop() > 90) {
@@ -501,7 +557,7 @@ $(function () {
 
   /* -------- Countdown Timer ------- */
   if ($(".countdown").length > 0) {
-    var your_date = "2025-02-28 00:00:00";
+    var your_date = "2025-03-18 00:00:00";
     const second = 1000,
       minute = second * 60,
       hour = minute * 60,
@@ -601,8 +657,23 @@ $(function () {
 /* http requests */
 
 // Load products from /api/products
+function getProducts(list) {
+  if (list == true) {
+    getProductsList();
+  } else {
+    getProductsGrid();
+  }
+}
 
-const getProducts = async () => {
+function getProductsByCategory(list) {
+  if (list == true) {
+    getProductsByCategoryList();
+  } else {
+    getProductsByCategoryGrid();
+  }
+}
+
+const getProductsGrid = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
@@ -857,11 +928,10 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByBrand = async (brandId) => {
+const getProductsByCategoryGrid = async () => {
+  console.log(categoryId);
   axios
-    .get(`/api/v1/${url}`, {
-      params: { categoryId: brandId, limit: limit, page: page },
-    })
+    .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
@@ -937,6 +1007,213 @@ const getProductsByBrand = async (brandId) => {
         });
       }
     })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+const getProductsByCategoryList = async () => {
+  console.log(categoryId);
+  axios
+    .get(`/api/v1/${url}/${categoryId}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#product").append(
+            $("<div>")
+              .addClass(
+                "featured-product featured-product-list align-flax mb-25"
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-img transition")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass(
+                        "product-details-btn text-uppercase text-center transition"
+                      )
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-info")
+                      .append(products[object][key].description)
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-action")
+                      .append(
+                        $("<ul>")
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("quick-popup btn btn-color")
+                                .attr({
+                                  href: products[object][key].url,
+                                  id: "product-link",
+                                })
+
+                                .append(
+                                  $("<img>").attr({
+                                    src: "images/shop-bag.png",
+                                    alt: "bag",
+                                    id: "product-link",
+                                  })
+                                )
+                                .append($("<span>").text("sepete ekle"))
+                            )
+                          )
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("btn")
+                                .attr({ href: "wishlist.html" })
+                                .append(
+                                  $("<i>")
+                                    .addClass("fa fa-heart")
+                                    .attr({ "aria-hidden": "true" })
+                                )
+                            )
+                          )
+                      )
+                  )
+              )
+          );
+        }
+      }
+
+      $(".product-info h3").remove();
+      $(".product-info ul").remove();
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+//index page items
+const getFeaturedProducts = async () => {
+  axios
+    .get(`/api/v1/products?categoryId=4d1670e409f3277d&page=1&limit=10`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#all").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+
+                  .append(
+                    $("<div>")
+                      .addClass(
+                        "product-details-btn text-uppercase text-center transition"
+                      )
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
+                  )
+              )
+          );
+        }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
     .catch((error) => {
       console.error("Error fetching data:", error);
     });

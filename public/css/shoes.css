@@ -2895,3 +2895,8 @@ table.border td ul li a:hover {
   text-align: center;
   border-radius: 100%;
 }
+
+.composite {
+  @extend .something;
+  @extend .else;
+}
