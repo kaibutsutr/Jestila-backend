@@ -203,65 +203,133 @@ $(function () {
       getProducts(list);
     }
   }
-  /*------------ manshop ---------*/
+  /*------------ manshop --------123-*/
   if (document.location.pathname == "/man-shop.html") {
     list = false;
-
     url = "manshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/man-shop-list.html") {
     list = true;
 
     url = "manshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
-  /*------------accessshop ---------*/
-  if (document.location.pathname == "/accessories-shop.html") {
+  /*------------ accshop --------123-*/
+  if (document.location.pathname == "/accessory-shop.html") {
     list = false;
+    url = "accessoryshop";
 
-    url = "accessoriesshop";
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
 
-    getProducts(list);
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
-  if (document.location.pathname == "/accessories-shop-list.html") {
+  if (document.location.pathname == "/accessory-shop-list.html") {
     list = true;
 
-    url = "accessoriesshop";
+    url = "accessoryshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
-  /*------------ jewshop ---------*/
+  /*------------ jewelryshop --------123-*/
   if (document.location.pathname == "/jewelry-shop.html") {
     list = false;
-
     url = "jewelryshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
     list = true;
 
     url = "jewelryshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
-  /*------------ bagshop ---------*/
+  /*------------ bagshop --------123-*/
   if (document.location.pathname == "/bag-shop.html") {
     list = false;
-
     url = "bagshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
   if (document.location.pathname == "/bag-shop-list.html") {
     list = true;
 
     url = "bagshop";
 
-    getProducts(list);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
   }
 
   /*------------ Page items limit ---------*/
