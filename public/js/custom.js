@@ -172,14 +172,20 @@ $(function () {
   /*------------ womanshop --------123-*/
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
-
+    let categoryName = localStorage.getItem("categoryName");
     url = "womanshop";
+    categoryId = constants[categoryName];
+    console.log(categoryId);
+
     getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop-list.html") {
-    var list = false;
+    var list = true;
 
+    let categoryName = localStorage.getItem("categoryName");
     url = "womanshop";
+    categoryId = constants[categoryName];
+    console.log(categoryId);
 
     getProductsListByCategory();
   }
