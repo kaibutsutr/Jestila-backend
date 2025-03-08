@@ -145,9 +145,10 @@ const constants = {
 $(function () {
   ("use strict");
   /*------------ Navigation ---------*/
-
+  /*------------ index ---------*/
   if (document.location.pathname == "/index.html") {
     getFeaturedProducts();
+    //finish tabs and bottom part!
   }
 
   if (
