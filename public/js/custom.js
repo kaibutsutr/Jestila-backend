@@ -174,6 +174,7 @@ $(function () {
     var list = false;
 
     url = "womanshop";
+    getProductsByCategory();
     if (categoryId == "") {
       getProducts();
     } else {
@@ -1042,9 +1043,7 @@ const getProductsByCategory = async () => {
 const getProductsListByCategory = async () => {
   console.log(categoryId);
   axios
-    .get(`/api/v1/${url}`, {
-      params: { categoryId: categoryId, limit: limit, page: page },
-    })
+    .get(`/api/v1/${url}`)
     .then((response) => {
       products = response.data;
       console.log(products);

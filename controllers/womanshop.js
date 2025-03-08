@@ -35,8 +35,7 @@ const getByQuery = (req, res) => {
   const {
     params: { id: id },
   } = req;
-  let page = req.query.page;
-  let limit = req.query.limit;
+
   let categoryId = req.params.id;
   console.log(categoryId);
 
@@ -47,7 +46,7 @@ const getByQuery = (req, res) => {
       accept: "application/json",
       authorization: constants.Bearer,
     },
-    params: { categoryId: categoryId, limit: limit, page: page },
+    params: { categoryId: categoryId, limit: 50 },
   };
 
   axios
