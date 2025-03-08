@@ -11,7 +11,7 @@ const getAllproducts = (req, res) => {
 
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products`,
+    url: `https://api.shopier.com/v1/products?categoryId=${constants.ÇANTAid}&`,
     headers: {
       accept: "application/json",
       authorization: constants.Bearer,
