@@ -169,7 +169,7 @@ $(function () {
       getProducts(list);
     }
   }
-  /*------------ bagshop --------123-*/
+  /*------------ bagshop --------124443-*/
   if (document.location.pathname == "/bag-shop.html") {
     list = false;
     url = "bagshop";
