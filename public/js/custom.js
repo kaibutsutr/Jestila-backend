@@ -8,7 +8,7 @@ var limit = 16;
 var page = 1;
 var pagination = 4;
 var discount = false;
-var list = false;
+
 var categoryId = "";
 
 var url = "womanshop";
@@ -153,114 +153,114 @@ $(function () {
   }
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
-    var list = false;
+    let list = false;
     brandName = localStorage.getItem("brandName");
     url = "brandshop";
     categoryId = constants[brandName];
     console.log(categoryId);
 
-    getProductsByCategory();
+    getProductsByCategory(list);
   }
   if (document.location.pathname == "/brand-shop-list.html") {
-    var list = true;
+    let list = true;
     brandName = localStorage.getItem("brandName");
     url = "brandshop";
     categoryIdId = constants[brandName];
     console.log(categoryId);
 
-    getProductsListByCategory();
+    getProductsByCategory(list);
   }
   /*------------ womanshop --------123-*/
   if (document.location.pathname == "/woman-shop.html") {
-    var list = false;
+    let list = false;
     url = "womanshop";
     let categoryName = localStorage.getItem("categoryName");
     if (!categoryName) {
-      getProducts();
+      getProducts(list);
     } else {
       categoryId = constants[categoryName];
       localStorage.removeItem("categoryName");
 
       console.log(categoryId);
 
-      getProductsByCategory();
+      getProductsByCategory(list);
     }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
-    var list = true;
+    let list = true;
 
     url = "womanshop";
     let categoryName = localStorage.getItem("categoryName");
     if (!categoryName) {
-      getProductsList();
+      getProducts(list);
     } else {
       categoryId = constants[categoryName];
       localStorage.removeItem("categoryName");
 
       console.log(categoryId);
 
-      getProductsListByCategory();
+      getProductsByCategory(list);
     }
   }
   /*------------ manshop ---------*/
   if (document.location.pathname == "/man-shop.html") {
-    var list = false;
+    let list = false;
 
     url = "manshop";
 
-    getProducts();
+    getProducts(list);
   }
   if (document.location.pathname == "/man-shop-list.html") {
-    var list = false;
+    let list = true;
 
     url = "manshop";
 
-    getProductsList();
+    getProducts(list);
   }
   /*------------accessshop ---------*/
   if (document.location.pathname == "/accessories-shop.html") {
-    var list = false;
+    let list = false;
 
     url = "accessoriesshop";
 
-    getProducts();
+    getProducts(list);
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
-    var list = false;
+    let list = true;
 
     url = "accessoriesshop";
 
-    getProductsList();
+    getProducts(list);
   }
   /*------------ jewshop ---------*/
   if (document.location.pathname == "/jewelry-shop.html") {
-    var list = false;
+    let list = false;
 
     url = "jewelryshop";
 
-    getProducts();
+    getProducts(list);
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
-    var list = false;
+    let list = true;
 
     url = "jewelryshop";
 
-    getProductsList();
+    getProducts(list);
   }
   /*------------ bagshop ---------*/
   if (document.location.pathname == "/bag-shop.html") {
-    var list = false;
+    let list = false;
 
     url = "bagshop";
 
-    getProducts();
+    getProducts(list);
   }
   if (document.location.pathname == "/bag-shop-list.html") {
-    var list = false;
+    let list = true;
 
     url = "bagshop";
 
-    getProductsList();
+    getProducts(list);
   }
 
   /*------------ Page items limit ---------*/
@@ -712,8 +712,23 @@ $(function () {
 /* http requests */
 
 // Load products from /api/products
+function getProducts(list) {
+  if (list == true) {
+    getProductsList();
+  } else {
+    getProductsGrid();
+  }
+}
 
-const getProducts = async () => {
+function getProductsByCategory(list) {
+  if (list == true) {
+    getProductsByCategoryList();
+  } else {
+    getProductsByCategoryGrid();
+  }
+}
+
+const getProductsGrid = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
@@ -968,7 +983,7 @@ const getOneProduct = async (productId) => {
 
 //get by query
 
-const getProductsByCategory = async () => {
+const getProductsByCategoryGrid = async () => {
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
@@ -1052,7 +1067,7 @@ const getProductsByCategory = async () => {
     });
 };
 
-const getProductsListByCategory = async () => {
+const getProductsByCategoryList = async () => {
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
