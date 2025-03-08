@@ -64,4 +64,6 @@ const getByQuery = (req, res) => {
 
 module.exports = {
   getAllproducts,
+  getByQuery,
 }; // export and object with functions
+// export and object with functions
