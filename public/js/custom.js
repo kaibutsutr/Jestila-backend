@@ -176,10 +176,10 @@ $(function () {
     list = false;
     url = "womanshop";
 
-    if (localStorage.getItem("categoryName") == undefined) {
+    if (localStorage.getItem(categoryName) === null) {
       getProducts(list);
     } else {
-      let categoryName = localStorage.getItem("categoryName");
+      let categoryName = localStorage.getItem(categoryName);
       categoryId = constants[categoryName];
 
       console.log(categoryId);
@@ -192,10 +192,9 @@ $(function () {
 
     url = "womanshop";
 
-    if (localStorage.getItem("categoryName") == undefined) {
+    if (localStorage.getItem(categoryName) === null) {
       getProducts(list);
     } else {
-      let categoryName = localStorage.getItem("categoryName");
       categoryId = constants[categoryName];
 
       console.log(categoryId);
