@@ -175,18 +175,13 @@ $(function () {
 
     url = "womanshop";
     getProductsByCategory();
-    if (categoryId == "") {
-      getProducts();
-    } else {
-      getProductsByCategory();
-    }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = false;
 
     url = "womanshop";
 
-    getProductsList();
+    getProductsListByCategory();
   }
   /*------------ manshop ---------*/
   if (document.location.pathname == "/man-shop.html") {
@@ -957,9 +952,7 @@ const getOneProduct = async (productId) => {
 const getProductsByCategory = async () => {
   console.log(categoryId);
   axios
-    .get(`/api/v1/${url}/${categoryId}`, {
-      params: { limit: limit, page: page },
-    })
+    .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
