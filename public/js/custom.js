@@ -236,9 +236,9 @@ $(function () {
     }
   }
   /*------------ accshop --------123-*/
-  if (document.location.pathname == "/accessory-shop.html") {
+  if (document.location.pathname == "/accessories-shop.html") {
     list = false;
-    url = "accessoryshop";
+    url = "accessoriesshop";
 
     if ("categoryName" in localStorage) {
       let categoryName = localStorage.getItem("categoryName");
@@ -251,10 +251,10 @@ $(function () {
       getProducts(list);
     }
   }
-  if (document.location.pathname == "/accessory-shop-list.html") {
+  if (document.location.pathname == "/accessories-shop-list.html") {
     list = true;
 
-    url = "accessoryshop";
+    url = "accessoriesshop";
 
     if ("categoryName" in localStorage) {
       let categoryName = localStorage.getItem("categoryName");
