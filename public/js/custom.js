@@ -146,7 +146,7 @@ $(function () {
   ("use strict");
   /*------------ Navigation ---------*/
 
-  if (document.location.pathname == "/index-yeni.html") {
+  if (document.location.pathname == "/index.html") {
     getFeaturedProducts();
   }
 
