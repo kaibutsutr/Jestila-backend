@@ -145,6 +145,11 @@ const constants = {
 $(function () {
   ("use strict");
   /*------------ Navigation ---------*/
+
+  if (document.location.pathname == "/index-yeni.html") {
+    getFeaturedProducts();
+  }
+
   if (
     document.location.pathname == "/product-detail.html" ||
     document.location.pathname == "/product-quick-view.html"
@@ -1255,6 +1260,89 @@ const getProductsByCategoryList = async () => {
 
       $(".product-info h3").remove();
       $(".product-info ul").remove();
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+//index page items
+const getFeaturedProducts = async () => {
+  axios
+    .get(`/api/v1/products?page=1&limit=10`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#all").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+
+                  .append(
+                    $("<div>")
+                      .addClass(
+                        "product-details-btn text-uppercase text-center transition"
+                      )
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
+                  )
+              )
+          );
+        }
+      }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
           type: "iframe",
