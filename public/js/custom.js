@@ -192,7 +192,7 @@ $(function () {
     url = "womanshop";
     let categoryName = localStorage.getItem("categoryName");
     if (!categoryName) {
-      getProducts();
+      getProductsList();
     } else {
       categoryId = constants[categoryName];
       localStorage.removeItem("categoryName");
