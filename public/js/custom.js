@@ -12,6 +12,134 @@ var discount = false;
 var list = false;
 url = "womanshop";
 
+const constants = {
+  KADINAYAKKABIid: "97fa66025e772afe",
+  AYAKKABIid: "4d1670e409f3277d",
+
+  ÇANTAid: "6f6880c7106a0b37",
+
+  AKSESUARid: "51495dc1b7425b77",
+
+  TAKIid: "8a4bd2da24265fd0",
+
+  BOTid: "a028bb132a02daaa",
+
+  ÇİZMEid: "daf6c42241ab73ae",
+
+  TOPUKLUid: "d4e8e12b8d4acf0a",
+
+  SNEAKERid: "fcb536309c0fc0ad",
+
+  LOAFERid: "0c9726f6c32dafa8",
+
+  SPORAYAKKABIid: "747fc695c3418ef8",
+
+  YÜRÜYÜŞid: "b891eec49ea4ace2",
+
+  KOŞUid: "1952499236d237ea",
+
+  BABETid: "bb6f615d3356080b",
+
+  SANDALETid: "90d109df9461a6cf",
+
+  ÇAPRAZid: "785458d81fb0b298",
+
+  ELÇANTASIid: "0b8db0567a8a82df",
+
+  HASIRid: "efda71a715860529",
+
+  OMUZid: "4296fcc9d6cc13ef",
+
+  KOLÇANTASIid: "0111f4af1a801b83",
+
+  ATKIid: "134fdc424de0b935",
+
+  KÜPEid: "b2deafa09752b401",
+
+  BEREid: "6bbfd1725f2ca491",
+
+  SAATid: "5bf616c78306fb15",
+
+  BİLEKLİKid: "ada093572986ec58",
+
+  YÜZÜKid: "5681ea3be7719654",
+
+  CÜZDANid: "03d01082d7419554",
+
+  GÖZLÜKid: "615bb27af6325400",
+
+  KOLYEid: "4202e7acda95f301",
+
+  ADIDASid: "c7826925739164b2",
+
+  CONVERSEid: "7cfe8749ab9ae6e5",
+
+  NIKEid: "9158b9d1390e7297",
+
+  JORDANid: "2e8e1b3ea68d7032",
+
+  MCQUEENid: "27158d122dcad430",
+
+  PARISid: "d7ee3aef1457381e",
+
+  BALENCIAGAid: "6a9b8ae494b7f685",
+
+  BOTTEGAid: "0fcd7e8e14821dc9",
+
+  BVLGARIid: "a53c580b3b8abe76",
+
+  CHANELid: "180b726c3cc37a09",
+
+  CELINEid: "30b112d9fbb6604d",
+
+  GOOSEid: "54746a624a15bc23",
+
+  GOYARDid: "85deaa6306167356",
+
+  GUCCIid: "fa81888aad8d0f9a",
+
+  HERMESid: "90867aa79b51202c",
+
+  JACQUEMUSid: "3b67ce2f30adcd90",
+
+  PIANAid: "a85d41f154450da8",
+
+  MIUid: "7fd953b21d329ce2",
+
+  PRADAid: "cae93ef53349ecf3",
+
+  POLENEid: "ed7a46cc75c49904",
+
+  SAINTid: "76cf79a1f712f9cf",
+
+  TOMFORDid: "befff5a702a09d16",
+
+  UGGid: "7b6d706cfa92ce96",
+
+  VANSid: "57f47d53b58a7e90",
+
+  S36id: "6e39a3314808ede5",
+  S37id: "6b8d6b3793d5d475",
+  S38id: "83195dc0849d33c9",
+  S39id: "a287aef049f3b77c",
+  S40id: "29bfd98d4e9d3740",
+  S41id: "45d4e764828fc5cb",
+  S42id: "051ead05ff07974d",
+  S43id: "53c48cf62f3f62ba",
+  S44id: "96d8e54d13164048",
+  S45id: "80e231f54917d0cc",
+  GREENid: "8575a1eb5520784c",
+  BLUEid: "3a674bc353f7eee8",
+  REDid: "d6b08731331de007",
+  BROWNid: "ff8ff76dcc3be5ca",
+  BLACKid: "8730898f4b2f3d63",
+  WHITEid: "aa6461d283b05659",
+  PINKid: "b34caac1880178ce",
+  ORANGEid: "bd4f95906d776060",
+  YELLOWid: "edf8b1b1cf0b7dcc",
+  NEUTRALid: "18d197319dfbd6a6",
+};
+
 /*------------ glasscase -----------*/
 
 $(function () {
@@ -30,16 +158,17 @@ $(function () {
   ) {
     var productId = localStorage.getItem("productId");
     console.log(productId);
+
     getOneProduct(productId);
   }
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
     list = false;
-    brandName = localStorage.getItem("brandName");
+    let brandName = localStorage.getItem("brandName");
+    categoryId = constants[brandName];
     url = "brandshop";
-    brandId = "c7826925739164b2";
 
-    getProductsByBrand(brandId);
+    getProductsByCategory(list);
     // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {

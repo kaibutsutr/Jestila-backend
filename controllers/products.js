@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
-const constants = require("../public/js/constants");
+const constants = require("../constants");
 const getAllproducts = (req, res) => {
   let page = req.query.page;
   let limit = req.query.limit;
