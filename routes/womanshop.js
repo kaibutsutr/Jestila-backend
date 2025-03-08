@@ -8,10 +8,6 @@ const {
 } = require("../controllers/womanshop");
 
 router.route("/").get(getAllproducts);
-router.route("/:id").get(getOneProduct);
-module.exports = router;
-
-router.route("/").get(getAllproducts);
 router.route("/:id").get(getByQuery);
 
 module.exports = router;
