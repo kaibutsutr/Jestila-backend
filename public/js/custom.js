@@ -150,6 +150,7 @@ $(function () {
     console.log(productId);
     getOneProduct(productId);
   }
+  /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("brandName");
@@ -170,9 +171,10 @@ $(function () {
   }
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
+    let categoryName = localStorage.getItem("categoryName");
     url = "womanshop";
-
-    getProductsByCategory();
+    categoryId = constants[categoryName];
+    console.log(categoryId);
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
@@ -371,6 +373,11 @@ $(function () {
     var brandName = $(this).closest("a").attr("id");
     localStorage.setItem("brandName", brandName);
     console.log(brandName);
+  });
+  $(".category-name").on("click", function () {
+    var categoryName = $(this).closest("a").attr("id");
+    localStorage.setItem("categoryName", categoryName);
+    console.log(categoryName);
   });
 
   /*------------ Only one checkbox is selected ---------*/
