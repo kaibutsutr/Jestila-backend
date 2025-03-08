@@ -172,45 +172,45 @@ $(function () {
     var list = false;
     url = "womanshop";
 
-    getProducts();
+    getProductsByCategory();
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
-    getProductsList();
+    getProductsListByCategory();
   }
   if (document.location.pathname == "/man-shop.html") {
     var list = false;
     url = "manshop";
-    getProducts();
+    getProductsByCategory();
   }
   if (document.location.pathname == "/man-shop-list.html") {
     var list = true;
     url = "manshop";
-    getProductsList();
+    getProductsListByCategory();
   }
   if (document.location.pathname == "/accessories-shop.html") {
     url = "accessoriesshop";
-    getProducts();
+    getProductsByCategory();
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
     url = "accessoriesshop";
-    getProductsList();
+    getProductsListByCategory();
   }
   if (document.location.pathname == "/jewelry-shop.html") {
     url = "jewelryshop";
-    getProducts();
+    getProductsByCategory();
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
     url = "jewelryshop";
-    getProductsList();
+    getProductsListByCategory();
   }
   if (document.location.pathname == "/bag-shop.html") {
     url = "bagshop";
-    getProducts();
+    getProductsByCategory();
   }
   if (document.location.pathname == "/bag-shop-list.html") {
     url = "bagshop";
-    getProductsList();
+    getProductsListByCategory();
   }
 
   /*------------ Page items limit ---------*/
