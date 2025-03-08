@@ -175,10 +175,11 @@ $(function () {
   if (document.location.pathname == "/woman-shop.html") {
     list = false;
     url = "womanshop";
-    let categoryName = localStorage.getItem("categoryName");
-    if (!categoryName) {
+
+    if (localStorage.getItem("categoryName") == undefined) {
       getProducts(list);
     } else {
+      let categoryName = localStorage.getItem("categoryName");
       categoryId = constants[categoryName];
 
       console.log(categoryId);
@@ -190,10 +191,11 @@ $(function () {
     list = true;
 
     url = "womanshop";
-    let categoryName = localStorage.getItem("categoryName");
-    if (!categoryName) {
+
+    if (localStorage.getItem("categoryName") == undefined) {
       getProducts(list);
     } else {
+      let categoryName = localStorage.getItem("categoryName");
       categoryId = constants[categoryName];
 
       console.log(categoryId);
@@ -411,6 +413,8 @@ $(function () {
   /*------------ get product id and save on local ---------*/
   $(document).on("click", "#product-link", function () {
     var productId = $(this).closest("div").attr("id");
+    localStorage.removeItem(categoryName);
+    console.log("removed");
     localStorage.setItem("productId", productId);
     console.log(productId);
   });
@@ -425,6 +429,10 @@ $(function () {
     var categoryName = $(this).closest("a").attr("id");
     localStorage.setItem("categoryName", categoryName);
     console.log(categoryName);
+  });
+  $(".remove-category").on("click", function () {
+    localStorage.removeItem(categoryName);
+    console.log("removed");
   });
 
   /*------------ Only one checkbox is selected ---------*/
