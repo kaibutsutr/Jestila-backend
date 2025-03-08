@@ -10,8 +10,7 @@ var pagination = 4;
 var discount = false;
 var list = false;
 var categoryId = "";
-var categoryName = "";
-var brandName = "";
+
 var url = "womanshop";
 
 const constants = {
@@ -175,13 +174,12 @@ $(function () {
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
     url = "womanshop";
-    if (categoryName == "") {
+    let categoryName = localStorage.getItem("categoryName");
+    if (!categoryName) {
       getProducts();
     } else {
-      categoryName = localStorage.getItem("categoryName");
-
       categoryId = constants[categoryName];
-      categoryName = "";
+      localStorage.removeItem("categoryName");
 
       console.log(categoryId);
 
@@ -191,12 +189,18 @@ $(function () {
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
 
-    let categoryName = localStorage.getItem("categoryName");
     url = "womanshop";
-    categoryId = constants[categoryName];
-    console.log(categoryId);
+    let categoryName = localStorage.getItem("categoryName");
+    if (!categoryName) {
+      getProducts();
+    } else {
+      categoryId = constants[categoryName];
+      localStorage.removeItem("categoryName");
 
-    getProductsListByCategory();
+      console.log(categoryId);
+
+      getProductsListByCategory();
+    }
   }
   /*------------ manshop ---------*/
   if (document.location.pathname == "/man-shop.html") {
