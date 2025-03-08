@@ -176,15 +176,15 @@ $(function () {
     list = false;
     url = "womanshop";
 
-    if (localStorage.getItem(categoryName) === null) {
-      getProducts(list);
-    } else {
-      let categoryName = localStorage.getItem(categoryName);
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
       categoryId = constants[categoryName];
 
       console.log(categoryId);
 
       getProductsByCategory(list);
+    } else {
+      getProducts(list);
     }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
@@ -192,14 +192,15 @@ $(function () {
 
     url = "womanshop";
 
-    if (localStorage.getItem(categoryName) === null) {
-      getProducts(list);
-    } else {
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
       categoryId = constants[categoryName];
 
       console.log(categoryId);
 
       getProductsByCategory(list);
+    } else {
+      getProducts(list);
     }
   }
   /*------------ manshop ---------*/
