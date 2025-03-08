@@ -169,7 +169,7 @@ $(function () {
 
     getProductsListByCategory();
   }
-  /*------------ womanshop ---------*/
+  /*------------ womanshop --------123-*/
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
 
