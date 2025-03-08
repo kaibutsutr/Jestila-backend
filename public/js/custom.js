@@ -140,7 +140,7 @@ const constants = {
   NEUTRALid: "18d197319dfbd6a6",
 };
 
-/*------------ glasscase ---------*/
+/*------------ glasscase -----------*/
 
 $(function () {
   ("use strict");
@@ -149,6 +149,7 @@ $(function () {
   if (document.location.pathname == "/index.html") {
     getFeaturedProducts();
     //finish tabs and bottom part!
+    //1234
   }
 
   if (
