@@ -1042,7 +1042,7 @@ const getProductsByCategory = async () => {
 const getProductsListByCategory = async () => {
   console.log(categoryId);
   axios
-    .get(`/api/v1/${url}`)
+    .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
