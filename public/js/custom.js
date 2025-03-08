@@ -169,6 +169,7 @@ $(function () {
 
     getProductsListByCategory();
   }
+  /*------------ womanshop ---------*/
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("categoryName");
@@ -185,6 +186,7 @@ $(function () {
     console.log(categoryId);
     getProductsListByCategory();
   }
+  /*------------ manshop ---------*/
   if (document.location.pathname == "/man-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("categoryName");
@@ -201,6 +203,7 @@ $(function () {
     console.log(categoryId);
     getProductsListByCategory();
   }
+  /*------------accessshop ---------*/
   if (document.location.pathname == "/accessories-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("categoryName");
@@ -217,6 +220,7 @@ $(function () {
     console.log(categoryId);
     getProductsListByCategory();
   }
+  /*------------ jewshop ---------*/
   if (document.location.pathname == "/jewelry-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("categoryName");
@@ -233,6 +237,7 @@ $(function () {
     console.log(categoryId);
     getProductsListByCategory();
   }
+  /*------------ bagshop ---------*/
   if (document.location.pathname == "/bag-shop.html") {
     var list = false;
     let categoryName = localStorage.getItem("categoryName");
