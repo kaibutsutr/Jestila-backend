@@ -137,6 +137,7 @@ const constants = {
   PINKid: "b34caac1880178ce",
   ORANGEid: "bd4f95906d776060",
   YELLOWid: "edf8b1b1cf0b7dcc",
+  NEUTRALid: "18d197319dfbd6a6",
 };
 
 /*------------ glasscase ---------*/
