@@ -8,6 +8,7 @@ var limit = 16;
 var page = 1;
 var pagination = 4;
 var discount = false;
+var list;
 
 var categoryId = "";
 
@@ -153,7 +154,7 @@ $(function () {
   }
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
-    let list = false;
+    list = false;
     brandName = localStorage.getItem("brandName");
     url = "brandshop";
     categoryId = constants[brandName];
@@ -162,24 +163,23 @@ $(function () {
     getProductsByCategory(list);
   }
   if (document.location.pathname == "/brand-shop-list.html") {
-    let list = true;
+    list = true;
     brandName = localStorage.getItem("brandName");
     url = "brandshop";
-    categoryIdId = constants[brandName];
+    categoryId = constants[brandName];
     console.log(categoryId);
 
     getProductsByCategory(list);
   }
   /*------------ womanshop --------123-*/
   if (document.location.pathname == "/woman-shop.html") {
-    let list = false;
+    list = false;
     url = "womanshop";
     let categoryName = localStorage.getItem("categoryName");
     if (!categoryName) {
       getProducts(list);
     } else {
       categoryId = constants[categoryName];
-      localStorage.removeItem("categoryName");
 
       console.log(categoryId);
 
@@ -187,7 +187,7 @@ $(function () {
     }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
-    let list = true;
+    list = true;
 
     url = "womanshop";
     let categoryName = localStorage.getItem("categoryName");
@@ -195,7 +195,6 @@ $(function () {
       getProducts(list);
     } else {
       categoryId = constants[categoryName];
-      localStorage.removeItem("categoryName");
 
       console.log(categoryId);
 
@@ -204,14 +203,14 @@ $(function () {
   }
   /*------------ manshop ---------*/
   if (document.location.pathname == "/man-shop.html") {
-    let list = false;
+    list = false;
 
     url = "manshop";
 
     getProducts(list);
   }
   if (document.location.pathname == "/man-shop-list.html") {
-    let list = true;
+    list = true;
 
     url = "manshop";
 
@@ -219,14 +218,14 @@ $(function () {
   }
   /*------------accessshop ---------*/
   if (document.location.pathname == "/accessories-shop.html") {
-    let list = false;
+    list = false;
 
     url = "accessoriesshop";
 
     getProducts(list);
   }
   if (document.location.pathname == "/accessories-shop-list.html") {
-    let list = true;
+    list = true;
 
     url = "accessoriesshop";
 
@@ -234,14 +233,14 @@ $(function () {
   }
   /*------------ jewshop ---------*/
   if (document.location.pathname == "/jewelry-shop.html") {
-    let list = false;
+    list = false;
 
     url = "jewelryshop";
 
     getProducts(list);
   }
   if (document.location.pathname == "/jewelry-shop-list.html") {
-    let list = true;
+    list = true;
 
     url = "jewelryshop";
 
@@ -249,14 +248,14 @@ $(function () {
   }
   /*------------ bagshop ---------*/
   if (document.location.pathname == "/bag-shop.html") {
-    let list = false;
+    list = false;
 
     url = "bagshop";
 
     getProducts(list);
   }
   if (document.location.pathname == "/bag-shop-list.html") {
-    let list = true;
+    list = true;
 
     url = "bagshop";
 
