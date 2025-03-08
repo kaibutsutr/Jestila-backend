@@ -10,6 +10,8 @@ var pagination = 4;
 var discount = false;
 var list = false;
 var categoryId = "";
+var categoryName = "";
+var brandName = "";
 var url = "womanshop";
 
 const constants = {
@@ -153,18 +155,18 @@ $(function () {
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
     var list = false;
-    let categoryName = localStorage.getItem("brandName");
+    brandName = localStorage.getItem("brandName");
     url = "brandshop";
-    categoryId = constants[categoryName];
+    categoryId = constants[brandName];
     console.log(categoryId);
 
     getProductsByCategory();
   }
   if (document.location.pathname == "/brand-shop-list.html") {
     var list = true;
-    let categoryName = localStorage.getItem("brandName");
+    brandName = localStorage.getItem("brandName");
     url = "brandshop";
-    categoryId = constants[categoryName];
+    categoryIdId = constants[brandName];
     console.log(categoryId);
 
     getProductsListByCategory();
@@ -172,12 +174,19 @@ $(function () {
   /*------------ womanshop --------123-*/
   if (document.location.pathname == "/woman-shop.html") {
     var list = false;
-    let categoryName = localStorage.getItem("categoryName");
     url = "womanshop";
-    categoryId = constants[categoryName];
-    console.log(categoryId);
+    if (categoryName == "") {
+      getProducts();
+    } else {
+      categoryName = localStorage.getItem("categoryName");
 
-    getProductsByCategory();
+      categoryId = constants[categoryName];
+      categoryName = "";
+
+      console.log(categoryId);
+
+      getProductsByCategory();
+    }
   }
   if (document.location.pathname == "/woman-shop-list.html") {
     var list = true;
