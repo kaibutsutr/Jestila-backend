@@ -693,7 +693,7 @@ $(function () {
 
   /* -------- Countdown Timer ------- */
   if ($(".countdown").length > 0) {
-    var your_date = "2025-02-28 00:00:00";
+    var your_date = "2025-03-18 00:00:00";
     const second = 1000,
       minute = second * 60,
       hour = minute * 60,
@@ -1275,7 +1275,7 @@ const getProductsByCategoryList = async () => {
 //index page items
 const getFeaturedProducts = async () => {
   axios
-    .get(`/api/v1/products?page=1&limit=10`)
+    .get(`/api/v1/products?categoryId=4d1670e409f3277d&page=1&limit=10`)
     .then((response) => {
       products = response.data;
       console.log(products);
