@@ -929,6 +929,11 @@
     max-width: 50%;
     /*---- Müşteri bir sayfada 2 ürün görmek istedi, orijinali %100 -----*/
   }
+  .tab-pane .featured-product {
+    flex: 0 0 50%;
+    max-width: 50%;
+    /*---- Müşteri bir sayfada 2 ürün görmek istedi, orijinali %100 -----*/
+  }
   .product-img {
     text-align: center;
   }
