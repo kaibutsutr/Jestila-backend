@@ -1019,9 +1019,7 @@ _______________________________________________________*/
   overflow: hidden;
 }
 /*fixed alignment issues here*/
-.banner-img {
-  padding: 0px 150px;
-}
+
 .banner-img img {
   width: 100%;
 }
