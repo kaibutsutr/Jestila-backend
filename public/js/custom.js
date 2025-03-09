@@ -146,7 +146,10 @@ $(function () {
   ("use strict");
   /*------------ Navigation ---------*/
   /*------------ index ---------*/
-  if (document.location.pathname == "/index.html") {
+  if (
+    document.location.pathname == "/index.html" ||
+    document.location.pathname == "/"
+  ) {
     getFeaturedProducts();
     //finish tabs and bottom part!
     //1234
