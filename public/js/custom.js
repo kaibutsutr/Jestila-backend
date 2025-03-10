@@ -959,9 +959,7 @@ const getSimilarProducts = async (categoryId) => {
 
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1041,9 +1039,7 @@ const getProductsGrid = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1125,9 +1121,7 @@ const getProductsGridByVariation = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1207,9 +1201,7 @@ const getProductsList = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1329,9 +1321,7 @@ const getProductsListByVariation = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1458,9 +1448,7 @@ const getProductsByCategoryGrid = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1541,9 +1529,7 @@ const getProductsByCategoryGridByVariation = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1622,9 +1608,7 @@ const getProductsByCategoryList = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1745,9 +1729,7 @@ const getProductsByCategoryListByVariation = async () => {
                   )
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
@@ -1871,9 +1853,7 @@ const getFeaturedProducts = async () => {
 
                   .append(
                     $("<div>")
-                      .addClass(
-                        "product-details-btn text-uppercase text-center transition"
-                      )
+                      .addClass("product-details-btn text-center transition")
                       .attr({ id: products[object][key].id })
                       .append(
                         $("<a>")
