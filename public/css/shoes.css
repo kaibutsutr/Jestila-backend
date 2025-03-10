@@ -393,7 +393,7 @@ select {
   -o-border-radius: 1.5px;
 }
 .checkbox:checked + label::after {
-  background-image: url("../images/check-box-icon.png");
+  background-image: url("../images/check-bo.png");
   background-repeat: no-repeat;
 }
 input.radio-button:checked + label::before {
@@ -1676,7 +1676,7 @@ _________________________________________________________*/
   border-color: #d5d5d5;
 }
 .checkbox:checked + label.white::after {
-  background-image: url(../images/check-box-icon-2.png);
+  background-image: url(../images/check-bo-2.png);
 }
 .latest-prod {
   margin-bottom: 20px;
