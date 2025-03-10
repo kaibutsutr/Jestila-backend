@@ -159,6 +159,8 @@ $(function () {
     //bottom product list
     getOpportunityProducts();
     //bottom product list
+    getProductOfTheWeek("32937174");
+    // hardcode the PoTW here
     discount = false;
     limit = 16;
   }
@@ -1466,6 +1468,34 @@ const getOpportunityProducts = async () => {
       }
     })
 
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+// get product of the week
+const getProductOfTheWeek = async (productId) => {
+  axios
+    .get(`/api/v1/products/${productId}`)
+    .then((response) => {
+      product = response.data;
+      console.log(product);
+
+      //append
+
+      $("#product-info").append(product.data.description);
+      $("#potw-title").text(product.data.title);
+      $("#potw-price").text(~~product.data.priceData.price + " ₺");
+      $("#potw-expensive-price").text(
+        ~~product.data.priceData.price + 3000 + " ₺"
+      );
+
+      $("#link-potw").attr("href", product.data.url);
+
+      $("#product-otw").attr("src", product.data.media[0].url);
+
+      // gc fix//
+    })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
