@@ -1613,11 +1613,11 @@ _________________________________________________________*/
   /*--------- opener plus changed  \f067  \f068 previous hali --------*/
 }
 .opener.plus:before {
-  content: "\f054";
+  content: "\f061";
   font-family: fontawesome;
 }
 .opener.minus:before {
-  content: "\f054";
+  content: "\f061";
   font-family: fontawesome;
 }
 /*--------- overwrite footer --------*/
