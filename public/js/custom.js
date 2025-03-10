@@ -157,7 +157,7 @@ $(function () {
     limit = 4;
     getBestSellerProducts();
     //bottom product list
-    getFeaturedProducts();
+    getOpportunityProducts();
     //bottom product list
     discount = false;
     limit = 16;
@@ -1396,11 +1396,13 @@ const getBestSellerProducts = async () => {
                   .append(
                     $("<a>")
                       .addClass("product-name text-uppercase")
-                      .attr({ href: "index.html" })
-                      .text("Alexander McQueen ‘Deep Blue Velvet’")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .text(products[object][key].title)
                   )
                   .append(
-                    $("<span>").addClass("product-price").text(" 8.500 TL ")
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
                   )
               )
           );
@@ -1414,7 +1416,7 @@ const getBestSellerProducts = async () => {
 };
 
 // get featured ones
-const getFeaturedProducts = async () => {
+const getOpportunityProducts = async () => {
   axios
     .get(`/api/v1/products?discount=${discount}&page=1&limit=${limit}`)
     .then((response) => {
@@ -1440,19 +1442,6 @@ const getFeaturedProducts = async () => {
                           id: "product-link",
                         })
                       )
-                  )
-              )
-              .append(
-                $("<div>")
-                  .addClass("seller-contain pl-15")
-                  .append(
-                    $("<a>")
-                      .addClass("product-name text-uppercase")
-                      .attr({ href: "index.html" })
-                      .text("Alexander McQueen ‘Deep Blue Velvet’")
-                  )
-                  .append(
-                    $("<span>").addClass("product-price").text(" 8.500 TL ")
                   )
               )
           );
