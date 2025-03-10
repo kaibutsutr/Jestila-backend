@@ -1444,6 +1444,21 @@ const getOpportunityProducts = async () => {
                       )
                   )
               )
+              .append(
+                $("<div>")
+                  .addClass("seller-contain pl-15")
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(~~products[object][key].priceData.price + " ₺")
+                  )
+              )
           );
         }
       }
