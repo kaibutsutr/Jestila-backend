@@ -2033,7 +2033,7 @@ const getProductOfTheWeek = async (productId) => {
 
       $("#product-link-to-go").attr({ id: productId });
 
-      $("#img1").attr("src", product.data.media[0].url);
+      $("#img1").attr("src", product.data.media[3].url);
 
       // popup fix?
       if ($(".quick-popup").length > 0) {
