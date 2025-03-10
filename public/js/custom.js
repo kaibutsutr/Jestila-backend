@@ -541,27 +541,27 @@ $(function () {
 
   $("#filter-by").on("click", function () {
     if ("categoryName" in localStorage) {
-      //remove content first
       $("#product").empty();
-// get checked ids
+      // get checked ids
       var ids = $("input:checkbox:checked")
         .map(function () {
           return this.id;
         })
         .get();
       console.log(ids);
-      if ()
-      let categoryName = localStorage.getItem("categoryName");
-      categoryId = constants[categoryName];
+      //remove content first
 
-      console.log(categoryId);
-      
+      if ("categoryName" in localStorage) {
+        let categoryName = localStorage.getItem("categoryName");
+        categoryId = constants[categoryName];
 
-      getProductsByCategoryByVariation(list);
-    } else {
-      getProductsByVariation(list);
+        console.log(categoryId);
+
+        getProductsByCategoryByVariation(list);
+      } else {
+        getProductsByVariation(list);
+      }
     }
-    
   });
 
   /*------------ Remove all filters ---------*/
@@ -842,7 +842,6 @@ function getProductsByCategory(list) {
     getProductsByCategoryGrid();
   }
 }
-
 
 // Variation versionLoad products from /api/products
 function getProductsByVariation(list) {
@@ -1164,7 +1163,6 @@ const getProductsGridByVariation = async () => {
     });
 };
 
-
 /* get as a list view*/
 
 const getProductsList = async () => {
@@ -1411,8 +1409,6 @@ const getProductsListByVariation = async () => {
       console.error("Error fetching data:", error);
     });
 };
-
-
 
 //get by query
 
