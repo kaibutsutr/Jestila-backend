@@ -1483,18 +1483,22 @@ const getProductOfTheWeek = async (productId) => {
 
       //append
 
-      $("#product-info").append(product.data.description);
       $("#potw-title").text(product.data.title);
       $("#potw-price").text(~~product.data.priceData.price + " ₺");
       $("#potw-expensive-price").text(
         ~~product.data.priceData.price + 3000 + " ₺"
       );
 
-      $("#link-potw").attr("href", product.data.url);
+      $("#product-link-to-go").attr({ id: productId });
 
-      $("#product-otw").attr("src", product.data.media[0].url);
+      $("#img1").attr("src", product.data.media[0].url);
 
-      // gc fix//
+      // popup fix?
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
