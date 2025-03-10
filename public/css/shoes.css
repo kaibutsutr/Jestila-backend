@@ -1610,6 +1610,7 @@ _________________________________________________________*/
   top: 1px;
   right: 0;
   font-size: 11px;
+  /*--------- opener plus changed  \f067  \f068 previous hali --------*/
 }
 .category .opener.plus:before {
   content: "\f061";

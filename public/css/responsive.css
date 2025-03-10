@@ -403,7 +403,7 @@
     top: 64px;
     left: -100%;
     padding: 20px 0px;
-    background: #2d3031;
+    background: #ffffff;
     width: 100%;
     z-index: 9;
     height: 100vh;
@@ -426,7 +426,7 @@
     padding: 0;
   }
   .menu > ul > li > a {
-    color: #fff;
+    color: #000000;
     display: block;
     padding: 10px 15px;
   }
@@ -473,7 +473,7 @@
     background: #fff;
   }
   .menu span.opener {
-    background: url(../images/sprite.png) no-repeat scroll 0 0;
+    content: "\f061"no-repeat scroll 0 0;
     height: 38px;
     width: 38px;
     display: inline-block;
