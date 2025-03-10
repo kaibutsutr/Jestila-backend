@@ -154,6 +154,7 @@ $(function () {
     getFeaturedProducts();
     //top product list
     discount = true;
+    limit = 4;
     getBestSellerProducts();
     //bottom product list
   }
@@ -1366,7 +1367,39 @@ const getBestSellerProducts = async () => {
       for (let object in products) {
         for (let key in products[object]) {
           //here
-          $("#seller").append;
+          $("#seller").append(
+            $("<div>")
+              .addClass("seller-box align-flax w-100 pb-20")
+              .append(
+                $("<div>")
+                  .addClass("seller-img")
+                  .append(
+                    $("<a>")
+                      .addClass("display-b")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("seller-contain pl-15")
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({ href: "index.html" })
+                      .text("Alexander McQueen ‘Deep Blue Velvet’")
+                  )
+                  .append(
+                    $("<span>").addClass("product-price").text(" 8.500 TL ")
+                  )
+              )
+          );
         }
       }
     })
