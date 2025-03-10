@@ -1076,7 +1076,7 @@ const getOneProduct = async (productId) => {
 const getSimilarProducts = async (categoryId) => {
   console.log(categoryId);
   axios
-    .get(`/api/v1/${url}/${categoryId}`)
+    .get(`/api/v1/products?categoryId=${categoryId}&limit=5`)
     .then((response) => {
       products = response.data;
       console.log(products);
