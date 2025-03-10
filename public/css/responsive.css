@@ -1176,6 +1176,10 @@
   }
   .banner-bg {
     padding-bottom: 30px;
+    /*---- customer wanted this --------*/
+    background: url(../images/banner-bg-r.jpeg);
+    height: 700px;
+    overflow: hidden;
   }
   /*---- offer Banner Css --------*/
   .offer-banner .banner-title {
