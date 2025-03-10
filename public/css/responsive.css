@@ -473,7 +473,7 @@
     background: #000000;
   }
   .menu span.opener {
-    background: url(../images/arrow-right-solid.svg) no-repeat scroll 0 0;
+    background: url(../images/sprite.png) no-repeat scroll 0 0;
     height: 38px;
     width: 38px;
     display: inline-block;
@@ -489,7 +489,7 @@
     background-position: -88px -410px;
   }
   .megamenu-inner .megamenu-title {
-    color: #000000;
+    color: #fff;
     margin-bottom: 0px;
   }
   .megamenu-inner .megamenu-title:before {
