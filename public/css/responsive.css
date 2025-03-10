@@ -822,7 +822,7 @@
     font-size: 16px;
   }
   .week-img img {
-    max-height: 550px;
+    max-height: 50%;
     object-fit: cover;
   }
   .week-img {
