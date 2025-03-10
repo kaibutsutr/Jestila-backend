@@ -1377,6 +1377,7 @@ const getBestSellerProducts = async () => {
               .append(
                 $("<div>")
                   .addClass("seller-img")
+                  .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
                       .addClass("display-b")
@@ -1407,11 +1408,6 @@ const getBestSellerProducts = async () => {
               )
           );
         }
-      }
-      if ($(".quick-popup").length > 0) {
-        $(".quick-popup").magnificPopup({
-          type: "iframe",
-        });
       }
     })
 
@@ -1436,6 +1432,7 @@ const getOpportunityProducts = async () => {
               .append(
                 $("<div>")
                   .addClass("seller-img")
+                  .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
                       .addClass("display-b")
@@ -1466,11 +1463,6 @@ const getOpportunityProducts = async () => {
               )
           );
         }
-      }
-      if ($(".quick-popup").length > 0) {
-        $(".quick-popup").magnificPopup({
-          type: "iframe",
-        });
       }
     })
 
