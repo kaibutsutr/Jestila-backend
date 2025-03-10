@@ -12,6 +12,9 @@ var discount = false;
 var list = false;
 var url = "womanshop";
 var discount = false;
+var sizeFilter,
+  colorFilter,
+  priceFilter = 0;
 
 const constants = {
   KADINAYAKKABIid: "97fa66025e772afe",
@@ -540,27 +543,36 @@ $(function () {
   /*------------ Filter by Variaton  filter - by ---------*/
 
   $("#filter-by").on("click", function () {
-    if ("categoryName" in localStorage) {
-      $("#product").empty();
-      // get checked ids
-      var ids = $("input:checkbox:checked")
-        .map(function () {
-          return this.id;
-        })
-        .get();
-      console.log(ids);
-      //remove content first
+    $("#product").empty();
+    // get checked ids
+    var ids = $("input:checkbox:checked")
+      .map(function () {
+        return this.id;
+      })
+      .get();
+    console.log(ids);
 
-      if ("categoryName" in localStorage) {
-        let categoryName = localStorage.getItem("categoryName");
-        categoryId = constants[categoryName];
-
-        console.log(categoryId);
-
-        getProductsByCategoryByVariation(list);
-      } else {
-        getProductsByVariation(list);
+    //remove content first, then get the filters
+    if (ids[0] !== undefined) {
+      sizeFilter = ids[0];
+      if (ids[1] !== undefined) {
+        colorFilter = ids[1];
+        if (ids[2] !== undefined) {
+          priceFilter = ids[2];
+        }
       }
+      console.log(sizeFilter, colorFilter, priceFilter);
+    }
+
+    if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
+
+      console.log(categoryId);
+
+      getProductsByCategoryByVariation(list);
+    } else {
+      getProductsByVariation(list);
     }
   });
 
