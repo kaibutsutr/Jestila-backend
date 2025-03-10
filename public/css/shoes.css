@@ -1621,14 +1621,6 @@ _________________________________________________________*/
   font-family: fontawesome;
 }
 /*--------- overwrite footer --------*/
-.footer.opener.plus:before {
-  content: "\f067";
-  font-family: fontawesome;
-}
-.footer.opener.minus:before {
-  content: "\f068";
-  font-family: fontawesome;
-}
 
 .sidebar .btn-filter {
   font-size: 12px;
