@@ -1408,6 +1408,11 @@ const getBestSellerProducts = async () => {
           );
         }
       }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
     })
 
     .catch((error) => {
@@ -1461,6 +1466,11 @@ const getOpportunityProducts = async () => {
               )
           );
         }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
       }
     })
 

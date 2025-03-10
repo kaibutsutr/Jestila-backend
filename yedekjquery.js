@@ -1,2 +1,0 @@
-$('<div>').addClass('seller-img').append($('<a>').addClass('display-b').attr({'href':'index.html'}).append($('<img>').addClass('transition').attr({'src':'https://cdn.shopier.app/pictures_large/jestilacom_9d5199a029c701c8ee7ccd92ca0d6d9e.jpeg','alt':'shoes'})));$('<div>').addClass('seller-contain pl-15').append($('<a>').addClass('product-name text-uppercase').attr({'href':'index.html'}).text('Alexander McQueen ‘Deep Blue Velvet’')).append($('<span>').addClass('product-price').text('
-8.500 TL '))
