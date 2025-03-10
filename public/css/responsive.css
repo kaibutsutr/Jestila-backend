@@ -457,7 +457,7 @@
   }
   .megamenu-inner ul li a {
     display: block;
-    color: #fff;
+    color: #000000;
     padding: 8px 0px;
   }
   .megamenu-inner ul li:before {
@@ -470,10 +470,10 @@
     left: -15px;
     width: 5px;
     height: 5px;
-    background: #fff;
+    background: #000000;
   }
   .menu span.opener {
-    content: "\f061"no-repeat scroll 0 0;
+    background: url(../images/arrow-right-solid.svg) no-repeat scroll 0 0;
     height: 38px;
     width: 38px;
     display: inline-block;
@@ -489,7 +489,7 @@
     background-position: -88px -410px;
   }
   .megamenu-inner .megamenu-title {
-    color: #fff;
+    color: #000000;
     margin-bottom: 0px;
   }
   .megamenu-inner .megamenu-title:before {
