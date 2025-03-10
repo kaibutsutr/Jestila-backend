@@ -10,7 +10,8 @@ var page = 1;
 var pagination = 4;
 var discount = false;
 var list = false;
-url = "womanshop";
+var url = "womanshop";
+var discount = false;
 
 const constants = {
   KADINAYAKKABIid: "97fa66025e772afe",
@@ -151,8 +152,10 @@ $(function () {
     document.location.pathname == "/"
   ) {
     getFeaturedProducts();
-    //finish tabs and bottom part!
-    //1234
+    //top product list
+    discount = true;
+    getBestSellerProducts();
+    //bottom product list
   }
 
   if (
@@ -1343,6 +1346,28 @@ const getFeaturedProducts = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+// get discounted products
+const getBestSellerProducts = async () => {
+  axios
+    .get(
+      `/api/v1/products?categoryId=4d1670e409f3277d&discount=${discount}&page=1&limit=10`
+    )
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          //here
+          $("#seller").append;
+        }
       }
     })
 

@@ -7,6 +7,7 @@ const getAllproducts = (req, res) => {
   let page = req.query.page;
   let limit = req.query.limit;
   let categoryId = req.query.categoryId;
+  let discount = req.query.discount;
 
   const options = {
     method: "GET",
@@ -15,7 +16,12 @@ const getAllproducts = (req, res) => {
       accept: "application/json",
       authorization: constants.Bearer,
     },
-    params: { categoryId: categoryId, limit: limit, page: page },
+    params: {
+      categoryId: categoryId,
+      limit: limit,
+      page: page,
+      discount: discount,
+    },
   };
 
   axios
