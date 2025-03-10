@@ -1612,11 +1612,11 @@ _________________________________________________________*/
   font-size: 11px;
 }
 .category .opener.plus:before {
-  content: "\f067";
+  content: "\f061";
   font-family: fontawesome;
 }
 .category .opener.minus:before {
-  content: "\f068";
+  content: "\f061";
   font-family: fontawesome;
 }
 .sidebar .btn-filter {
