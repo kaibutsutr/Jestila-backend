@@ -1234,9 +1234,10 @@ _______________________________________________________*/
   background: #f5f5f5;
   padding: 40px;
 }
-.week-img {
+/* .week-img {
   background: #fff;
-}
+} */
+/* REMOVED BY CUSTOMER*/
 .week-img:hover {
   box-shadow: 0px 0px 15px 1px rgb(0, 0, 0, 0.2);
 }
