@@ -1610,13 +1610,13 @@ _________________________________________________________*/
   top: 1px;
   right: 0;
   font-size: 11px;
-  /*--------- opener plus changed  \f061  \f061 previous hali --------*/
+  /*--------- opener plus changed  \f067  \f068 previous hali --------*/
 }
-.category .opener.plus:before {
+.opener.plus:before {
   content: "\f061";
   font-family: fontawesome;
 }
-.category .opener.minus:before {
+.opener.minus:before {
   content: "\f061";
   font-family: fontawesome;
 }
