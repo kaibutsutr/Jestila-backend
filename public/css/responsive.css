@@ -1102,7 +1102,8 @@
   }
   .footer-static .opener {
     display: block;
-    background: url(../images/sprite.png) no-repeat scroll 0 0;
+    /* background: url(../images/sprite.png) no-repeat scroll 0 0;  
+    deleted this to make  plus disappear*/
     height: 30px;
     width: 30px;
     display: inline-block;
