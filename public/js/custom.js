@@ -536,7 +536,16 @@ $(function () {
       else $("#result").html("Empty...!");
     });
   });
-  /*------------ Remove all checkboxes ---------*/
+
+  /*------------ Filter by Variaton  filter - by ---------*/
+
+  $("#filter-by").on("click", function () {
+    console.log($("#check-box1").val());
+    console.log($("#check-box2").val());
+    console.log($("#check-box3").val());
+  });
+
+  /*------------ Remove all filters ---------*/
   $(".btn-filter-remove").on("click", function () {
     $("input[type=checkbox]").prop("checked", false);
   });
