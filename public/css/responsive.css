@@ -1178,7 +1178,8 @@
     padding-bottom: 30px;
     /*---- customer wanted this --------*/
     background: url(../images/banner-bg-r.jpeg);
-    height: 700px;
+    width: 400px;
+    height: auto;
     overflow: hidden;
   }
   /*---- offer Banner Css --------*/
