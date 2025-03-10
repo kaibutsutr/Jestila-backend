@@ -978,7 +978,7 @@ const getSimilarProducts = async (categoryId) => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1060,7 +1060,7 @@ const getProductsGrid = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1142,7 +1142,7 @@ const getProductsGridByVariation = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1221,7 +1221,7 @@ const getProductsList = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
@@ -1341,7 +1341,7 @@ const getProductsListByVariation = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
@@ -1469,7 +1469,7 @@ const getProductsByCategoryGrid = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1550,7 +1550,7 @@ const getProductsByCategoryGridByVariation = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1628,7 +1628,7 @@ const getProductsByCategoryList = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
@@ -1749,7 +1749,7 @@ const getProductsByCategoryListByVariation = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
@@ -1873,7 +1873,7 @@ const getFeaturedProducts = async () => {
                   .attr({ id: products[object][key].id })
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({
                         href: "product-detail.html",
                         id: "product-link",
@@ -1938,7 +1938,7 @@ const getBestSellerProducts = async () => {
                   .addClass("seller-contain pl-15")
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
@@ -1993,7 +1993,7 @@ const getOpportunityProducts = async () => {
                   .addClass("seller-contain pl-15")
                   .append(
                     $("<a>")
-                      .addClass("product-name text-uppercase")
+                      .addClass("product-name")
                       .attr({ href: "product-detail.html", id: "product-link" })
                       .text(products[object][key].title)
                   )
