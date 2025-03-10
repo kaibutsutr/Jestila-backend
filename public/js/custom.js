@@ -540,9 +540,9 @@ $(function () {
   /*------------ Filter by Variaton  filter - by ---------*/
 
   $("#filter-by").on("click", function () {
-    console.log($("#check-box1").val());
-    console.log($("#check-box2").val());
-    console.log($("#check-box3").val());
+    console.log($("#check-box1").id());
+    console.log($("#check-box2").id());
+    console.log($("#check-box3").id());
   });
 
   /*------------ Remove all filters ---------*/
