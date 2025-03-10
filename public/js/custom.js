@@ -157,6 +157,10 @@ $(function () {
     limit = 4;
     getBestSellerProducts();
     //bottom product list
+    getFeaturedProducts();
+    //bottom product list
+    discount = false;
+    limit = 16;
   }
 
   if (
@@ -1359,7 +1363,7 @@ const getFeaturedProducts = async () => {
 const getBestSellerProducts = async () => {
   axios
     .get(
-      `/api/v1/products?categoryId=4d1670e409f3277d&discount=${discount}&page=1&limit=10`
+      `/api/v1/products?categoryId=4d1670e409f3277d&discount=${discount}&page=1&limit=${limit}`
     )
     .then((response) => {
       products = response.data;
@@ -1368,6 +1372,58 @@ const getBestSellerProducts = async () => {
         for (let key in products[object]) {
           //here
           $("#seller").append(
+            $("<div>")
+              .addClass("seller-box align-flax w-100 pb-20")
+              .append(
+                $("<div>")
+                  .addClass("seller-img")
+                  .append(
+                    $("<a>")
+                      .addClass("display-b")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("seller-contain pl-15")
+                  .append(
+                    $("<a>")
+                      .addClass("product-name text-uppercase")
+                      .attr({ href: "index.html" })
+                      .text("Alexander McQueen ‘Deep Blue Velvet’")
+                  )
+                  .append(
+                    $("<span>").addClass("product-price").text(" 8.500 TL ")
+                  )
+              )
+          );
+        }
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+// get featured ones
+const getFeaturedProducts = async () => {
+  axios
+    .get(`/api/v1/products?discount=${discount}&page=1&limit=${limit}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          //here
+          $("#featured-seller").append(
             $("<div>")
               .addClass("seller-box align-flax w-100 pb-20")
               .append(
