@@ -537,7 +537,7 @@ $(function () {
     });
   });
   /*------------ Remove all checkboxes ---------*/
-  $(".btn-filter").on("click", function () {
+  $(".btn-filter-remove").on("click", function () {
     $("input[type=checkbox]").prop("checked", false);
   });
   /*------------ Sticky Header Slider ---------*/
