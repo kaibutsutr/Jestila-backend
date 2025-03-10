@@ -1961,7 +1961,9 @@ const getBestSellerProducts = async () => {
 // get featured ones
 const getOpportunityProducts = async () => {
   axios
-    .get(`/api/v1/products?discount=${discount}&page=1&limit=${limit}`)
+    .get(
+      `/api/v1/products?categoryId=97fa66025e772afe&discount=${discount}&page=1&limit=${limit}`
+    )
     .then((response) => {
       products = response.data;
       console.log(products);
