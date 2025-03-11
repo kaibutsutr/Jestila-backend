@@ -854,19 +854,6 @@ $(function () {
 
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
-    $(".darkmode-toggle").on("click", function () {
-      if (darkmode.isActivated()) {
-        $("#logo").prop("src", "images/logo-dark.png");
-
-        $("footer #logo").prop("src", "images/logo-dark.png");
-        console.log("dark mode");
-      } else {
-        $("#logo").prop("src", "images/logo.png");
-
-        $("footer #logo").prop("src", "images/logo.png");
-        console.log("light mode");
-      }
-    });
   });
 });
 

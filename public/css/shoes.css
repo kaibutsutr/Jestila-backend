@@ -2920,5 +2920,5 @@ table.border td ul li a:hover {
   color: #000;
 }
 .darkmode--activated img {
-  filter: invert(0);
+  filter: invert(1);
 }
