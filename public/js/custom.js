@@ -835,6 +835,11 @@ $(function () {
 
   $(document).ready(function () {
     responsive_dropdown();
+    /* ---- night mode ---- */
+    $("#nightmode").click(function () {
+      $("body").toggleClass("dark-mode");
+      $("header, main, footer, nav a").toggleClass("dark-mode");
+    });
   });
 });
 
