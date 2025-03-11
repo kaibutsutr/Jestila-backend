@@ -39,16 +39,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* darkmode.js */
-body .darkmode-toggle {
-  bottom: inherit;
-  top: 1em;
-}
-.darkmode-layer,
-.darkmode-toggle {
-  z-index: 500;
-}
-
 /*_______________________________________________________
 // BASIC STYLE  //----------------------------
 _______________________________________________________*/
@@ -2916,10 +2906,19 @@ table.border td ul li a:hover {
   isolation: isolate;
 }
 
+/* darkmode.js */
+
+.darkmode-layer,
+.darkmode-toggle {
+  z-index: 500;
+}
+
 .darkmode--activated #logo {
   mix-blend-mode: difference;
 }
 .darkmode--activated .header.sticky {
   color: #000;
-  background: #000;
+}
+.darkmode--activated img {
+  filter: invert(0);
 }

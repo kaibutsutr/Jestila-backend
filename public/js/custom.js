@@ -839,9 +839,9 @@ $(function () {
     /*------------ nightmode cookie check -----------*/
     /* ---- darkmode ---- */
     const options = {
-      bottom: "0px", // default: '32px'
+      bottom: "16px", // default: '32px'
       right: "unset", // default: '32px'
-      left: "0px", // default: 'unset'
+      left: "16px", // default: 'unset'
       time: "0.5s", // default: '0.3s'
       mixColor: "#fff", // default: '#fff'
       backgroundColor: "#fff", // default: '#fff'
@@ -854,18 +854,19 @@ $(function () {
 
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
+    $(".darkmode-toggle").on("click", function () {
+      if (darkmode.isActivated()) {
+        $("#logo").prop("src", "images/logo-dark.png");
 
-    if (darkmode.isActivated()) {
-      $("#logo").prop("src", "images/logo-dark.png");
+        $("footer #logo").prop("src", "images/logo-dark.png");
+        console.log("dark mode");
+      } else {
+        $("#logo").prop("src", "images/logo.png");
 
-      $("footer #logo").prop("src", "images/logo-dark.png");
-      console.log("dark mode");
-    } else {
-      $("#logo").prop("src", "images/logo.png");
-
-      $("footer #logo").prop("src", "images/logo.png");
-      console.log("light mode");
-    }
+        $("footer #logo").prop("src", "images/logo.png");
+        console.log("light mode");
+      }
+    });
   });
 });
 
