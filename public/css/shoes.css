@@ -2914,8 +2914,9 @@ footer.dark-mode {
 .header.dark-mode,
 .footer.dark-mode,
 .sticky.dark-mode,
-.header.menu-left {
+.header.menu-left .header.megamenu {
   background-color: #000000;
+  color: #f5f5f5;
 }
 
 main.dark-mode,
@@ -2924,7 +2925,8 @@ div.dark-mode,
 section.dark-mode {
   color: #f5f5f5;
 }
-.header.dark-mode ul li a {
+.header.dark-mode ul li a,
+.header.menu-toggle.active {
   color: #f5f5f5;
 }
 
