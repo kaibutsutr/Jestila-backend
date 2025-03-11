@@ -149,8 +149,6 @@ const constants = {
 $(function () {
   ("use strict");
 
-  /*------------ nightmode cookie check -----------*/
-
   /*------------ Navigation ---------*/
   /*------------ index ---------*/
   if (
@@ -837,11 +835,13 @@ $(function () {
   /* ---- Quick Popup JS ---- */
 
   $(document).ready(function () {
+    responsive_dropdown();
+    /*------------ nightmode cookie check -----------*/
     /* ---- darkmode ---- */
     const options = {
-      bottom: "64px", // default: '32px'
+      bottom: "0px", // default: '32px'
       right: "unset", // default: '32px'
-      left: "32px", // default: 'unset'
+      left: "0px", // default: 'unset'
       time: "0.5s", // default: '0.3s'
       mixColor: "#fff", // default: '#fff'
       backgroundColor: "#fff", // default: '#fff'
@@ -855,12 +855,16 @@ $(function () {
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
 
-    responsive_dropdown();
     if (darkmode.isActivated()) {
       $("#logo").prop("src", "images/logo-dark.png");
 
       $("footer #logo").prop("src", "images/logo-dark.png");
       console.log("dark mode");
+    } else {
+      $("#logo").prop("src", "images/logo.png");
+
+      $("footer #logo").prop("src", "images/logo.png");
+      console.log("light mode");
     }
   });
 });
