@@ -884,7 +884,7 @@ const getOneProduct = async (productId) => {
 
       $("#product-info").append(product.data.description);
       $("#product-title").text(product.data.title);
-      $("#product-price").text(~~product.data.priceData.price + " ₺");
+      $("#product-price").text(~~product.data.priceData.discountedPrice + " ₺");
       $("#buyProduct").attr("href", product.data.url);
 
       $("#img1").attr("src", product.data.media[0].url);
@@ -988,7 +988,9 @@ const getSimilarProducts = async (categoryId) => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1070,7 +1072,9 @@ const getProductsGrid = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1152,7 +1156,9 @@ const getProductsGridByVariation = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1228,7 +1234,9 @@ const getProductsList = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
                   .append(
                     $("<div>")
@@ -1348,7 +1356,9 @@ const getProductsListByVariation = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
                   .append(
                     $("<div>")
@@ -1479,7 +1489,9 @@ const getProductsByCategoryGrid = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1560,7 +1572,9 @@ const getProductsByCategoryGridByVariation = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1635,7 +1649,9 @@ const getProductsByCategoryList = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
                   .append(
                     $("<div>")
@@ -1756,7 +1772,9 @@ const getProductsByCategoryListByVariation = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
                   .append(
                     $("<div>")
@@ -1883,7 +1901,9 @@ const getFeaturedProducts = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -1943,9 +1963,28 @@ const getBestSellerProducts = async () => {
                       .text(products[object][key].title)
                   )
                   .append(
-                    $("<span>")
-                      .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                    $("<div>")
+                      .addClass("price-d pb-25")
+                      .append(
+                        $("<label>")
+                          .addClass("price-r pr-30")
+                          .attr({ id: "potw-expensive-price" })
+                          .text(
+                            ~~products[object][key].priceData.discountedPrice +
+                              " ₺"
+                          )
+                      )
+                      .append(
+                        $("<label>")
+                          .addClass("price-o")
+                          .attr({ id: "potw-price" })
+                          .text(
+                            ~~(
+                              0.9 *
+                              products[object][key].priceData.discountedPrice
+                            ) + " ₺"
+                          )
+                      )
                   )
               )
           );
@@ -2002,7 +2041,9 @@ const getOpportunityProducts = async () => {
                   .append(
                     $("<span>")
                       .addClass("product-price")
-                      .text(~~products[object][key].priceData.price + " ₺")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
                   )
               )
           );
@@ -2026,9 +2067,9 @@ const getProductOfTheWeek = async (productId) => {
       //append
 
       $("#potw-title").text(product.data.title);
-      $("#potw-price").text(~~product.data.priceData.price + " ₺");
+      $("#potw-price").text(~~product.data.priceData.discountedPrice + " ₺");
       $("#potw-expensive-price").text(
-        ~~product.data.priceData.price + 3000 + " ₺"
+        ~~product.data.priceData.discountedPrice + 3000 + " ₺"
       );
 
       $("#product-link-to-go").attr({ id: productId });
