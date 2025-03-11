@@ -2913,7 +2913,8 @@ footer.dark-mode {
 }
 .header.dark-mode,
 .footer.dark-mode,
-.sticky.dark-mode {
+.sticky.dark-mode,
+.header.menu-left {
   background-color: #000000;
 }
 
