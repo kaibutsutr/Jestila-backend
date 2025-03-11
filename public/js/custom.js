@@ -148,6 +148,13 @@ const constants = {
 
 $(function () {
   ("use strict");
+
+  /*------------ nightmode cookie check -----------*/
+  if ("nightmode" in localStorage) {
+    $("body").toggleClass("dark-mode");
+    $("header, main, footer, nav a").toggleClass("dark-mode");
+    console.log("night mode");
+  }
   /*------------ Navigation ---------*/
   /*------------ index ---------*/
   if (
@@ -839,6 +846,8 @@ $(function () {
     $("#nightmode").click(function () {
       $("body").toggleClass("dark-mode");
       $("header, main, footer, nav a").toggleClass("dark-mode");
+      localStorage.setItem("nightmode", true);
+      console.log("night mode");
     });
     /* ---- light mode ---- */
     $("#lightmode").click(function () {
