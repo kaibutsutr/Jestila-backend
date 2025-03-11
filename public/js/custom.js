@@ -496,7 +496,7 @@ $(function () {
 
   /*------------ Click events ---------*/
   /*------------ show sidebar on mobile ---------*/
-  $("#filter-button").on("click", function () {
+  $("#filter-show-button").on("click", function () {
     $(".sidebar").show();
   });
 
