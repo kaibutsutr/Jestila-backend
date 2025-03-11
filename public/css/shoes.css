@@ -2910,6 +2910,8 @@ body.dark-mode {
   color: #f5f5f5;
 }
 header.dark-mode,
+.sticky.dark-mode,
+.container-fluid.dark-mode,
 main.dark-mode,
 footer.dark-mode {
   background-color: #222;

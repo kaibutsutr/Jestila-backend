@@ -840,6 +840,11 @@ $(function () {
       $("body").toggleClass("dark-mode");
       $("header, main, footer, nav a").toggleClass("dark-mode");
     });
+    /* ---- light mode ---- */
+    $("#lightmode").click(function () {
+      $("body").removeClass("dark-mode");
+      $("header, main, footer, nav a").removeClass("dark-mode");
+    });
   });
 });
 
