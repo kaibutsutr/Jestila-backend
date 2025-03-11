@@ -155,9 +155,6 @@ $(function () {
     document.location.pathname == "/index.html" ||
     document.location.pathname == "/"
   ) {
-    getFeaturedShoes();
-    getFeaturedBags();
-    getFeaturedAccessories();
     //top product list
     discount = true;
     limit = 4;
@@ -167,6 +164,10 @@ $(function () {
     //bottom product list
     getProductOfTheWeek("32937174");
     // hardcode the PoTW here
+    getFeaturedShoes();
+    getFeaturedBags();
+    getFeaturedAccessories();
+    // defaults
     discount = false;
     limit = 16;
   }
@@ -495,6 +496,7 @@ $(function () {
   });
 
   /*------------ Click events ---------*/
+
   /*------------ show sidebar on mobile ---------*/
   $("#filter-show-button").on("click", function () {
     $(".sidebar").show();
