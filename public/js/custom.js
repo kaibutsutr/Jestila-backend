@@ -1968,21 +1968,16 @@ const getBestSellerProducts = async () => {
                       .append(
                         $("<label>")
                           .addClass("price-r pr-30")
-                          .attr({ id: "potw-expensive-price" })
-                          .text(
-                            ~~products[object][key].priceData.discountedPrice +
-                              " ₺"
-                          )
+                          .attr({ id: "product-expensive-price" })
+                          .text(~~products[object][key].priceData.price + " ₺")
                       )
                       .append(
                         $("<label>")
                           .addClass("price-o")
-                          .attr({ id: "potw-price" })
+                          .attr({ id: "product-price" })
                           .text(
-                            ~~(
-                              0.9 *
-                              products[object][key].priceData.discountedPrice
-                            ) + " ₺"
+                            ~~products[object][key].priceData.discountedPrice +
+                              " ₺"
                           )
                       )
                   )
@@ -2039,10 +2034,22 @@ const getOpportunityProducts = async () => {
                       .text(products[object][key].title)
                   )
                   .append(
-                    $("<span>")
-                      .addClass("product-price")
-                      .text(
-                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                    $("<div>")
+                      .addClass("price-d pb-25")
+                      .append(
+                        $("<label>")
+                          .addClass("price-r pr-30")
+                          .attr({ id: "product-expensive-price" })
+                          .text(~~products[object][key].priceData.price + " ₺")
+                      )
+                      .append(
+                        $("<label>")
+                          .addClass("price-o")
+                          .attr({ id: "product-price" })
+                          .text(
+                            ~~products[object][key].priceData.discountedPrice +
+                              " ₺"
+                          )
                       )
                   )
               )
@@ -2068,9 +2075,7 @@ const getProductOfTheWeek = async (productId) => {
 
       $("#potw-title").text(product.data.title);
       $("#potw-price").text(~~product.data.priceData.discountedPrice + " ₺");
-      $("#potw-expensive-price").text(
-        ~~product.data.priceData.discountedPrice + 3000 + " ₺"
-      );
+      $("#potw-expensive-price").text(~~product.data.priceData.price + " ₺");
 
       $("#product-link-to-go").attr({ id: productId });
 
