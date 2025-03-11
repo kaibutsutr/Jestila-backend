@@ -857,6 +857,9 @@ $(function () {
     $("#lightmode").click(function () {
       $("body").removeClass("dark-mode");
       $("header, main, footer, nav a").removeClass("dark-mode");
+      $("#logo").each(function () {
+        $("#logo").prop("src", "images/logo.png");
+      });
       localStorage.removeItem("nightmode");
       console.log("Light mode");
     });
