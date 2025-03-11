@@ -837,6 +837,7 @@ $(function () {
   /* ---- Quick Popup JS ---- */
 
   $(document).ready(function () {
+    /* ---- darkmode ---- */
     const options = {
       bottom: "64px", // default: '32px'
       right: "unset", // default: '32px'
@@ -847,7 +848,7 @@ $(function () {
       buttonColorDark: "#100f2c", // default: '#100f2c'
       buttonColorLight: "#fff", // default: '#fff'
       saveInCookies: true, // default: true,
-      label: "🌓", // default: ''
+      label: "", // default: ''
       autoMatchOsTheme: true, // default: true
     };
 
@@ -855,15 +856,12 @@ $(function () {
     darkmode.showWidget();
 
     responsive_dropdown();
-    if ("nightmode" in localStorage) {
-      darkMode();
-      console.log("night mode");
+    if (darkmode.isActivated()) {
+      $("#logo").prop("src", "images/logo-dark.png");
+
+      $("footer #logo").prop("src", "images/logo-dark.png");
+      console.log("dark mode");
     }
-    /* ---- night mode ---- */
-    $("#nightmode").click(darkMode);
-    //function here
-    /* ---- light mode ---- */
-    $("#lightmode").click(lightMode);
   });
 });
 
@@ -2285,21 +2283,3 @@ const getProductOfTheWeek = async (productId) => {
       console.error("Error fetching data:", error);
     });
 };
-
-//dark mode function
-function darkMode() {
-  $("#logo").prop("src", "images/logo-dark.png");
-
-  $("footer #logo").prop("src", "images/logo-dark.png");
-
-  localStorage.setItem("nightmode", true);
-  console.log("night mode");
-}
-//light mode version
-function lightMode() {
-  $("#logo").prop("src", "images/logo.png");
-  $("footer #logo").prop("src", "images/logo.png");
-
-  localStorage.removeItem("nightmode");
-  console.log("Light mode");
-}
