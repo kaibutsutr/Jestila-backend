@@ -846,6 +846,7 @@ $(function () {
     $("#nightmode").click(function () {
       $("body").toggleClass("dark-mode");
       $("header, main, footer, nav a").toggleClass("dark-mode");
+      $("#logo").prop("src", "images/logo-dark.png");
       localStorage.setItem("nightmode", true);
       console.log("night mode");
     });
