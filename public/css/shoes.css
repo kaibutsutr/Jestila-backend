@@ -2905,7 +2905,8 @@ table.border td ul li a:hover {
 }
 
 /* Dark mode entries */
-body.dark-mode {
+body.dark-mode,
+section.dark-mode {
   background-color: #333;
   color: #f5f5f5;
 }
@@ -2917,5 +2918,9 @@ footer.dark-mode {
   background-color: #222;
 }
 nav.dark-mode a {
+  color: #f5f5f5;
+}
+.ptb-100 {
+  background-color: #333;
   color: #f5f5f5;
 }
