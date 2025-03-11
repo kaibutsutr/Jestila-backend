@@ -2905,6 +2905,6 @@ table.border td ul li a:hover {
   isolation: isolate;
 }
 
-.darkmode--activated .logo {
+.darkmode--activated #logo {
   mix-blend-mode: difference;
 }
