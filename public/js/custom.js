@@ -151,8 +151,11 @@ $(function () {
 
   /*------------ nightmode cookie check -----------*/
   if ("nightmode" in localStorage) {
-    $("body").toggleClass("dark-mode");
-    $("header, main, footer, nav a").toggleClass("dark-mode");
+    $("body").addClass("dark-mode");
+    $("header, main, footer, nav a").addClass("dark-mode");
+
+    $("#logo").prop("src", "images/logo-dark.png");
+    $("footer #logo").prop("src", "images/logo-dark.png");
     console.log("night mode");
   }
   /*------------ Navigation ---------*/
@@ -844,11 +847,10 @@ $(function () {
     responsive_dropdown();
     /* ---- night mode ---- */
     $("#nightmode").click(function () {
-      $("body").toggleClass("dark-mode");
-      $("header, main, footer, nav a").toggleClass("dark-mode");
-      $("#logo").each(function () {
-        $("#logo").prop("src", "images/logo-dark.png");
-      });
+      $("body").addClass("dark-mode");
+      $("header, main, footer, nav a").addClass("dark-mode");
+      $("#logo").prop("src", "images/logo-dark.png");
+      $("footer #logo").prop("src", "images/logo-dark.png");
 
       localStorage.setItem("nightmode", true);
       console.log("night mode");
@@ -857,9 +859,9 @@ $(function () {
     $("#lightmode").click(function () {
       $("body").removeClass("dark-mode");
       $("header, main, footer, nav a").removeClass("dark-mode");
-      $("#logo").each(function () {
-        $("#logo").prop("src", "images/logo.png");
-      });
+      $("#logo").prop("src", "images/logo.png");
+      $("footer #logo").prop("src", "images/logo.png");
+
       localStorage.removeItem("nightmode");
       console.log("Light mode");
     });
