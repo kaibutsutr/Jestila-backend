@@ -2905,8 +2905,17 @@ table.border td ul li a:hover {
 }
 
 /* Dark mode entries */
-body.dark-mode {
+body.dark-mode,
+header.dark-mode,
+footer.dark-mode {
   background-color: #333;
+  color: #f5f5f5;
+}
+
+main.dark-mode,
+form.dark-mode,
+div.dark-mode,
+section.dark-mode {
   color: #f5f5f5;
 }
 
@@ -2916,18 +2925,17 @@ h1.dark-mode h2.dark-mode h3.dark-mode h4.dark-mode h5.dark-mode h6.dark-mode {
   color: #f5f5f5;
 }
 div.dark-mode,
-.containter.dark-mode {
+.containter.dark-mode,
+label.dark-mode {
   color: #f5f5f5;
 }
-header.dark-mode,
-.sticky.dark-mode,
-.container-fluid.dark-mode,
-footer.dark-mode {
+div.dark-mode,
+div a.dark-mode,
+div label.dark-mode {
   color: #f5f5f5;
-  background-color: #000;
 }
 
 .megamenu.dark-mode {
-  background-color: #333;
+  background-color: #000;
   color: #f5f5f5;
 }

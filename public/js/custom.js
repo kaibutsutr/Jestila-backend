@@ -2272,7 +2272,7 @@ const getProductOfTheWeek = async (productId) => {
 //dark mode function
 function darkMode() {
   $("body").addClass("dark-mode");
-  $("header, main, footer, a, form, div, class").addClass("dark-mode");
+  $("header, main, footer,  form, div, section").addClass("dark-mode");
   $(".megamenu, .opener, .plus").addClass("dark-mode");
   $("#logo").prop("src", "images/logo-dark.png");
 
