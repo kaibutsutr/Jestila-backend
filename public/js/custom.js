@@ -150,10 +150,7 @@ $(function () {
   ("use strict");
 
   /*------------ nightmode cookie check -----------*/
-  if ("nightmode" in localStorage) {
-    darkMode();
-    console.log("night mode");
-  }
+
   /*------------ Navigation ---------*/
   /*------------ index ---------*/
   if (
@@ -841,11 +838,15 @@ $(function () {
 
   $(document).ready(function () {
     responsive_dropdown();
+    if ("nightmode" in localStorage) {
+      darkMode();
+      console.log("night mode");
+    }
     /* ---- night mode ---- */
-    $("#nightmode").click(darkMode());
+    $("#nightmode").click(darkMode);
     //function here
     /* ---- light mode ---- */
-    $("#lightmode").click(lightMode());
+    $("#lightmode").click(lightMode);
   });
 });
 
@@ -2271,11 +2272,9 @@ const getProductOfTheWeek = async (productId) => {
 //dark mode function
 function darkMode() {
   $("body").addClass("dark-mode");
-  $("header, main, footer, nav a, form, div").addClass("dark-mode");
+  $("header, main, footer, a, form, div, class").addClass("dark-mode");
+  $(".megamenu, .opener, .plus").addClass("dark-mode");
   $("#logo").prop("src", "images/logo-dark.png");
-  $("class").each(function () {
-    $(this).addClass("dark-mode");
-  });
 
   $("footer #logo").prop("src", "images/logo-dark.png");
 
@@ -2285,7 +2284,7 @@ function darkMode() {
 //light mode version
 function lightMode() {
   $("body").removeClass("dark-mode");
-  $("header, main, footer, nav a").removeClass("dark-mode");
+  $("header, main, footer, a, form, div, .megamenu").removeClass("dark-mode");
   $("#logo").prop("src", "images/logo.png");
   $("footer #logo").prop("src", "images/logo.png");
 

@@ -2910,15 +2910,24 @@ body.dark-mode {
   color: #f5f5f5;
 }
 
-nav.dark-mode a {
+a.dark-mode,
+p.dark-mode,
+h1.dark-mode h2.dark-mode h3.dark-mode h4.dark-mode h5.dark-mode h6.dark-mode {
   color: #f5f5f5;
 }
-div.dark-mode {
-  background-color: #444;
+div.dark-mode,
+.containter.dark-mode {
+  color: #f5f5f5;
 }
 header.dark-mode,
 .sticky.dark-mode,
 .container-fluid.dark-mode,
 footer.dark-mode {
+  color: #f5f5f5;
   background-color: #000;
+}
+
+.megamenu.dark-mode {
+  background-color: #333;
+  color: #f5f5f5;
 }
