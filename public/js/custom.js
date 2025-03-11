@@ -2271,11 +2271,6 @@ const getProductOfTheWeek = async (productId) => {
 
 //dark mode function
 function darkMode() {
-  $("body").addClass("dark-mode");
-  $("header, main, footer,  form, div, section").addClass("dark-mode");
-  $(
-    ".megamenu, .opener, .plus, .header ul li, .menu-left,.header.menu-left,.header.megamenu,.header.menu-left.active"
-  ).addClass("dark-mode");
   $("#logo").prop("src", "images/logo-dark.png");
 
   $("footer #logo").prop("src", "images/logo-dark.png");
@@ -2285,8 +2280,6 @@ function darkMode() {
 }
 //light mode version
 function lightMode() {
-  $("body").removeClass("dark-mode");
-  $("header, main, footer, a, form, div, .megamenu").removeClass("dark-mode");
   $("#logo").prop("src", "images/logo.png");
   $("footer #logo").prop("src", "images/logo.png");
 
