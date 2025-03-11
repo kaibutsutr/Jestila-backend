@@ -2911,8 +2911,9 @@ footer.dark-mode {
   background-color: #333;
   color: #f5f5f5;
 }
-header.dark-mode,
-footer.dark-mode {
+.header.dark-mode,
+.footer.dark-mode,
+.sticky.dark-mode {
   background-color: #000000;
 }
 
@@ -2922,7 +2923,7 @@ div.dark-mode,
 section.dark-mode {
   color: #f5f5f5;
 }
-header ul li {
+.header.dark-mode ul li a {
   color: #f5f5f5;
 }
 
