@@ -853,6 +853,8 @@ $(function () {
     $("#lightmode").click(function () {
       $("body").removeClass("dark-mode");
       $("header, main, footer, nav a").removeClass("dark-mode");
+      localStorage.removeItem("nightmode");
+      console.log("Light mode");
     });
   });
 });
