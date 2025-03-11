@@ -151,11 +151,7 @@ $(function () {
 
   /*------------ nightmode cookie check -----------*/
   if ("nightmode" in localStorage) {
-    $("body").addClass("dark-mode");
-    $("header, main, footer, nav a").addClass("dark-mode");
-
-    $("#logo").prop("src", "images/logo-dark.png");
-    $("footer #logo").prop("src", "images/logo-dark.png");
+    darkMode();
     console.log("night mode");
   }
   /*------------ Navigation ---------*/
@@ -846,25 +842,10 @@ $(function () {
   $(document).ready(function () {
     responsive_dropdown();
     /* ---- night mode ---- */
-    $("#nightmode").click(function () {
-      $("body").addClass("dark-mode");
-      $("header, main, footer, nav a").addClass("dark-mode");
-      $("#logo").prop("src", "images/logo-dark.png");
-      $("footer #logo").prop("src", "images/logo-dark.png");
-
-      localStorage.setItem("nightmode", true);
-      console.log("night mode");
-    });
+    $("#nightmode").click(darkMode());
+    //function here
     /* ---- light mode ---- */
-    $("#lightmode").click(function () {
-      $("body").removeClass("dark-mode");
-      $("header, main, footer, nav a").removeClass("dark-mode");
-      $("#logo").prop("src", "images/logo.png");
-      $("footer #logo").prop("src", "images/logo.png");
-
-      localStorage.removeItem("nightmode");
-      console.log("Light mode");
-    });
+    $("#lightmode").click(lightMode());
   });
 });
 
@@ -2286,3 +2267,28 @@ const getProductOfTheWeek = async (productId) => {
       console.error("Error fetching data:", error);
     });
 };
+
+//dark mode function
+function darkMode() {
+  $("body").addClass("dark-mode");
+  $("header, main, footer, nav a, form, div").addClass("dark-mode");
+  $("#logo").prop("src", "images/logo-dark.png");
+  $("class").each(function () {
+    $(this).addClass("dark-mode");
+  });
+
+  $("footer #logo").prop("src", "images/logo-dark.png");
+
+  localStorage.setItem("nightmode", true);
+  console.log("night mode");
+}
+//light mode version
+function lightMode() {
+  $("body").removeClass("dark-mode");
+  $("header, main, footer, nav a").removeClass("dark-mode");
+  $("#logo").prop("src", "images/logo.png");
+  $("footer #logo").prop("src", "images/logo.png");
+
+  localStorage.removeItem("nightmode");
+  console.log("Light mode");
+}
