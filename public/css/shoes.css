@@ -1703,6 +1703,9 @@ _________________________________________________________*/
 .list-types.list {
   padding-right: 0;
 }
+.list-types.filter {
+  padding-right: 0;
+}
 .list-types-icon {
   display: inline-block;
   height: 25px;
@@ -1732,10 +1735,10 @@ _________________________________________________________*/
 }
 .short-by {
   float: left;
-  width: calc(100% - 78px);
+  width: calc(100% - 107px);
 }
 .shorting .view {
-  width: 78px;
+  width: 107px;
   float: left;
 }
 .select-item {
