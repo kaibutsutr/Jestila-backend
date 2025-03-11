@@ -2919,6 +2919,7 @@ table.border td ul li a:hover {
 .darkmode--activated .header.sticky {
   color: #000;
 }
-.darkmode--activated img {
+.darkmode--activated img,
+.darkmode--activated .offer-bg {
   filter: invert(1);
 }
