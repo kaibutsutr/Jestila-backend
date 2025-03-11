@@ -154,7 +154,9 @@ $(function () {
     document.location.pathname == "/index.html" ||
     document.location.pathname == "/"
   ) {
-    getFeaturedProducts();
+    getFeaturedShoes();
+    getFeaturedBags();
+    getFeaturedAccessories();
     //top product list
     discount = true;
     limit = 4;
@@ -1839,7 +1841,7 @@ const getProductsByCategoryListByVariation = async () => {
 };
 
 //index page items
-const getFeaturedProducts = async () => {
+const getFeaturedShoes = async () => {
   axios
     .get(`/api/v1/products?categoryId=4d1670e409f3277d&page=1&limit=10`)
     .then((response) => {
@@ -1847,7 +1849,169 @@ const getFeaturedProducts = async () => {
       console.log(products);
       for (let object in products) {
         for (let key in products[object]) {
-          $("#all").append(
+          $("#shoes").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+
+                  .append(
+                    $("<div>")
+                      .addClass("product-details-btn text-center transition")
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
+                  )
+              )
+          );
+        }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+const getFeaturedBags = async () => {
+  axios
+    .get(`/api/v1/products?categoryId=6f6880c7106a0b37&page=1&limit=10`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#bag").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+
+                  .append(
+                    $("<div>")
+                      .addClass("product-details-btn text-center transition")
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
+                  )
+              )
+          );
+        }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+const getFeaturedAccessories = async () => {
+  axios
+    .get(`/api/v1/products?categoryId=51495dc1b7425b77&page=1&limit=10`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#accessories").append(
             $("<div>")
               .addClass("featured-product mb-25")
               .append(
@@ -1933,7 +2097,7 @@ const getBestSellerProducts = async () => {
       for (let object in products) {
         for (let key in products[object]) {
           //here
-          $("#seller").append(
+          $("#seller").prepend(
             $("<div>")
               .addClass("seller-box align-flax w-100 pb-20")
               .append(
@@ -2004,7 +2168,7 @@ const getOpportunityProducts = async () => {
       for (let object in products) {
         for (let key in products[object]) {
           //here
-          $("#featured-seller").append(
+          $("#featured-seller").prepend(
             $("<div>")
               .addClass("seller-box align-flax w-100 pb-20")
               .append(
