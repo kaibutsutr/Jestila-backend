@@ -252,10 +252,10 @@
     padding: 10px 10px;
   }
   .shorting .view {
-    width: 65px;
+    width: 107px;
   }
   .short-by {
-    width: calc(100% - 65px);
+    width: calc(100% - 107px);
   }
   .shorting select {
     max-width: 120px;
