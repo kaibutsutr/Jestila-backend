@@ -2893,11 +2893,6 @@ table.border td ul li a:hover {
   background: #2d3031;
 }
 
-.composite {
-  @extend .something;
-  @extend .else;
-}
-
 /* Dark mode entries */
 .darkmode--activated p,
 .darkmode--activated ul,
@@ -2905,13 +2900,9 @@ table.border td ul li a:hover {
   color: #000;
 }
 
-.button {
-  isolation: isolate;
-}
-
 .darkmode-layer,
 .darkmode-toggle {
-  z-index: 500;
+  z-index: 12;
 }
 
 .darkmode--activated #logo {
