@@ -2897,6 +2897,7 @@ table.border td ul li a:hover {
 
 /* Dark mode entries */
 .darkmode--activated p,
+.darkmode--activated ul,
 .darkmode--activated li {
   color: #000;
 }
@@ -2907,4 +2908,8 @@ table.border td ul li a:hover {
 
 .darkmode--activated #logo {
   mix-blend-mode: difference;
+}
+.darkmode--activated .header.sticky {
+  color: #000;
+  background: #000;
 }
