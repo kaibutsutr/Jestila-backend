@@ -628,9 +628,14 @@
   }
 }
 /*--------- Mobile Screen --------*/
+
 @media (max-width: 767px) {
   .container {
     max-width: 100%;
+  }
+  /*--------- hide filters --------*/
+  .sidebar {
+    display: none;
   }
   .owl-carousel button.owl-dot {
     width: 25px;

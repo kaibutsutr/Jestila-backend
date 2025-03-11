@@ -2906,8 +2906,6 @@ table.border td ul li a:hover {
   isolation: isolate;
 }
 
-/* darkmode.js */
-
 .darkmode-layer,
 .darkmode-toggle {
   z-index: 500;
