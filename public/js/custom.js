@@ -384,6 +384,8 @@ $(function () {
     .val("16")
     .change(function () {
       $("#product").empty();
+      $("#order").val("1").change();
+      // default the ordering so we dont get error
       if ($(this).val() == "16") {
         $("#limit option[value=16]").attr("selected", true);
         limit = 16;
@@ -465,7 +467,7 @@ $(function () {
       }
       if ($(this).val() == "5") {
         $("#product").empty();
-        $("#product option[value=4]").attr("selected", true);
+        $("#product option[value=5]").attr("selected", true);
         // price high to low
         if (list == true) {
           getPriceList(url);
