@@ -26,14 +26,15 @@ const getByQuery = (req, res) => {
     var data = _.sortBy(womanData, function (o) {
       return o.priceData.discountedPrice;
     });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
+    var reversedData = data.reverse();
+    console.log(reversedData);
+    res.status(200).json({ reversedData }); //send json object with success true and  array
   }
   if (sentUrl === "-womanshop") {
     // price is of a string type
     var data = _.sortBy(womanData, function (o) {
       return o.priceData.discountedPrice;
-    }).reverse();
+    });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
   }
@@ -65,9 +66,10 @@ const getByQuery = (req, res) => {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
-    }).reverse();
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
+    });
+    var reversedData = data.reverse();
+    console.log(reversedData);
+    res.status(200).json({ reversedData }); //send json object with success true and  array
   }
 
   //GET

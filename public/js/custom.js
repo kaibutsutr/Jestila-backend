@@ -402,7 +402,7 @@ $(function () {
       if ($(this).val() == "1") {
         //default
         $("#product").empty();
-        $("#product option[value=1]").attr("selected", true);
+        $("#order option[value=1]").attr("selected", true);
         if (list == true) {
           getProductsList(url, page, limit);
         } else {
@@ -411,7 +411,7 @@ $(function () {
       }
       if ($(this).val() == "2") {
         $("#product").empty();
-        $("#product option[value=2]").attr("selected", true);
+        $("#order option[value=2]").attr("selected", true);
         discount = true;
         // add discount
         if (list == true) {
@@ -439,9 +439,9 @@ $(function () {
         fixedUrl = "-" + url;
         console.log(fixedUrl);
         if (list == true) {
-          getPriceGrid(fixedUrl, page, limit);
+          getPriceGrid(fixedUrl);
         } else {
-          getPriceGrid(fixedUrl, page, limit);
+          getPriceGrid(fixedUrl);
         }
       }
       if ($(this).val() == "5") {
@@ -449,9 +449,9 @@ $(function () {
         $("#product option[value=4]").attr("selected", true);
         // price high to low
         if (list == true) {
-          getPriceGrid(url, page, limit);
+          getPriceGrid(url);
         } else {
-          getPriceGrid(url, page, limit);
+          getPriceGrid(url);
         }
       }
     });
@@ -2301,9 +2301,9 @@ const getProductOfTheWeek = async (productId) => {
 };
 
 // price sorting
-const getPriceGrid = async () => {
+const getPriceGrid = async (url) => {
   axios
-    .get(`/api/v1/database/${url}?page=${page}&limit=${limit}`)
+    .get(`/api/v1/database/${url}?page=1&limit=50`)
     .then((response) => {
       products = response.data;
       console.log(products);
