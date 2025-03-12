@@ -21,17 +21,6 @@ const getByQuery = (req, res) => {
   let sentUrl = req.params.url;
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
-    const sortArray = womanData["data"];
-
-    console.log(
-      sortArray.sort((a, b) => {
-        if (a.priceData.discountedPrice < b.priceData.discountedPrice)
-          return -1;
-        if (a.priceData.discountedPrice > b.priceData.discountedPrice) return 1;
-        return 0;
-      })
-    );
-
     res.status(200).json({ sortArray }); //send json object with success true and  array
   }
   if (sentUrl === "manshop") {
@@ -43,16 +32,6 @@ const getByQuery = (req, res) => {
 
   //GET
 };
-
-const sortArray = womanData["data"];
-
-console.log(
-  sortArray.sort((a, b) => {
-    if (a.priceData.discountedPrice < b.priceData.discountedPrice) return -1;
-    if (a.priceData.discountedPrice > b.priceData.discountedPrice) return 1;
-    return 0;
-  })
-);
 
 module.exports = {
   getAllproducts,
