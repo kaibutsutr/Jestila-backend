@@ -2303,7 +2303,7 @@ const getProductOfTheWeek = async (productId) => {
 // price sorting
 const getPriceGrid = async (url) => {
   axios
-    .get(`/api/v1/database/${url}?page=1&limit=50`)
+    .get(`/api/v1/database/${url}`)
     .then((response) => {
       products = response.data;
       console.log(products);
