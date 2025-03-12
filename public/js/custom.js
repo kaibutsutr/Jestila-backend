@@ -401,6 +401,7 @@ $(function () {
     .change(function () {
       $("#product").empty();
       if ($(this).val() == "1") {
+        //default
         $("#product option[value=1]").attr("selected", true);
         if (list == true) {
           getProductsList(url, page, limit);
@@ -421,6 +422,7 @@ $(function () {
         discount = false;
       }
       if ($(this).val() == "3") {
+        //same as 1
         $("#product option[value=3]").attr("selected", true);
         if (list == true) {
           getProductsList(url, page, limit);
@@ -429,19 +431,22 @@ $(function () {
         }
       }
       if ($(this).val() == "4") {
+        // price low to high
         $("#product option[value=4]").attr("selected", true);
+        fixedUrl = "-" + url;
         if (list == true) {
-          getProductsList(url, page, limit);
+          getPriceGrid(fixedUrl, page, limit);
         } else {
-          getProducts(url, page, limit);
+          getPriceGrid(fixedUrl, page, limit);
         }
       }
       if ($(this).val() == "5") {
-        $("#product option[value=5]").attr("selected", true);
+        $("#product option[value=4]").attr("selected", true);
+        // price high to low
         if (list == true) {
-          getProductsList(url, page, limit);
+          getPriceGrid(url, page, limit);
         } else {
-          getProducts(url, page, limit);
+          getPriceGrid(url, page, limit);
         }
       }
     });
@@ -2289,3 +2294,88 @@ const getProductOfTheWeek = async (productId) => {
       console.error("Error fetching data:", error);
     });
 };
+
+// price sorting
+const getPriceGrid = async () => {
+  axios
+    .get(`/api/v1/database/${url}?page=${page}&limit=${limit}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+
+      //iterate over objects
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#product").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-details-btn text-center transition")
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
+                  )
+              )
+          );
+        }
+      }
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+/* Grid Var*/
