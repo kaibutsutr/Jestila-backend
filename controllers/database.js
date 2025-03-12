@@ -23,24 +23,51 @@ const getByQuery = (req, res) => {
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
-    var sortedArray = _.sortBy(womanData, "discountedPrice");
-    console.log(sortedArray);
-    res.status(200).json({ sortedArray }); //send json object with success true and  array
+    var data = _.sortBy(womanData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
   }
   if (sentUrl === "-womanshop") {
     // price is of a string type
-    var sortedArray = _.sortBy(
-      womanData,
-      "priceData.discountedPrice"
-    ).reverse();
-    console.log(sortedArray);
-    res.status(200).json({ sortedArray }); //send json object with success true and  array
+    var data = _.sortBy(womanData, function (o) {
+      return o.priceData.discountedPrice;
+    }).reverse();
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
   }
   if (sentUrl === "manshop") {
-    res.status(200).json({ manData }); //send json object with success true and  array
+    // price is of a string type
+    var data = _.sortBy(manData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
+  }
+  if (sentUrl === "-manshop") {
+    // price is of a string type
+    var data = _.sortBy(manData, function (o) {
+      return o.priceData.discountedPrice;
+    }).reverse();
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
   }
   if (sentUrl === "accessoriesshop") {
-    res.status(200).json({ accessoriesData }); //send json object with success true and  array
+    // price is of a string type
+    var data = _.sortBy(accessoriesData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
+  }
+  if (sentUrl === "-accessoriesshop") {
+    // price is of a string type
+    var data = _.sortBy(accessoriesData, function (o) {
+      return o.priceData.discountedPrice;
+    }).reverse();
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
   }
 
   //GET
