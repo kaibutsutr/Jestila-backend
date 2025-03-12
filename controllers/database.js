@@ -58,7 +58,7 @@ const getByQuery = (req, res) => {
   if (
     sentUrl === "accessoriesshop" ||
     sentUrl === "bagshop" ||
-    sentUrl === "jewelrysshop"
+    sentUrl === "jewelryshop"
   ) {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
