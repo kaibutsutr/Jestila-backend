@@ -399,9 +399,9 @@ $(function () {
   $("#order")
     .val("1")
     .change(function () {
-      $("#product").empty();
       if ($(this).val() == "1") {
         //default
+        $("#product").empty();
         $("#product option[value=1]").attr("selected", true);
         if (list == true) {
           getProductsList(url, page, limit);
@@ -410,6 +410,7 @@ $(function () {
         }
       }
       if ($(this).val() == "2") {
+        $("#product").empty();
         $("#product option[value=2]").attr("selected", true);
         discount = true;
         // add discount
@@ -422,6 +423,7 @@ $(function () {
         discount = false;
       }
       if ($(this).val() == "3") {
+        $("#product").empty();
         //same as 1
         $("#product option[value=3]").attr("selected", true);
         if (list == true) {
@@ -431,9 +433,11 @@ $(function () {
         }
       }
       if ($(this).val() == "4") {
+        $("#product").empty();
         // price low to high
         $("#product option[value=4]").attr("selected", true);
         fixedUrl = "-" + url;
+        console.log(fixedUrl);
         if (list == true) {
           getPriceGrid(fixedUrl, page, limit);
         } else {
@@ -441,6 +445,7 @@ $(function () {
         }
       }
       if ($(this).val() == "5") {
+        $("#product").empty();
         $("#product option[value=4]").attr("selected", true);
         // price high to low
         if (list == true) {
