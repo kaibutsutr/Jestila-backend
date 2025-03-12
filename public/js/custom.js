@@ -171,6 +171,14 @@ $(function () {
     discount = false;
     limit = 16;
   }
+  /*------------ database ---------*/
+  if (document.location.pathname == "/database.html") {
+    list = false;
+    url = "database";
+    page = 3;
+
+    getProductsGrid(page);
+  }
 
   if (
     document.location.pathname == "/product-detail.html" ||
