@@ -3,36 +3,28 @@ const axios = require("axios");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 const constants = require("../constants");
-const data = require("../db/db");
+const allData = require("../db/db"); // all
+const womanData = require("../db/womanshop"); //woman data
+const manData = require("../db/manshop");
 
 const getAllproducts = (req, res) => {
-  console.log(data);
-  res.status(200).json({ data }); //send json object with success true and  array
+  res.status(200).json({ allData }); //send json object with success true and  array
 
   //GET
 };
 const getByQuery = (req, res) => {
-  let page = req.query.page;
+  const {
+    params: { url: url },
+  } = req;
 
-  const options = {
-    method: "GET",
-    url: `https://api.shopier.com/v1/products?`,
-    headers: {
-      accept: "application/json",
-      authorization: constants.Bearer,
-    },
-    params: { limit: 50, page: page },
-  };
-
-  axios
-    .request(options)
-    .then((response) => {
-      const contentType = response.headers["content-type"];
-      const data = response.data;
-      console.log(data);
-      res.status(200).json({ data }); //send json object with success true and  array
-    })
-    .catch((err) => console.error(err));
+  let sentUrl = req.params.url;
+  console.log(sentUrl);
+  if (sentUrl === "womanshop") {
+    res.status(200).json({ womanData }); //send json object with success true and  array
+  }
+  if (sentUrl === "manshop") {
+    res.status(200).json({ manData }); //send json object with success true and  array
+  }
 
   //GET
 };
