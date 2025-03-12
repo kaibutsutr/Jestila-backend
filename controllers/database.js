@@ -4,7 +4,7 @@ const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 const constants = require("../constants");
 const allData = require("../db/db"); // all
-const womanData = require("../db/womanshop"); //woman data
+const womanDatas = require("../db/womanshop"); //woman data
 const manData = require("../db/manshop");
 const accessoriesData = require("../db/accessoriesshop");
 
@@ -21,6 +21,10 @@ const getByQuery = (req, res) => {
   let sentUrl = req.params.url;
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
+    // price is of a string type
+    _.sortBy(womanDatas, function (womanData) {
+      return parseInt(home.priceData.discountedPrice);
+    });
     res.status(200).json({ sortArray }); //send json object with success true and  array
   }
   if (sentUrl === "manshop") {
