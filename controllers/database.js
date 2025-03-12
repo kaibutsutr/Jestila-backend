@@ -38,18 +38,18 @@ const getByQuery = (req, res) => {
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
   }
-  if (sentUrl === "womanshop") {
+  if (sentUrl === "manshop") {
     // price is of a string type
-    var data = _.sortBy(womanData, function (o) {
+    var data = _.sortBy(manData, function (o) {
       return o.priceData.discountedPrice;
     });
     var reversedData = data.reverse();
     console.log(reversedData);
     res.status(200).json({ reversedData }); //send json object with success true and  array
   }
-  if (sentUrl === "-womanshop") {
+  if (sentUrl === "-manshop") {
     // price is of a string type
-    var data = _.sortBy(womanData, function (o) {
+    var data = _.sortBy(manData, function (o) {
       return o.priceData.discountedPrice;
     });
     console.log(data);
@@ -60,17 +60,17 @@ const getByQuery = (req, res) => {
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
     });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
+    var reversedData = data.reverse();
+    console.log(reversedData);
+    res.status(200).json({ reversedData }); //send json object with success true and  array
   }
   if (sentUrl === "-accessoriesshop") {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
     });
-    var reversedData = data.reverse();
-    console.log(reversedData);
-    res.status(200).json({ reversedData }); //send json object with success true and  array
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
   }
 
   //GET
