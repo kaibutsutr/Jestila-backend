@@ -21,7 +21,18 @@ const getByQuery = (req, res) => {
   let sentUrl = req.params.url;
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
-    res.status(200).json({ womanData }); //send json object with success true and  array
+    const sortArray = womanData["data"];
+
+    console.log(
+      sortArray.sort((a, b) => {
+        if (a.priceData.discountedPrice < b.priceData.discountedPrice)
+          return -1;
+        if (a.priceData.discountedPrice > b.priceData.discountedPrice) return 1;
+        return 0;
+      })
+    );
+
+    res.status(200).json({ sortArray }); //send json object with success true and  array
   }
   if (sentUrl === "manshop") {
     res.status(200).json({ manData }); //send json object with success true and  array
@@ -33,30 +44,12 @@ const getByQuery = (req, res) => {
   //GET
 };
 
-const dataArr = {
-  hello: [
-    {
-      id: 114,
-      keyword: "zzzzzz",
-      region: "Sri Lanka",
-      supportGroup: "administrators",
-      category: "Category2",
-    },
-    {
-      id: 115,
-      keyword: "aaaaa",
-      region: "Japan",
-      supportGroup: "developers",
-      category: "Category2",
-    },
-  ],
-};
-const sortArray = dataArr["hello"];
+const sortArray = womanData["data"];
 
 console.log(
   sortArray.sort((a, b) => {
-    if (a.region < b.region) return -1;
-    if (a.region > b.region) return 1;
+    if (a.priceData.discountedPrice < b.priceData.discountedPrice) return -1;
+    if (a.priceData.discountedPrice > b.priceData.discountedPrice) return 1;
     return 0;
   })
 );
