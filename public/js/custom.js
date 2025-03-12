@@ -439,7 +439,7 @@ $(function () {
         fixedUrl = "-" + url;
         console.log(fixedUrl);
         if (list == true) {
-          getPriceGrid(fixedUrl);
+          getPriceList(fixedUrl);
         } else {
           getPriceGrid(fixedUrl);
         }
@@ -449,7 +449,7 @@ $(function () {
         $("#product option[value=4]").attr("selected", true);
         // price high to low
         if (list == true) {
-          getPriceGrid(url);
+          getPriceList(url);
         } else {
           getPriceGrid(url);
         }
@@ -2387,7 +2387,7 @@ const getPriceGrid = async (url) => {
 
 /* get as a List view*/
 
-const getProductsList = async () => {
+const getPriceList = async (url) => {
   axios
     .get(`/api/v1/database/${url}`)
     .then((response) => {
