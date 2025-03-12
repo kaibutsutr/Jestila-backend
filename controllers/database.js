@@ -23,7 +23,7 @@ const getByQuery = (req, res) => {
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
-    var sortedArray = _.sortBy(womanData, priceData.discountedPrice);
+    var sortedArray = _.sortBy(womanData, "discountedPrice");
     console.log(sortedArray);
     res.status(200).json({ sortedArray }); //send json object with success true and  array
   }
