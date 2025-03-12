@@ -10,6 +10,7 @@ const manshop = require("./routes/manshop");
 const accessoriesshop = require("./routes/accessoriesshop");
 const jewelryshop = require("./routes/jewelryshop");
 const bagshop = require("./routes/bagshop");
+const database = require("./routes/database");
 const brandshop = require("./routes/brandshop");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
@@ -33,6 +34,7 @@ app.use("/api/v1/accessoriesshop", accessoriesshop);
 app.use("/api/v1/jewelryshop", jewelryshop);
 app.use("/api/v1/bagshop", bagshop);
 app.use("/api/v1/brandshop", brandshop);
+app.use("/api/v1/database", database);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
