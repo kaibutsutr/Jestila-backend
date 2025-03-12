@@ -192,11 +192,30 @@ $(function () {
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
     list = false;
-    let brandName = localStorage.getItem("brandName");
-    categoryId = constants[brandName];
     url = "brandshop";
+    if ("brandName" in localStorage) {
+      let brandName = localStorage.getItem("brandName");
+      categoryId = constants[brandName];
 
-    getProductsByCategory(list);
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
+
+    // hardcode constants here!
+  }
+  if (document.location.pathname == "/brand-shop-list.html") {
+    list = true;
+    url = "brandshop";
+    if ("brandName" in localStorage) {
+      let brandName = localStorage.getItem("brandName");
+      categoryId = constants[brandName];
+
+      getProductsByCategory(list);
+    } else {
+      getProducts(list);
+    }
+
     // hardcode constants here!
   }
   if (document.location.pathname == "/woman-shop.html") {
