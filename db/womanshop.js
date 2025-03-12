@@ -1,3 +1,4 @@
+const _ = require("underscore");
 const data = [
   {
     id: "34130374",
@@ -3792,5 +3793,7 @@ const data = [
     dispatchDuration: 0,
   },
 ];
+
+console.log(_.sortBy(data, "priceData.discountedPrice"));
 
 module.exports = data;

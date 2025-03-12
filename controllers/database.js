@@ -4,7 +4,7 @@ const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 const constants = require("../constants");
 const allData = require("../db/db"); // all
-const womanDatas = require("../db/womanshop"); //woman data
+const data = require("../db/womanshop"); //woman data
 const manData = require("../db/manshop");
 const accessoriesData = require("../db/accessoriesshop");
 const _ = require("underscore");
@@ -37,9 +37,6 @@ const getByQuery = (req, res) => {
 
   //GET
 };
-_.sortBy(womanDatas, function (data) {
-  return parseInt(data.discountedPrice);
-});
 
 module.exports = {
   getAllproducts,
