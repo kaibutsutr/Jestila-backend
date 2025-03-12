@@ -55,7 +55,11 @@ const getByQuery = (req, res) => {
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
   }
-  if (sentUrl === "accessoriesshop") {
+  if (
+    sentUrl === "accessoriesshop" ||
+    sentUrl === "bagshop" ||
+    sentUrl === "jewelrysshop"
+  ) {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
@@ -64,7 +68,11 @@ const getByQuery = (req, res) => {
     console.log(reversedData);
     res.status(200).json({ reversedData }); //send json object with success true and  array
   }
-  if (sentUrl === "-accessoriesshop") {
+  if (
+    sentUrl === "-accessoriesshop" ||
+    sentUrl === "-bagshop" ||
+    sentUrl === "-jewelryshop"
+  ) {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
