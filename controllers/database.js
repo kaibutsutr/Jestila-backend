@@ -23,7 +23,16 @@ const getByQuery = (req, res) => {
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
-    var sortedArray = _.sortBy(data, "priceData.discountedPrice");
+    var sortedArray = _.sortBy(womanData, parseInt("discountedPrice"));
+    console.log(sortedArray);
+    res.status(200).json({ sortedArray }); //send json object with success true and  array
+  }
+  if (sentUrl === "-womanshop") {
+    // price is of a string type
+    var sortedArray = _.sortBy(
+      womanData,
+      "priceData.discountedPrice"
+    ).reverse();
     console.log(sortedArray);
     res.status(200).json({ sortedArray }); //send json object with success true and  array
   }
