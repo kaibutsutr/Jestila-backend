@@ -7,6 +7,7 @@ const allData = require("../db/db"); // all
 const womanDatas = require("../db/womanshop"); //woman data
 const manData = require("../db/manshop");
 const accessoriesData = require("../db/accessoriesshop");
+const _ = require("underscore");
 
 const getAllproducts = (req, res) => {
   res.status(200).json({ allData }); //send json object with success true and  array
@@ -23,7 +24,7 @@ const getByQuery = (req, res) => {
   if (sentUrl === "womanshop") {
     // price is of a string type
     _.sortBy(womanDatas, function (womanData) {
-      return parseInt(home.priceData.discountedPrice);
+      return parseInt(home.discountedPrice);
     });
     res.status(200).json({ sortArray }); //send json object with success true and  array
   }
@@ -36,6 +37,9 @@ const getByQuery = (req, res) => {
 
   //GET
 };
+_.sortBy(womanDatas, function (data) {
+  return parseInt(data.discountedPrice);
+});
 
 module.exports = {
   getAllproducts,
