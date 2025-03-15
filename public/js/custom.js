@@ -977,6 +977,9 @@ const getOneProduct = async (productId) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
 
       getSimilarProducts(product.data.categories[0].id);
@@ -1066,6 +1069,9 @@ const getSimilarProducts = async (categoryId) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -1150,6 +1156,9 @@ const getProductsGrid = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -1234,6 +1243,9 @@ const getProductsGridByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -1358,6 +1370,9 @@ const getProductsList = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -1480,6 +1495,9 @@ const getProductsListByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -1567,6 +1585,9 @@ const getProductsByCategoryGrid = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -1650,6 +1671,9 @@ const getProductsByCategoryGridByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -1773,6 +1797,9 @@ const getProductsByCategoryList = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -1896,6 +1923,9 @@ const getProductsByCategoryListByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -1979,6 +2009,9 @@ const getFeaturedShoes = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -2060,6 +2093,9 @@ const getFeaturedBags = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -2141,6 +2177,9 @@ const getFeaturedAccessories = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
@@ -2314,6 +2353,9 @@ const getProductOfTheWeek = async (productId) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -2399,6 +2441,9 @@ const getPriceGrid = async (url) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
     .catch((error) => {
@@ -2523,6 +2568,9 @@ const getPriceList = async (url) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+        if (products.length() < 50) {
+          $(".pagination-bar").remove();
+        }
       }
     })
 
