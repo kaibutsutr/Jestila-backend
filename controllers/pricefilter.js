@@ -16,10 +16,11 @@ const getAllproducts = (req, res) => {
 };
 const getByQuery = (req, res) => {
   const {
-    params: { price: price },
+    query: { price: price },
   } = req;
 
-  let price = req.params.url;
+  let sentUrl = req.query.url;
+  let price = req.query.price;
 
   let minPrice = 0;
 
@@ -27,33 +28,30 @@ const getByQuery = (req, res) => {
     minPrice = 0;
   }
   if (price === 4) {
-    minPrice = 2000;
-  }
-  if (price === 6) {
     minPrice = 4000;
   }
   if (price === 8) {
-    minPrice = 6000;
-  }
-  if (price === 10) {
     minPrice = 8000;
   }
   if (price === 12) {
-    minPrice = 10000;
-  }
-  if (price === 14) {
     minPrice = 12000;
-    maxPrice = 14000;
   }
   if (price === 16) {
-    minPrice = 14000;
-    maxPrice = 16000;
+    minPrice = 16000;
   }
+
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
     var data = _.sortBy(womanData, function (o) {
-      return o.priceData.discountedPrice;
+      var currentPrice = parseInt(o.priceData.discountedPrice);
+      console.log(currentPrice);
+      if (currentPrice > minPrice) {
+        return o.priceData.discountedPrice;
+      }
+
+      console.log(data);
+      res.status(200).json({ data }); //send json object with success true and  array
     });
     var reversedData = data.reverse();
     console.log(reversedData);
