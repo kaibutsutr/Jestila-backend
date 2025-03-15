@@ -920,7 +920,7 @@
     isKeypressEnabled: true,
     colorIcons: -1, // The color of the icons
     colorLoading: -1,
-    textImageNotLoaded: "NO IMAGE",
+    textImageNotLoaded: "",
     //CAPTION
     isZCapEnabled: true,
     capZType: "in", // in, out
