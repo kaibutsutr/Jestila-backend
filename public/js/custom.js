@@ -978,7 +978,7 @@ const getOneProduct = async (productId) => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
 
@@ -1070,7 +1070,7 @@ const getSimilarProducts = async (categoryId) => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1157,7 +1157,7 @@ const getProductsGrid = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1244,7 +1244,7 @@ const getProductsGridByVariation = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1371,7 +1371,7 @@ const getProductsList = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1496,7 +1496,7 @@ const getProductsListByVariation = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1586,7 +1586,7 @@ const getProductsByCategoryGrid = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1672,7 +1672,7 @@ const getProductsByCategoryGridByVariation = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1798,7 +1798,7 @@ const getProductsByCategoryList = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -1924,7 +1924,7 @@ const getProductsByCategoryListByVariation = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2010,7 +2010,7 @@ const getFeaturedShoes = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2094,7 +2094,7 @@ const getFeaturedBags = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2178,7 +2178,7 @@ const getFeaturedAccessories = async () => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2354,7 +2354,7 @@ const getProductOfTheWeek = async (productId) => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2442,7 +2442,7 @@ const getPriceGrid = async (url) => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
@@ -2569,7 +2569,7 @@ const getPriceList = async (url) => {
           type: "iframe",
         });
         if (products.length() < 50) {
-          $(".pagination-bar").empty();
+          $(".pagination").hide();
         }
       }
     })
