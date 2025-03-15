@@ -1080,7 +1080,7 @@ const getProductsGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = Object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1169,7 +1169,7 @@ const getProductsGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1259,7 +1259,7 @@ const getProductsList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1386,7 +1386,7 @@ const getProductsListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1517,7 +1517,7 @@ const getProductsByCategoryGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1605,7 +1605,7 @@ const getProductsByCategoryGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1694,7 +1694,7 @@ const getProductsByCategoryList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -1822,7 +1822,7 @@ const getProductsByCategoryListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -2371,7 +2371,7 @@ const getPriceGrid = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
@@ -2461,7 +2461,7 @@ const getPriceList = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.keys(products).length;
+      var size = object.entries(products).length;
       console.log(size);
       if (50 > size) {
         $(".pagination-bar").remove();
