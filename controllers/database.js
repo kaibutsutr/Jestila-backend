@@ -20,6 +20,41 @@ const getByQuery = (req, res) => {
   } = req;
 
   let sentUrl = req.params.url;
+  let price = 0;
+  let minPrice = 0;
+  let maxPrice = 100000;
+  if (price === 2) {
+    minPrice = 0;
+    maxPrice = 2000;
+  }
+  if (price === 4) {
+    minPrice = 2000;
+    maxPrice = 4000;
+  }
+  if (price === 6) {
+    minPrice = 4000;
+    maxPrice = 6000;
+  }
+  if (price === 8) {
+    minPrice = 6000;
+    maxPrice = 8000;
+  }
+  if (price === 10) {
+    minPrice = 8000;
+    maxPrice = 10000;
+  }
+  if (price === 12) {
+    minPrice = 10000;
+    maxPrice = 12000;
+  }
+  if (price === 14) {
+    minPrice = 12000;
+    maxPrice = 14000;
+  }
+  if (price === 16) {
+    minPrice = 14000;
+    maxPrice = 16000;
+  }
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
@@ -33,7 +68,10 @@ const getByQuery = (req, res) => {
   if (sentUrl === "-womanshop") {
     // price is of a string type
     var data = _.sortBy(womanData, function (o) {
-      return o.priceData.discountedPrice;
+      let currentPrice = o.priceData.discountedPrice;
+      if (minPrice <= currentPrice <= maxPrice) {
+        return o.priceData.discountedPrice;
+      }
     });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
