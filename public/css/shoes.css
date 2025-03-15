@@ -2914,6 +2914,7 @@ table.border td ul li a:hover {
 .darkmode--activated img,
 .darkmode--activated .offer-bg,
 .darkmode--activated a img,
-.darkmode--activated .owl-item {
+.darkmode--activated .owl-item,
+.darkmode--activated .banner-img {
   filter: invert(1);
 }
