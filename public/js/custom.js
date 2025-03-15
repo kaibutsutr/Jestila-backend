@@ -1080,6 +1080,11 @@ const getProductsGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1164,6 +1169,11 @@ const getProductsGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1249,6 +1259,11 @@ const getProductsList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1371,6 +1386,11 @@ const getProductsListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1497,8 +1517,9 @@ const getProductsByCategoryGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      console.log(products.length);
-      if (50 > products.length) {
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
         $(".pagination-bar").remove();
       }
 
@@ -1584,8 +1605,9 @@ const getProductsByCategoryGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      console.log(products.length);
-      if (50 > products.length) {
+      var size = object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
         $(".pagination-bar").remove();
       }
 
@@ -1672,8 +1694,9 @@ const getProductsByCategoryList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      console.log(products.length);
-      if (50 > products.length) {
+      var size = object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
         $(".pagination-bar").remove();
       }
       for (let object in products) {
@@ -1799,6 +1822,11 @@ const getProductsByCategoryListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -2343,6 +2371,11 @@ const getPriceGrid = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -2428,6 +2461,11 @@ const getPriceList = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      var size = Object.keys(products).length;
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
