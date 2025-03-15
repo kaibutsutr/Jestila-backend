@@ -22,30 +22,24 @@ const getByQuery = (req, res) => {
   let price = req.params.url;
 
   let minPrice = 0;
-  let maxPrice = 100000;
+
   if (price === 2) {
     minPrice = 0;
-    maxPrice = 2000;
   }
   if (price === 4) {
     minPrice = 2000;
-    maxPrice = 4000;
   }
   if (price === 6) {
     minPrice = 4000;
-    maxPrice = 6000;
   }
   if (price === 8) {
     minPrice = 6000;
-    maxPrice = 8000;
   }
   if (price === 10) {
     minPrice = 8000;
-    maxPrice = 10000;
   }
   if (price === 12) {
     minPrice = 10000;
-    maxPrice = 12000;
   }
   if (price === 14) {
     minPrice = 12000;
