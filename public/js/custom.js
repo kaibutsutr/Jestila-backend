@@ -626,7 +626,7 @@ $(function () {
 
   /*------------ Price checkbox ---------*/
   if ($(".category-content").length > 0) {
-    const isChecked = $("#" + "price_4").is(":checked");
+    const isChecked = $("#price_4").is(":checked");
 
     if (isChecked) {
       $("#product").empty();
