@@ -2361,6 +2361,7 @@ const getProductOfTheWeek = async (productId) => {
 // price sorting
 /* Grid Var*/
 const getPriceGrid = async (url) => {
+  let size = 0;
   axios
     .get(`/api/v1/database/${url}`)
     .then((response) => {
@@ -2430,7 +2431,11 @@ const getPriceGrid = async (url) => {
                   )
               )
           );
+          size++;
         }
+      }
+      if (50 > size) {
+        $(".pagination-bar").remove();
       }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
@@ -2446,6 +2451,7 @@ const getPriceGrid = async (url) => {
 /* get as a List view*/
 
 const getPriceList = async (url) => {
+  let size = 0;
   axios
     .get(`/api/v1/database/${url}`)
     .then((response) => {
@@ -2552,7 +2558,11 @@ const getPriceList = async (url) => {
                   )
               )
           );
+          size++;
         }
+      }
+      if (50 > size) {
+        $(".pagination-bar").remove();
       }
 
       $(".product-info h3").remove();
