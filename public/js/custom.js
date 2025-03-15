@@ -626,9 +626,11 @@ $(function () {
 
   /*------------ Price checkbox ---------*/
   if ($(".category-content").length > 0) {
-    const isChecked = document.getElementById(price_4).checked;
+    const isChecked = $("#" + "price_4").is(":checked");
+
     if (isChecked) {
       $("#product").empty();
+      url = "womanshop";
       getPriceFilterGrid(url, 4);
     }
   }
