@@ -2587,7 +2587,7 @@ const getPriceList = async (url) => {
 const getPriceFilterGrid = async (url, price) => {
   let size = 0;
   axios
-    .get(`/api/v1/pricefilter?url=${url}&price=${price}&`)
+    .get(`/api/v1/pricefilter?url=${url}&price=${price}`)
     .then((response) => {
       products = response.data;
       console.log(products);

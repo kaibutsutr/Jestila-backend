@@ -15,10 +15,6 @@ const getAllproducts = (req, res) => {
   //GET
 };
 const getByQuery = (req, res) => {
-  const {
-    query: { price: price },
-  } = req;
-
   let sentUrl = req.query.url;
   let price = req.query.price;
 
