@@ -1497,6 +1497,10 @@ const getProductsByCategoryGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      console.log(products.length);
+      if (50 > products.length) {
+        $(".pagination-bar").remove();
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1580,8 +1584,8 @@ const getProductsByCategoryGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      console.log(data.length);
-      if (50 > data.length) {
+      console.log(products.length);
+      if (50 > products.length) {
         $(".pagination-bar").remove();
       }
 
@@ -1668,8 +1672,8 @@ const getProductsByCategoryList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      console.log(data.length);
-      if (50 > data.length) {
+      console.log(products.length);
+      if (50 > products.length) {
         $(".pagination-bar").remove();
       }
       for (let object in products) {
