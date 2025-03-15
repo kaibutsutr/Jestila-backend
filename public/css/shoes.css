@@ -2913,6 +2913,7 @@ table.border td ul li a:hover {
 }
 .darkmode--activated img,
 .darkmode--activated .offer-bg,
+.darkmode--activated .bg,
 .darkmode--activated a img,
 .darkmode--activated .owl-item,
 .darkmode--activated .banner-img {
