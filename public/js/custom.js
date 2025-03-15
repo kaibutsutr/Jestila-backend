@@ -978,9 +978,6 @@ const getOneProduct = async (productId) => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
 
       getSimilarProducts(product.data.categories[0].id);
     })
@@ -1070,9 +1067,6 @@ const getSimilarProducts = async (categoryId) => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1157,9 +1151,6 @@ const getProductsGrid = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1243,9 +1234,6 @@ const getProductsGridByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
-      }
-      if (products.length() < 50) {
-        $(".pagination").hide();
       }
     })
     .catch((error) => {
@@ -1371,9 +1359,6 @@ const getProductsList = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
 
     .catch((error) => {
@@ -1496,9 +1481,6 @@ const getProductsListByVariation = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
 
     .catch((error) => {
@@ -1586,9 +1568,6 @@ const getProductsByCategoryGrid = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1601,6 +1580,10 @@ const getProductsByCategoryGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      console.log(data.length);
+      if (50 > data.length) {
+        $(".pagination-bar").remove();
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1672,9 +1655,6 @@ const getProductsByCategoryGridByVariation = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1688,6 +1668,10 @@ const getProductsByCategoryList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      console.log(data.length);
+      if (50 > data.length) {
+        $(".pagination-bar").remove();
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1797,9 +1781,6 @@ const getProductsByCategoryList = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
-      }
-      if (products.length() < 50) {
-        $(".pagination").hide();
       }
     })
 
@@ -1924,9 +1905,6 @@ const getProductsByCategoryListByVariation = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
 
     .catch((error) => {
@@ -2010,9 +1988,6 @@ const getFeaturedShoes = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
 
     .catch((error) => {
@@ -2025,6 +2000,7 @@ const getFeaturedBags = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#bag").append(
@@ -2094,9 +2070,6 @@ const getFeaturedBags = async () => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
 
     .catch((error) => {
@@ -2109,6 +2082,7 @@ const getFeaturedAccessories = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#accessories").append(
@@ -2177,9 +2151,6 @@ const getFeaturedAccessories = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
-      }
-      if (products.length() < 50) {
-        $(".pagination").hide();
       }
     })
 
@@ -2354,9 +2325,6 @@ const getProductOfTheWeek = async (productId) => {
           type: "iframe",
         });
       }
-      if (products.length() < 50) {
-        $(".pagination").hide();
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -2441,9 +2409,6 @@ const getPriceGrid = async (url) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
-      }
-      if (products.length() < 50) {
-        $(".pagination").hide();
       }
     })
     .catch((error) => {
@@ -2568,9 +2533,6 @@ const getPriceList = async (url) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
-      }
-      if (products.length() < 50) {
-        $(".pagination").hide();
       }
     })
 
