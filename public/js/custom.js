@@ -1080,11 +1080,6 @@ const getProductsGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -1151,6 +1146,7 @@ const getProductsGrid = async () => {
           );
         }
       }
+
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
           type: "iframe",
@@ -1164,16 +1160,12 @@ const getProductsGrid = async () => {
 /* Grid Var*/
 
 const getProductsGridByVariation = async () => {
+  let size = 0;
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -1238,7 +1230,12 @@ const getProductsGridByVariation = async () => {
                   )
               )
           );
+          size++;
         }
+      }
+      console.log(size);
+      if (50 > size) {
+        $(".pagination-bar").remove();
       }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
@@ -1259,11 +1256,7 @@ const getProductsList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1381,16 +1374,13 @@ const getProductsList = async () => {
     });
 };
 const getProductsListByVariation = async () => {
+  let size = 0;
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1491,11 +1481,15 @@ const getProductsListByVariation = async () => {
                   )
               )
           );
+          size++;
         }
       }
 
       $(".product-info h3").remove();
       $(".product-info ul").remove();
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
           type: "iframe",
@@ -1511,17 +1505,13 @@ const getProductsListByVariation = async () => {
 //get by query
 
 const getProductsByCategoryGrid = async () => {
+  let size = 0;
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -1586,7 +1576,11 @@ const getProductsByCategoryGrid = async () => {
                   )
               )
           );
+          size++;
         }
+      }
+      if (50 > size) {
+        $(".pagination-bar").remove();
       }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
@@ -1599,17 +1593,13 @@ const getProductsByCategoryGrid = async () => {
     });
 };
 const getProductsByCategoryGridByVariation = async () => {
+  let size = 0;
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -1674,7 +1664,11 @@ const getProductsByCategoryGridByVariation = async () => {
                   )
               )
           );
+          size++;
         }
+      }
+      if (50 > size) {
+        $(".pagination-bar").remove();
       }
       if ($(".quick-popup").length > 0) {
         $(".quick-popup").magnificPopup({
@@ -1688,17 +1682,14 @@ const getProductsByCategoryGridByVariation = async () => {
 };
 
 const getProductsByCategoryList = async () => {
+  let size = 0;
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1799,9 +1790,12 @@ const getProductsByCategoryList = async () => {
                   )
               )
           );
+          size++;
         }
       }
-
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       $(".product-info h3").remove();
       $(".product-info ul").remove();
       if ($(".quick-popup").length > 0) {
@@ -1816,17 +1810,14 @@ const getProductsByCategoryList = async () => {
     });
 };
 const getProductsByCategoryListByVariation = async () => {
+  let size = 0;
   console.log(categoryId);
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
@@ -1927,9 +1918,13 @@ const getProductsByCategoryListByVariation = async () => {
                   )
               )
           );
+          size++;
         }
       }
 
+      if (50 > size) {
+        $(".pagination-bar").remove();
+      }
       $(".product-info h3").remove();
       $(".product-info ul").remove();
       if ($(".quick-popup").length > 0) {
@@ -2371,11 +2366,6 @@ const getPriceGrid = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -2461,11 +2451,7 @@ const getPriceList = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var size = Object.entries(response.data).length;
-      console.log(size);
-      if (50 > size) {
-        $(".pagination-bar").remove();
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#product").append(
