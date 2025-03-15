@@ -624,6 +624,15 @@ $(function () {
     }
   });
 
+  /*------------ Price checkbox ---------*/
+  if ($(".category-content").length > 0) {
+    const isChecked = document.getElementById(price_4).checked;
+    if (isChecked) {
+      $("#product").empty();
+      getPriceFilterGrid(url, 4);
+    }
+  }
+
   /*------------ Remove all filters ---------*/
   $(".btn-filter-remove").on("click", function () {
     $("input[type=checkbox]").prop("checked", false);
@@ -642,11 +651,6 @@ $(function () {
     $(".menu-toggle").on("click", function () {
       $(".menu-toggle, .menu-left").toggleClass("active");
     });
-
-    /*------------ Responsive Cart Dropdown ---------*/
-    // $(".cart-menu").on("click", function () {
-    //   $(".cart-dropdown").toggleClass("open");
-    // });
 
     /* ---- For Mobile Menu Dropdown JS Start ---- */
     $(".menu span.opener").on("click", function () {
