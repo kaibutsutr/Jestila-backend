@@ -631,13 +631,22 @@ $(function () {
     if ($(this).is(":checked")) $("#result").html($(this).data("id"));
     else $("#result").html("Empty...!");
 
-    const isChecked = $("#price_4").is(":checked");
-    console.log(isChecked);
+    const is2Checked = $("#price_2").is(":checked");
+    console.log("2Checked");
 
-    if (isChecked) {
+    const is4Checked = $("#price_4").is(":checked");
+    console.log("4Checked");
+    const is6Checked = $("#price_8").is(":checked");
+    console.log("8Checked");
+    const is8Checked = $("#price_12").is(":checked");
+    console.log("12Checked");
+    const is8Checked = $("#price_16").is(":checked");
+    console.log("16Checked");
+
+    if (is4Checked) {
       $("#product").empty();
-      url = "womanshop";
-      console.log("checked");
+      url = url;
+
       getPriceFilterGrid(url, 4);
     }
   });
