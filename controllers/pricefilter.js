@@ -16,7 +16,7 @@ const getAllproducts = (req, res) => {
 };
 const getByQuery = (req, res) => {
   let sentUrl = req.query.url;
-  let price = parseInt(req.query.price);
+  let minPrice = parseInt(req.query.price);
 
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
@@ -24,7 +24,7 @@ const getByQuery = (req, res) => {
     var data = _.sortBy(womanData, function (o) {
       var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > price) {
+      if (currentPrice > minPrice) {
         return o.priceData.discountedPrice;
       }
     });
@@ -37,7 +37,7 @@ const getByQuery = (req, res) => {
     var data = _.sortBy(manData, function (o) {
       var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > price) {
+      if (currentPrice > minPrice) {
         return o.priceData.discountedPrice;
       }
     });
@@ -50,7 +50,7 @@ const getByQuery = (req, res) => {
     var data = _.sortBy(accessoriesData, function (o) {
       var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > price) {
+      if (currentPrice > minPrice) {
         return o.priceData.discountedPrice;
       }
     });

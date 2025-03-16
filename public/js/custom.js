@@ -606,28 +606,28 @@ $(function () {
         $("#product").empty();
         url = url;
 
-        getPriceFilterGrid(url, 4000);
+        getPriceFilterGrid(url, 3999);
         console.log("4Checked");
       }
       if (is8Checked) {
         $("#product").empty();
         url = url;
 
-        getPriceFilterGrid(url, 8000);
+        getPriceFilterGrid(url, 7999);
         console.log("8Checked");
       }
       if (is12Checked) {
         $("#product").empty();
         url = url;
 
-        getPriceFilterGrid(url, 12000);
+        getPriceFilterGrid(url, 11999);
         console.log("12Checked");
       }
       if (is16Checked) {
         $("#product").empty();
         url = url;
 
-        getPriceFilterGrid(url, 16000);
+        getPriceFilterGrid(url, 15999);
         console.log("16Checked");
       }
     });
