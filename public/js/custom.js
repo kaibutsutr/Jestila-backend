@@ -574,18 +574,6 @@ $(function () {
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
     });
-    $("#check-box2 .checkbox").on("change", function () {
-      $("#check-box2 .checkbox").not(this).prop("checked", false);
-      $("#result").html($(this).data("id"));
-      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
-      else $("#result").html("Empty...!");
-    });
-    $("#check-box3 .checkbox").on("change", function () {
-      $("#check-box3 .checkbox").not(this).prop("checked", false);
-      $("#result").html($(this).data("id"));
-      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
-      else $("#result").html("Empty...!");
-    });
   });
 
   /*------------ Filter by Variaton  filter - by ---------*/
@@ -631,23 +619,54 @@ $(function () {
     if ($(this).is(":checked")) $("#result").html($(this).data("id"));
     else $("#result").html("Empty...!");
 
+    /*------------ find checked checkbox ---------*/
+
     const is2Checked = $("#price_2").is(":checked");
-    console.log("2Checked");
 
     const is4Checked = $("#price_4").is(":checked");
-    console.log("4Checked");
-    const is6Checked = $("#price_8").is(":checked");
-    console.log("8Checked");
-    const is8Checked = $("#price_12").is(":checked");
-    console.log("12Checked");
-    const is8Checked = $("#price_16").is(":checked");
-    console.log("16Checked");
+
+    const is8Checked = $("#price_8").is(":checked");
+
+    const is12Checked = $("#price_12").is(":checked");
+
+    const is16Checked = $("#price_16").is(":checked");
+
+    /*------------ send query ---------*/
+    if (is2Checked) {
+      $("#product").empty();
+      url = url;
+
+      getPriceFilterGrid(url, 2);
+      console.log("2Checked");
+    }
 
     if (is4Checked) {
       $("#product").empty();
       url = url;
 
       getPriceFilterGrid(url, 4);
+      console.log("4Checked");
+    }
+    if (is8Checked) {
+      $("#product").empty();
+      url = url;
+
+      getPriceFilterGrid(url, 8);
+      console.log("8Checked");
+    }
+    if (is12Checked) {
+      $("#product").empty();
+      url = url;
+
+      getPriceFilterGrid(url, 12);
+      console.log("12Checked");
+    }
+    if (is16Checked) {
+      $("#product").empty();
+      url = url;
+
+      getPriceFilterGrid(url, 16);
+      console.log("16Checked");
     }
   });
 
