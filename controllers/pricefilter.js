@@ -21,12 +21,11 @@ const getByQuery = (req, res) => {
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
-    var data = _.sortBy(womanData, function (o) {
-      var currentPrice = o.priceData.discountedPrice;
-
-      if (currentPrice > minPrice) {
-        return o.priceData.discountedPrice;
-      }
+    const result = womanData.filter(
+      (o) => o.priceData.discountedPrice >= minPrice
+    );
+    var data = _.sortBy(result, function (o) {
+      return o.priceData.discountedPrice;
     });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array);
@@ -34,25 +33,22 @@ const getByQuery = (req, res) => {
 
   if (sentUrl === "manshop") {
     // price is of a string type
-    var data = _.sortBy(manData, function (o) {
-      var currentPrice = o.priceData.discountedPrice;
-
-      if (currentPrice > minPrice) {
-        return o.priceData.discountedPrice;
-      }
+    const result = manData.filter(
+      (o) => o.priceData.discountedPrice >= minPrice
+    );
+    var data = _.sortBy(result, function (o) {
+      return o.priceData.discountedPrice;
     });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array);
   }
-  //GET
   if (sentUrl === "accessoriesshop") {
     // price is of a string type
-    var data = _.sortBy(accessoriesData, function (o) {
-      var currentPrice = o.priceData.discountedPrice;
-
-      if (currentPrice > minPrice) {
-        return o.priceData.discountedPrice;
-      }
+    const result = accessoriesData.filter(
+      (o) => o.priceData.discountedPrice >= minPrice
+    );
+    var data = _.sortBy(result, function (o) {
+      return o.priceData.discountedPrice;
     });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array);
