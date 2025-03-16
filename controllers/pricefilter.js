@@ -53,65 +53,28 @@ const getByQuery = (req, res) => {
   if (sentUrl === "manshop") {
     // price is of a string type
     var data = _.sortBy(manData, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    var reversedData = data.reverse();
-    console.log(reversedData);
-    res.status(200).json({ reversedData }); //send json object with success true and  array
-  }
-  if (sentUrl === "-manshop") {
-    // price is of a string type
-    var data = _.sortBy(manData, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
-  }
-  if (
-    sentUrl === "accessoriesshop" ||
-    sentUrl === "bagshop" ||
-    sentUrl === "jewelryshop"
-  ) {
-    // price is of a string type
-    var data = _.sortBy(accessoriesData, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    var reversedData = data.reverse();
-    console.log(reversedData);
-    res.status(200).json({ reversedData }); //send json object with success true and  array
-  }
-  if (
-    sentUrl === "-accessoriesshop" ||
-    sentUrl === "-bagshop" ||
-    sentUrl === "-jewelryshop"
-  ) {
-    // price is of a string type
-    var data = _.sortBy(accessoriesData, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
-  }
+      var currentPrice = parseInt(o.priceData.discountedPrice);
 
-  if (sentUrl === "brandshop") {
-    // price is of a string type
-    var data = _.sortBy(allData, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    var reversedData = data.reverse();
-    console.log(reversedData);
-    res.status(200).json({ reversedData }); //send json object with success true and  array
-  }
-  // bring all products
-  if (sentUrl === "-brandshop") {
-    var data = _.sortBy(allData, function (o) {
-      return o.priceData.discountedPrice;
+      if (currentPrice > minPrice) {
+        return o.priceData.discountedPrice;
+      }
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
+    res.status(200).json({ data }); //send json object with success true and  array);
   }
-
   //GET
+  if (sentUrl === "accessoriesshop") {
+    // price is of a string type
+    var data = _.sortBy(accessoriesData, function (o) {
+      var currentPrice = parseInt(o.priceData.discountedPrice);
+
+      if (currentPrice > minPrice) {
+        return o.priceData.discountedPrice;
+      }
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array);
+  }
 };
 
 module.exports = {
