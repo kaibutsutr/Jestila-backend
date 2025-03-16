@@ -16,33 +16,15 @@ const getAllproducts = (req, res) => {
 };
 const getByQuery = (req, res) => {
   let sentUrl = req.query.url;
-  let price = req.query.price;
-
-  let minPrice = 0;
-
-  if (price === 2) {
-    minPrice = 0;
-  }
-  if (price === 4) {
-    minPrice = 4000;
-  }
-  if (price === 8) {
-    minPrice = 8000;
-  }
-  if (price === 12) {
-    minPrice = 12000;
-  }
-  if (price === 16) {
-    minPrice = 16000;
-  }
+  let price = parseInt(req.query.price);
 
   console.log(sentUrl);
   if (sentUrl === "womanshop") {
     // price is of a string type
     var data = _.sortBy(womanData, function (o) {
-      var currentPrice = parseInt(o.priceData.discountedPrice);
+      var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > minPrice) {
+      if (currentPrice > price) {
         return o.priceData.discountedPrice;
       }
     });
@@ -53,9 +35,9 @@ const getByQuery = (req, res) => {
   if (sentUrl === "manshop") {
     // price is of a string type
     var data = _.sortBy(manData, function (o) {
-      var currentPrice = parseInt(o.priceData.discountedPrice);
+      var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > minPrice) {
+      if (currentPrice > price) {
         return o.priceData.discountedPrice;
       }
     });
@@ -66,9 +48,9 @@ const getByQuery = (req, res) => {
   if (sentUrl === "accessoriesshop") {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
-      var currentPrice = parseInt(o.priceData.discountedPrice);
+      var currentPrice = o.priceData.discountedPrice;
 
-      if (currentPrice > minPrice) {
+      if (currentPrice > price) {
         return o.priceData.discountedPrice;
       }
     });

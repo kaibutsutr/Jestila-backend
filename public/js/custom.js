@@ -574,6 +574,63 @@ $(function () {
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
     });
+    /*------------ Price checkbox ---------*/
+    $("#check-box2 .checkbox").on("change", function () {
+      $("#check-box2 .checkbox").not(this).prop("checked", false);
+      $("#result").html($(this).data("id"));
+      if ($(this).is(":checked")) $("#result").html($(this).data("id"));
+      else $("#result").html("Empty...!");
+
+      /*------------ find checked checkbox ---------*/
+
+      const is2Checked = $("#price_2").is(":checked");
+
+      const is4Checked = $("#price_4").is(":checked");
+
+      const is8Checked = $("#price_8").is(":checked");
+
+      const is12Checked = $("#price_12").is(":checked");
+
+      const is16Checked = $("#price_16").is(":checked");
+
+      /*------------ send query ---------*/
+      if (is2Checked) {
+        $("#product").empty();
+        url = url;
+
+        getPriceFilterGrid(url, 0);
+        console.log("2Checked");
+      }
+
+      if (is4Checked) {
+        $("#product").empty();
+        url = url;
+
+        getPriceFilterGrid(url, 4000);
+        console.log("4Checked");
+      }
+      if (is8Checked) {
+        $("#product").empty();
+        url = url;
+
+        getPriceFilterGrid(url, 8000);
+        console.log("8Checked");
+      }
+      if (is12Checked) {
+        $("#product").empty();
+        url = url;
+
+        getPriceFilterGrid(url, 12000);
+        console.log("12Checked");
+      }
+      if (is16Checked) {
+        $("#product").empty();
+        url = url;
+
+        getPriceFilterGrid(url, 16000);
+        console.log("16Checked");
+      }
+    });
   });
 
   /*------------ Filter by Variaton  filter - by ---------*/
@@ -612,67 +669,10 @@ $(function () {
     }
   });
 
-  /*------------ Price checkbox ---------*/
-  $("#check-box2 .checkbox").on("change", function () {
-    $("#check-box2 .checkbox").not(this).prop("checked", false);
-    $("#result").html($(this).data("id"));
-    if ($(this).is(":checked")) $("#result").html($(this).data("id"));
-    else $("#result").html("Empty...!");
-
-    /*------------ find checked checkbox ---------*/
-
-    const is2Checked = $("#price_2").is(":checked");
-
-    const is4Checked = $("#price_4").is(":checked");
-
-    const is8Checked = $("#price_8").is(":checked");
-
-    const is12Checked = $("#price_12").is(":checked");
-
-    const is16Checked = $("#price_16").is(":checked");
-
-    /*------------ send query ---------*/
-    if (is2Checked) {
-      $("#product").empty();
-      url = url;
-
-      getPriceFilterGrid(url, 2);
-      console.log("2Checked");
-    }
-
-    if (is4Checked) {
-      $("#product").empty();
-      url = url;
-
-      getPriceFilterGrid(url, 4);
-      console.log("4Checked");
-    }
-    if (is8Checked) {
-      $("#product").empty();
-      url = url;
-
-      getPriceFilterGrid(url, 8);
-      console.log("8Checked");
-    }
-    if (is12Checked) {
-      $("#product").empty();
-      url = url;
-
-      getPriceFilterGrid(url, 12);
-      console.log("12Checked");
-    }
-    if (is16Checked) {
-      $("#product").empty();
-      url = url;
-
-      getPriceFilterGrid(url, 16);
-      console.log("16Checked");
-    }
-  });
-
   /*------------ Remove all filters ---------*/
   $(".btn-filter-remove").on("click", function () {
     $("input[type=checkbox]").prop("checked", false);
+    location.reload(true);
   });
   /*------------ Sticky Header Slider ---------*/
   $(window).scroll(function () {
