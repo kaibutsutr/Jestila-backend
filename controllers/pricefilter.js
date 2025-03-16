@@ -43,10 +43,11 @@ const getByQuery = (req, res) => {
     res.status(200).json({ data }); //send json object with success true and  array);
   }
   if (sentUrl === "accessoriesshop") {
-    // price is of a string type
+    // filter by price first
     const result = accessoriesData.filter(
       (o) => o.priceData.discountedPrice >= minPrice
     );
+    // then sort them ascending
     var data = _.sortBy(result, function (o) {
       return o.priceData.discountedPrice;
     });
