@@ -625,15 +625,22 @@ $(function () {
   });
 
   /*------------ Price checkbox ---------*/
-  if ($(".category-content").length > 0) {
+  $("#check-box2 .checkbox").on("change", function () {
+    $("#check-box2 .checkbox").not(this).prop("checked", false);
+    $("#result").html($(this).data("id"));
+    if ($(this).is(":checked")) $("#result").html($(this).data("id"));
+    else $("#result").html("Empty...!");
+
     const isChecked = $("#price_4").is(":checked");
+    console.log(isChecked);
 
     if (isChecked) {
       $("#product").empty();
       url = "womanshop";
+      console.log("checked");
       getPriceFilterGrid(url, 4);
     }
-  }
+  });
 
   /*------------ Remove all filters ---------*/
   $(".btn-filter-remove").on("click", function () {

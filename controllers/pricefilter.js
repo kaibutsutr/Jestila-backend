@@ -41,29 +41,15 @@ const getByQuery = (req, res) => {
     // price is of a string type
     var data = _.sortBy(womanData, function (o) {
       var currentPrice = parseInt(o.priceData.discountedPrice);
-      console.log(currentPrice);
-      if (currentPrice > minPrice) {
-        return o.priceData.discountedPrice;
-      }
 
-      console.log(data);
-      res.status(200).json({ data }); //send json object with success true and  array
-    });
-    var reversedData = data.reverse();
-    console.log(reversedData);
-    res.status(200).json({ reversedData }); //send json object with success true and  array
-  }
-  if (sentUrl === "-womanshop") {
-    // price is of a string type
-    var data = _.sortBy(womanData, function (o) {
-      let currentPrice = o.priceData.discountedPrice;
-      if (minPrice <= currentPrice <= maxPrice) {
+      if (currentPrice > minPrice) {
         return o.priceData.discountedPrice;
       }
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array
+    res.status(200).json({ data }); //send json object with success true and  array);
   }
+
   if (sentUrl === "manshop") {
     // price is of a string type
     var data = _.sortBy(manData, function (o) {
