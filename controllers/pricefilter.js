@@ -80,6 +80,18 @@ const getByQuery = (req, res) => {
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array);
   }
+  if (sentUrl === "brandshop") {
+    // filter by price first
+    const result = allData.filter(
+      (o) => o.priceData.discountedPrice >= minPrice
+    );
+    // then sort them ascending
+    var data = _.sortBy(result, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array);
+  }
 };
 
 module.exports = {

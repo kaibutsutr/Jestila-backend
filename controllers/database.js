@@ -7,6 +7,8 @@ const allData = require("../db/db"); // all
 const womanData = require("../db/womanshop"); //woman data
 const manData = require("../db/manshop");
 const accessoriesData = require("../db/accessoriesshop");
+const bagData = require("../db/bagshop");
+const jewelryData = require("../db/jewelryshop");
 const _ = require("underscore");
 
 const getAllproducts = (req, res) => {
@@ -55,11 +57,7 @@ const getByQuery = (req, res) => {
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
   }
-  if (
-    sentUrl === "accessoriesshop" ||
-    sentUrl === "bagshop" ||
-    sentUrl === "jewelryshop"
-  ) {
+  if (sentUrl === "accessoriesshop") {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
@@ -68,11 +66,7 @@ const getByQuery = (req, res) => {
     console.log(reversedData);
     res.status(200).json({ reversedData }); //send json object with success true and  array
   }
-  if (
-    sentUrl === "-accessoriesshop" ||
-    sentUrl === "-bagshop" ||
-    sentUrl === "-jewelryshop"
-  ) {
+  if (sentUrl === "-accessoriesshop") {
     // price is of a string type
     var data = _.sortBy(accessoriesData, function (o) {
       return o.priceData.discountedPrice;
@@ -80,7 +74,40 @@ const getByQuery = (req, res) => {
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array
   }
-
+  if (sentUrl === "bagshop") {
+    // price is of a string type
+    var data = _.sortBy(bagData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    var reversedData = data.reverse();
+    console.log(reversedData);
+    res.status(200).json({ reversedData }); //send json object with success true and  array
+  }
+  if (sentUrl === "-bagshop") {
+    // price is of a string type
+    var data = _.sortBy(bagData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
+  }
+  if (sentUrl === "jewelryshop") {
+    // price is of a string type
+    var data = _.sortBy(jewelryData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    var reversedData = data.reverse();
+    console.log(reversedData);
+    res.status(200).json({ reversedData }); //send json object with success true and  array
+  }
+  if (sentUrl === "-jewelryshop") {
+    // price is of a string type
+    var data = _.sortBy(jewelryData, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array
+  }
   if (sentUrl === "brandshop") {
     // price is of a string type
     var data = _.sortBy(allData, function (o) {
