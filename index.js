@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const url = require("url");
 const querystring = require("querystring");
 const products = require("./routes/products");
+const productdetail = require("./routes/productdetail");
 const womanshop = require("./routes/womanshop");
 const manshop = require("./routes/manshop");
 const accessoriesshop = require("./routes/accessoriesshop");
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 //
 
 app.use("/api/v1/products", products);
+app.use("/api/v1/productdetail", productdetail);
 app.use("/api/v1/womanshop", womanshop);
 app.use("/api/v1/manshop", manshop);
 app.use("/api/v1/accessoriesshop", accessoriesshop);
