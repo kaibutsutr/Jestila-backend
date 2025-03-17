@@ -29,7 +29,7 @@ const getByQuery = (req, res) => {
       accept: "application/json",
       authorization: constants.Bearer,
     },
-    params: { categoryId: categoryId, selectionId: sizeId, limit: 50 },
+    params: { categoryId: categoryId, selectionId: sizeId, limit: 5 },
   };
 
   axios
