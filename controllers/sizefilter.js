@@ -16,11 +16,14 @@ const getAllproducts = (req, res) => {
 };
 const getByQuery = (req, res) => {
   let size = req.query.size;
-  let sizeId = constants[size];
+  let sizeId = constants["S" + size + "id"];
   console.log(sizeId);
 
   let categoryId = req.query.id;
   console.log(categoryId);
+  if (categoryId == "") {
+    categoryId = constants.AYAKKABIid;
+  }
 
   const options = {
     method: "GET",
@@ -29,7 +32,7 @@ const getByQuery = (req, res) => {
       accept: "application/json",
       authorization: constants.Bearer,
     },
-    params: { categoryId: categoryId, selectionId: sizeId, limit: 5 },
+    params: { categoryId: categoryId, selectionId: sizeId, limit: 50 },
   };
 
   axios
