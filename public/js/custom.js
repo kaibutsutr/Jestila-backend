@@ -180,15 +180,6 @@ $(function () {
     getProductsGrid(page);
   }
 
-  if (
-    document.location.pathname == "/product-detail.html" ||
-    document.location.pathname == "/product-quick-view.html"
-  ) {
-    var productId = localStorage.getItem("productId");
-    console.log(productId);
-
-    getOneProduct(productId);
-  }
   /*------------ brandshop ---------*/
   if (document.location.pathname == "/brand-shop.html") {
     list = false;
@@ -840,6 +831,16 @@ $(function () {
         }
       }
     });
+
+    if (
+      document.location.pathname == "/product-detail.html/*" ||
+      document.location.pathname == "/product-quick-view.html"
+    ) {
+      var productId = localStorage.getItem("productId");
+      console.log(productId);
+
+      getOneProduct(productId);
+    }
   });
 
   /*------------ Filter by Variaton  filter - by ---------*/
@@ -1189,9 +1190,9 @@ function getProductsByCategoryByVariation(list) {
 }
 
 // one product an few ones
-const getOneProduct = async (productId) => {
+const getOneProduct = async (id) => {
   axios
-    .get(`/api/v1/productdetail/${productId}`)
+    .get(`/api/v1/productdetail/${id}`)
     .then((response) => {
       product = response.data;
       console.log(product);

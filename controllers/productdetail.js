@@ -11,7 +11,7 @@ const getOneProduct = async (req, res) => {
 
   const options = {
     method: "GET",
-    url: `https://api.shopier.com/v1/products/${productId}`,
+    url: `https://api.shopier.com/v1/products?productId=${productId}`,
     headers: {
       accept: "application/json",
       authorization: constants.Bearer,
