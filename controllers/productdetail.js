@@ -24,14 +24,11 @@ const getOneProduct = async (req, res) => {
       const contentType = response.headers["content-type"];
       const data = response.data;
 
-      const responseH = axios.get("https://www.jestila.co/product-detail.html");
-      var htmlPage = responseH.data;
-
       //append
 
       // popup fix?
 
-      res.status(200).json({ htmlPage }); //send json object with success true and  array
+      res.send(responseH); //send json object with success true and  array
     })
     .catch((err) => console.error(err));
 };
