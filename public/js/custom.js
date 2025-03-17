@@ -570,6 +570,7 @@ $(function () {
   $(document).ready(function () {
     $("#check-box1 .checkbox").on("change", function () {
       $("#check-box1 .checkbox").not(this).prop("checked", false);
+      $("#check-box2 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
       else $("#result").html("Empty...!");
@@ -746,6 +747,7 @@ $(function () {
     /*------------ Size checkbox ---------*/
 
     $("#check-box2 .checkbox").on("change", function () {
+      $("#check-box1 .checkbox").not(this).prop("checked", false);
       $("#check-box2 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
