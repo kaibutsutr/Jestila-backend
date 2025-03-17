@@ -23,12 +23,8 @@ const getOneProduct = async (req, res) => {
     .then((response) => {
       const contentType = response.headers["content-type"];
       const data = response.data;
-
-      //append
-
-      // popup fix?
-
-      res.send(responseH); //send json object with success true and  array
+      console.log(data);
+      res.status(200).json({ data }); //send json object with success true and  array
     })
     .catch((err) => console.error(err));
 };
