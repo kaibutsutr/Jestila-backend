@@ -597,8 +597,6 @@ $(function () {
         categoryId = constants[categoryName];
 
         console.log(categoryId);
-
-        getProductsByCategory(list);
       } else {
         if (url === "womanshop") {
           categoryId = constants.KADINAYAKKABIid;
