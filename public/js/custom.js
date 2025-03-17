@@ -590,14 +590,24 @@ $(function () {
       const is43Checked = $("#S43id").is(":checked");
       const is44Checked = $("#S44id").is(":checked");
       const is45Checked = $("#S45id").is(":checked");
+//get category for query
+      if ("categoryName" in localStorage) {
+      let categoryName = localStorage.getItem("categoryName");
+      categoryId = constants[categoryName];
 
+      console.log(categoryId);
+
+      getProductsByCategory(list);
+    } else{
+      categoryId=""
+    }
       /*------------ send query ---------*/
 if (list) {
   if (is36Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 36);
+    getSizeFilterList(category, url, 36);
     console.log("36Checked");
   }
 
@@ -605,63 +615,63 @@ if (list) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 37);
+    getSizeFilterList(category, url, 37);
     console.log("37Checked");
   }
   if (is38Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 38);
+    getSizeFilterList(category, url, 38);
     console.log("38Checked");
   }
   if (is39Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 39);
+    getSizeFilterList(category, url, 39);
     console.log("39Checked");
   }
   if (is40Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 40);
+    getSizeFilterList(category, url, 40);
     console.log("40Checked");
   }
   if (is41Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 41);
+    getSizeFilterList(category, url, 41);
     console.log("41Checked");
   }
   if (is42Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 42);
+    getSizeFilterList(category, url, 42);
     console.log("42Checked");
   }
   if (is43Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 43);
+    getSizeFilterList(category, url, 43);
     console.log("43Checked");
   }
   if (is44Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 44);
+    getSizeFilterList(category, url, 44);
     console.log("44Checked");
   }
   if (is45Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(url, 45);
+    getSizeFilterList(category, url, 45);
     console.log("45Checked");
   }
 }
@@ -671,7 +681,7 @@ else {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 36);
+      getSizeFilterGrid(category, url, 36);
       console.log("36Checked");
     }
 
@@ -679,63 +689,63 @@ else {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 37);
+      getSizeFilterGrid(category, url, 37);
       console.log("37Checked");
     }
     if (is38Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 38);
+      getSizeFilterGrid(category, url, 38);
       console.log("38Checked");
     }
     if (is39Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 39);
+      getSizeFilterGrid(category, url, 39);
       console.log("39Checked");
     }
     if (is40Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 40);
+      getSizeFilterGrid(category, url, 40);
       console.log("40Checked");
     }
     if (is41Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 41);
+      getSizeFilterGrid(category, url, 41);
       console.log("41Checked");
     }
     if (is42Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 42);
+      getSizeFilterGrid(category, url, 42);
       console.log("42Checked");
     }
     if (is43Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 43);
+      getSizeFilterGrid(category, url, 43);
       console.log("43Checked");
     }
     if (is44Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 44);
+      getSizeFilterGrid(category, url, 44);
       console.log("44Checked");
     }
     if (is45Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(url, 45);
+      getSizeFilterGrid(category, url, 45);
       console.log("45Checked");
     }
   }
