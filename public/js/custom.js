@@ -171,6 +171,15 @@ $(function () {
     discount = false;
     limit = 16;
   }
+  if (
+    document.location.pathname == "/product-detail.html/*" ||
+    document.location.pathname == "/product-quick-view.html"
+  ) {
+    var productId = localStorage.getItem("productId");
+    console.log(productId);
+
+    getOneProduct(productId);
+  }
   /*------------ database ---------*/
   if (document.location.pathname == "/database.html") {
     list = false;
@@ -831,16 +840,6 @@ $(function () {
         }
       }
     });
-
-    if (
-      document.location.pathname == "/product-detail.html/*" ||
-      document.location.pathname == "/product-quick-view.html"
-    ) {
-      var productId = localStorage.getItem("productId");
-      console.log(productId);
-
-      getOneProduct(productId);
-    }
   });
 
   /*------------ Filter by Variaton  filter - by ---------*/

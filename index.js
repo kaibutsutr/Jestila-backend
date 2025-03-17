@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const url = require("url");
 const querystring = require("querystring");
 const products = require("./routes/products");
-const productdetail = require("./routes/productdetail");
+
 const womanshop = require("./routes/womanshop");
 const manshop = require("./routes/manshop");
 const accessoriesshop = require("./routes/accessoriesshop");
@@ -15,6 +15,7 @@ const database = require("./routes/database");
 const brandshop = require("./routes/brandshop");
 const pricefilter = require("./routes/pricefilter");
 const sizefilter = require("./routes/sizefilter");
+const productdetail = require("./routes/productdetail");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
