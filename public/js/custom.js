@@ -568,7 +568,7 @@ $(function () {
 
   /*------------ Only one checkbox is selected ---------*/
   $(document).ready(function () {
-    $("#check-box1 .checkbox").on("change", function () {
+     $("#check-box1 .checkbox").on("change", function () {
       $("#check-box1 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
@@ -605,73 +605,73 @@ $(function () {
 if (list) {
   if (is36Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 36);
+    getSizeFilterList(categoryId , 36);
     console.log("36Checked");
   }
 
   if (is37Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 37);
+    getSizeFilterList(categoryId , 37);
     console.log("37Checked");
   }
   if (is38Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 38);
+    getSizeFilterList(categoryId , 38);
     console.log("38Checked");
   }
   if (is39Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 39);
+    getSizeFilterList(categoryId , 39);
     console.log("39Checked");
   }
   if (is40Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 40);
+    getSizeFilterList(categoryId , 40);
     console.log("40Checked");
   }
   if (is41Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 41);
+    getSizeFilterList(categoryId , 41);
     console.log("41Checked");
   }
   if (is42Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 42);
+    getSizeFilterList(categoryId , 42);
     console.log("42Checked");
   }
   if (is43Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 43);
+    getSizeFilterList(categoryId , 43);
     console.log("43Checked");
   }
   if (is44Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 44);
+    getSizeFilterList(categoryId , 44);
     console.log("44Checked");
   }
   if (is45Checked) {
     $("#product").empty();
-    url = url;
+   
 
-    getSizeFilterList(category , 45);
+    getSizeFilterList(categoryId , 45);
     console.log("45Checked");
   }
 }
@@ -679,82 +679,78 @@ else {
   
     if (is36Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 36);
+      getSizeFilterGrid(categoryId , 36);
       console.log("36Checked");
     }
 
     if (is37Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 37);
+      getSizeFilterGrid(categoryId , 37);
       console.log("37Checked");
     }
     if (is38Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 38);
+      getSizeFilterGrid(categoryId , 38);
       console.log("38Checked");
     }
     if (is39Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 39);
+      getSizeFilterGrid(categoryId , 39);
       console.log("39Checked");
     }
     if (is40Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 40);
+      getSizeFilterGrid(categoryId , 40);
       console.log("40Checked");
     }
     if (is41Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 41);
+      getSizeFilterGrid(categoryId , 41);
       console.log("41Checked");
     }
     if (is42Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 42);
+      getSizeFilterGrid(categoryId , 42);
       console.log("42Checked");
     }
     if (is43Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 43);
+      getSizeFilterGrid(categoryId , 43);
       console.log("43Checked");
     }
     if (is44Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 44);
+      getSizeFilterGrid(categoryId , 44);
       console.log("44Checked");
     }
     if (is45Checked) {
       $("#product").empty();
-      url = url;
+     
 
-      getSizeFilterGrid(category , 45);
+      getSizeFilterGrid(categoryId , 45);
       console.log("45Checked");
     }
   }
-}
-
-      
-    });
-    /*------------ Price checkbox ---------*/
-    $("#check-box2 .checkbox").on("change", function () {
+})/*------------ Size checkbox ---------*/
+$("#check-box2 .checkbox").on("change", function () {
       $("#check-box2 .checkbox").not(this).prop("checked", false);
       $("#result").html($(this).data("id"));
       if ($(this).is(":checked")) $("#result").html($(this).data("id"));
@@ -849,6 +845,12 @@ else {
         }
       }
     });
+   
+
+      
+    });
+   
+    
   });
 
   /*------------ Filter by Variaton  filter - by ---------*/

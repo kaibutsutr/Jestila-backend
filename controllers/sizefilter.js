@@ -15,45 +15,34 @@ const getAllproducts = (req, res) => {
   //GET
 };
 const getByQuery = (req, res) => {
-  let sentUrl = req.query.url;
-  let minPrice = parseInt(req.query.price);
+  let size = req.query.size;
+  let sizeId = constants[size];
+  console.log(sizeId);
 
-  console.log(sentUrl);
-  if (sentUrl === "womanshop") {
-    // price is of a string type
-    const result = womanData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
+  let categoryId = req.query.id;
+  console.log(categoryId);
 
-  if (sentUrl === "manshop") {
-    // price is of a string type
-    const result = manData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-  if (sentUrl === "accessoriesshop") {
-    // filter by price first
-    const result = accessoriesData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    // then sort them ascending
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
+  const options = {
+    method: "GET",
+    url: `https://api.shopier.com/v1/products?`,
+    headers: {
+      accept: "application/json",
+      authorization: constants.Bearer,
+    },
+    params: { categoryId: categoryId, selectionId: sizeId, limit: 50 },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      const contentType = response.headers["content-type"];
+      const data = response.data;
+      console.log(data);
+      res.status(200).json({ data }); //send json object with success true and  array
+    })
+    .catch((err) => console.error(err));
+
+  //GET
 };
 
 module.exports = {
