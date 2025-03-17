@@ -7,6 +7,7 @@ const allData = require("../db/db"); // all
 const womanData = require("../db/womanshop"); //woman data
 const manData = require("../db/manshop");
 const accessoriesData = require("../db/accessoriesshop");
+const bagData = require("../db/bagshop");
 const _ = require("underscore");
 
 const getAllproducts = (req, res) => {
@@ -45,6 +46,18 @@ const getByQuery = (req, res) => {
   if (sentUrl === "accessoriesshop") {
     // filter by price first
     const result = accessoriesData.filter(
+      (o) => o.priceData.discountedPrice >= minPrice
+    );
+    // then sort them ascending
+    var data = _.sortBy(result, function (o) {
+      return o.priceData.discountedPrice;
+    });
+    console.log(data);
+    res.status(200).json({ data }); //send json object with success true and  array);
+  }
+  if (sentUrl === "bagshop") {
+    // filter by price first
+    const result = bagData.filter(
       (o) => o.priceData.discountedPrice >= minPrice
     );
     // then sort them ascending
