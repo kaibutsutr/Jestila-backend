@@ -607,7 +607,7 @@ if (list) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 36);
+    getSizeFilterList(category , 36);
     console.log("36Checked");
   }
 
@@ -615,63 +615,63 @@ if (list) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 37);
+    getSizeFilterList(category , 37);
     console.log("37Checked");
   }
   if (is38Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 38);
+    getSizeFilterList(category , 38);
     console.log("38Checked");
   }
   if (is39Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 39);
+    getSizeFilterList(category , 39);
     console.log("39Checked");
   }
   if (is40Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 40);
+    getSizeFilterList(category , 40);
     console.log("40Checked");
   }
   if (is41Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 41);
+    getSizeFilterList(category , 41);
     console.log("41Checked");
   }
   if (is42Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 42);
+    getSizeFilterList(category , 42);
     console.log("42Checked");
   }
   if (is43Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 43);
+    getSizeFilterList(category , 43);
     console.log("43Checked");
   }
   if (is44Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 44);
+    getSizeFilterList(category , 44);
     console.log("44Checked");
   }
   if (is45Checked) {
     $("#product").empty();
     url = url;
 
-    getSizeFilterList(category, , 45);
+    getSizeFilterList(category , 45);
     console.log("45Checked");
   }
 }
@@ -681,7 +681,7 @@ else {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 36);
+      getSizeFilterGrid(category , 36);
       console.log("36Checked");
     }
 
@@ -689,63 +689,63 @@ else {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 37);
+      getSizeFilterGrid(category , 37);
       console.log("37Checked");
     }
     if (is38Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 38);
+      getSizeFilterGrid(category , 38);
       console.log("38Checked");
     }
     if (is39Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 39);
+      getSizeFilterGrid(category , 39);
       console.log("39Checked");
     }
     if (is40Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 40);
+      getSizeFilterGrid(category , 40);
       console.log("40Checked");
     }
     if (is41Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 41);
+      getSizeFilterGrid(category , 41);
       console.log("41Checked");
     }
     if (is42Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 42);
+      getSizeFilterGrid(category , 42);
       console.log("42Checked");
     }
     if (is43Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 43);
+      getSizeFilterGrid(category , 43);
       console.log("43Checked");
     }
     if (is44Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 44);
+      getSizeFilterGrid(category , 44);
       console.log("44Checked");
     }
     if (is45Checked) {
       $("#product").empty();
       url = url;
 
-      getSizeFilterGrid(category, , 45);
+      getSizeFilterGrid(category , 45);
       console.log("45Checked");
     }
   }
