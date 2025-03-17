@@ -23,8 +23,15 @@ const getOneProduct = async (req, res) => {
     .then((response) => {
       const contentType = response.headers["content-type"];
       const data = response.data;
-      console.log(data);
-      res.status(200).json({ data }); //send json object with success true and  array
+
+      const responseH = axios.get("https://www.jestila.co/product-detail.html");
+      var htmlPage = responseH.data;
+
+      //append
+
+      // popup fix?
+
+      res.status(200).json({ htmlPage }); //send json object with success true and  array
     })
     .catch((err) => console.error(err));
 };

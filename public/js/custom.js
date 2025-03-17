@@ -172,7 +172,7 @@ $(function () {
     limit = 16;
   }
   if (
-    document.location.pathname == "/product-detail.html/*" ||
+    document.location.pathname == "/product-detail.html" ||
     document.location.pathname == "/product-quick-view.html"
   ) {
     var productId = localStorage.getItem("productId");
