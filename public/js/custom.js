@@ -3061,7 +3061,7 @@ const getPriceFilterList = async (url, price) => {
 const getSizeFilterGrid = async (categoryId, sizeId) => {
   let size = 0;
   axios
-    .get(`/api/v1/sizefilter?url=${url}&size=${sizeId}`)
+    .get(`/api/v1/sizefilter?categoryId=${categoryId}&size=${sizeId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
@@ -3148,7 +3148,7 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
 const getSizeFilterList = async (categoryId, sizeId) => {
   let size = 0;
   axios
-    .get(`/api/v1/sizefilter?url=${url}&size=${sizeId}`)
+   get(`/api/v1/sizefilter?categoryId=${categoryId}&size=${sizeId}`)
     .then((response) => {
       products = response.data;
       console.log(products);
