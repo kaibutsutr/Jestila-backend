@@ -1191,7 +1191,7 @@ function getProductsByCategoryByVariation(list) {
 // one product an few ones
 const getOneProduct = async (productId) => {
   axios
-    .get(`/api/v1/products/${productId}`)
+    .get(`/api/v1/productdetail/${productId}`)
     .then((response) => {
       product = response.data;
       console.log(product);
