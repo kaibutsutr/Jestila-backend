@@ -3473,7 +3473,7 @@ const getSearchedProductsGrid = async (searchData) => {
       var len = products.data.length;
       $("#product-count").text(len + " ürün gösteriliyor");
       $("#product-search").text(
-        searchData + " araması için" + len + " sonuç listeleniyor"
+        searchData + " araması için " + len + " sonuç listeleniyor"
       );
       if (len === 0) {
         $("#product")
@@ -3567,7 +3567,7 @@ const getSearchedProductsList = async (searchData) => {
       var len = products.data.length;
       $("#product-count").text(len + " ürün gösteriliyor");
       $("#product-search").text(
-        searchData + " araması için" + len + " sonuç listeleniyor"
+        searchData + " araması için " + len + " sonuç listeleniyor"
       );
       if (len === 0) {
         $("#product")
