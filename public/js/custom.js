@@ -186,8 +186,19 @@ $(function () {
     if ("searchData" in localStorage) {
       var searchData = localStorage.getItem("searchData");
       console.log(searchData);
-      getSearchedProducts(searchData);
-      // here i am
+      getSearchedProductsGrid(searchData);
+      // do a search
+    }
+  }
+  if (document.location.pathname == "/search-shop-list.html") {
+    list = true;
+    url = "search";
+    page = 3;
+    if ("searchData" in localStorage) {
+      var searchData = localStorage.getItem("searchData");
+      console.log(searchData);
+      getSearchedProductsList(searchData);
+      // do a search
     }
   }
 
@@ -3350,7 +3361,7 @@ const getSizeFilterList = async (categoryId, sizeId) => {
       console.error("Error fetching data:", error);
     });
 };
-const getSearchedProducts = async (searchData) => {
+const getSearchedProductsGrid = async (searchData) => {
   axios
     .get(`/api/v1/search/?search=${searchData}`)
     .then((response) => {
@@ -3429,6 +3440,129 @@ const getSearchedProducts = async (searchData) => {
         });
       }
     })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+const getSearchedProductsList = async (searchData) => {
+  axios
+    .get(`/api/v1/search/?search=${searchData}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#product").append(
+            $("<div>")
+              .addClass(
+                "featured-product featured-product-list align-flax mb-25"
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-img transition")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-details-btn text-center transition")
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name")
+                      .attr({ href: "product-detail.html", id: "product-link" })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-info")
+                      .append(products[object][key].description)
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-action")
+                      .append(
+                        $("<ul>")
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("quick-popup btn btn-color")
+                                .attr({
+                                  href: products[object][key].url,
+                                  id: "product-link",
+                                })
+
+                                .append(
+                                  $("<img>").attr({
+                                    src: "images/shop-bag.png",
+                                    alt: "bag",
+                                    id: "product-link",
+                                  })
+                                )
+                                .append($("<span>").text("sepete ekle"))
+                            )
+                          )
+                          .append(
+                            $("<li>").append(
+                              $("<a>")
+                                .addClass("btn")
+                                .attr({ href: "wishlist.html" })
+                                .append(
+                                  $("<i>")
+                                    .addClass("fa fa-heart")
+                                    .attr({ "aria-hidden": "true" })
+                                )
+                            )
+                          )
+                      )
+                  )
+              )
+          );
+        }
+      }
+
+      $(".product-info h3").remove();
+      $(".product-info ul").remove();
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
+
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
