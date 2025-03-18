@@ -7,7 +7,7 @@ const formAlertDOM = document.querySelector(".form-alert");
 var w = 0;
 var limit = 16;
 var page = 1;
-var pagination = 4;
+var pagination = 9;
 var discount = false;
 var list = false;
 var url = "womanshop";
@@ -512,6 +512,71 @@ $(function () {
     });
     $("#product").empty();
     page = 3;
+    if (list == true) {
+      getProductsList(url, page, limit);
+    } else {
+      getProducts(url, page, limit);
+    }
+  });
+  $("#pagination-4").click(function () {
+    $(".pagination").on("click", "li", function () {
+      $(".pagination li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+    $("#product").empty();
+    page = 4;
+    if (list == true) {
+      getProductsList(url, page, limit);
+    } else {
+      getProducts(url, page, limit);
+    }
+  });
+  $("#pagination-5").click(function () {
+    $(".pagination").on("click", "li", function () {
+      $(".pagination li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+    $("#product").empty();
+    page = 5;
+    if (list == true) {
+      getProductsList(url, page, limit);
+    } else {
+      getProducts(url, page, limit);
+    }
+  });
+  $("#pagination-6").click(function () {
+    $(".pagination").on("click", "li", function () {
+      $(".pagination li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+    $("#product").empty();
+    page = 6;
+    if (list == true) {
+      getProductsList(url, page, limit);
+    } else {
+      getProducts(url, page, limit);
+    }
+  });
+  $("#pagination-7").click(function () {
+    $(".pagination").on("click", "li", function () {
+      $(".pagination li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+    $("#product").empty();
+    page = 7;
+    if (list == true) {
+      getProductsList(url, page, limit);
+    } else {
+      getProducts(url, page, limit);
+    }
+  });
+  $("#pagination-8").click(function () {
+    $(".pagination").on("click", "li", function () {
+      $(".pagination li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+    $("#product").empty();
+    page = 8;
     if (list == true) {
       getProductsList(url, page, limit);
     } else {
