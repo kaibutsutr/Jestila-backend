@@ -3472,8 +3472,13 @@ const getSearchedProductsGrid = async (searchData) => {
       console.log(products);
       var len = products.data.length;
       $("#product-count").text(len + " ürün gösteriliyor");
+      $("#product-search").text(
+        searchData + " araması için" + len + " sonuç listeleniyor"
+      );
       if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
+        $("#product")
+          .append(searchData + " aramanız için ürün bulunamadı")
+          .addClass("hello");
         return;
       }
 
@@ -3561,8 +3566,13 @@ const getSearchedProductsList = async (searchData) => {
       console.log(products);
       var len = products.data.length;
       $("#product-count").text(len + " ürün gösteriliyor");
+      $("#product-search").text(
+        searchData + " araması için" + len + " sonuç listeleniyor"
+      );
       if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
+        $("#product")
+          .append(searchData + " aramanız için ürün bulunamadı")
+          .addClass("hello");
         return;
       }
 
