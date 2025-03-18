@@ -1440,6 +1440,12 @@ const getProductsGrid = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -1528,6 +1534,12 @@ const getProductsGridByVariation = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -1620,6 +1632,12 @@ const getProductsList = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -1746,6 +1764,12 @@ const getProductsListByVariation = async () => {
   axios
     .get(`/api/v1/${url}?page=${page}&limit=${limit}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -1880,6 +1904,9 @@ const getProductsByCategoryGrid = async () => {
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -1970,6 +1997,9 @@ const getProductsByCategoryGridByVariation = async () => {
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2061,6 +2091,9 @@ const getProductsByCategoryList = async () => {
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2191,6 +2224,9 @@ const getProductsByCategoryListByVariation = async () => {
   axios
     .get(`/api/v1/${url}/${categoryId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2322,6 +2358,9 @@ const getFeaturedShoes = async () => {
   axios
     .get(`/api/v1/products?categoryId=4d1670e409f3277d&page=1&limit=10`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2405,6 +2444,9 @@ const getFeaturedBags = async () => {
   axios
     .get(`/api/v1/products?categoryId=6f6880c7106a0b37&page=1&limit=10`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2489,6 +2531,9 @@ const getFeaturedAccessories = async () => {
   axios
     .get(`/api/v1/products?categoryId=51495dc1b7425b77&page=1&limit=10`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2577,6 +2622,9 @@ const getBestSellerProducts = async () => {
       `/api/v1/products?categoryId=4d1670e409f3277d&discount=${discount}&page=1&limit=${limit}`
     )
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2650,6 +2698,9 @@ const getOpportunityProducts = async () => {
       `/api/v1/products?categoryId=97fa66025e772afe&discount=${discount}&page=1&limit=${limit}`
     )
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2753,6 +2804,9 @@ const getPriceGrid = async (url) => {
   axios
     .get(`/api/v1/database/${url}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2845,6 +2899,9 @@ const getPriceList = async (url) => {
   axios
     .get(`/api/v1/database/${url}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -2978,6 +3035,9 @@ const getPriceFilterGrid = async (url, price) => {
   axios
     .get(`/api/v1/pricefilter?url=${url}&price=${price}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -3067,6 +3127,9 @@ const getPriceFilterList = async (url, price) => {
   axios
     .get(`/api/v1/pricefilter?url=${url}&price=${price}&`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -3200,6 +3263,9 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
   axios
     .get(`/api/v1/sizefilter?id=${categoryId}&size=${sizeId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -3289,6 +3355,9 @@ const getSizeFilterList = async (categoryId, sizeId) => {
   axios;
   get(`/api/v1/sizefilter?id=${categoryId}&size=${sizeId}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -3418,6 +3487,9 @@ const getSearchedProductsGrid = async (searchData) => {
   axios
     .get(`/api/v1/search/?search=${searchData}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
@@ -3503,10 +3575,16 @@ const getSearchedProductsList = async (searchData) => {
   axios
     .get(`/api/v1/search/?search=${searchData}`)
     .then((response) => {
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
       }
+      products = response.data;
+      console.log(products);
+      var len = products.data.length;
       if (len === 0) {
         $("#product").append("hello world").addClass("hello");
         return;
