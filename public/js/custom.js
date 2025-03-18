@@ -186,6 +186,8 @@ $(function () {
     if ("searchData" in localStorage) {
       var searchData = localStorage.getItem("searchData");
       console.log(searchData);
+      getSearchedProducts(searchData);
+      // here i am
     }
   }
 
@@ -3344,6 +3346,89 @@ const getSizeFilterList = async (categoryId, sizeId) => {
       }
     })
 
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+const getSearchedProducts = async (searchData) => {
+  axios
+    .get(`/api/v1/search/?search=${searchData}`)
+    .then((response) => {
+      products = response.data;
+      console.log(products);
+
+      //iterate over objects
+      for (let object in products) {
+        for (let key in products[object]) {
+          $("#product").append(
+            $("<div>")
+              .addClass("featured-product mb-25")
+              .append(
+                $("<div>")
+                  .addClass("product-img transition mb-15")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .append(
+                        $("<img>").addClass("transition").attr({
+                          src: products[object][key].media[0].url,
+                          alt: "product",
+                          id: "product-link",
+                        })
+                      )
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("product-details-btn text-center transition")
+                      .attr({ id: products[object][key].id })
+                      .append(
+                        $("<a>")
+                          .addClass("quick-popup")
+
+                          .attr({
+                            href: "product-quick-view.html",
+                            id: "product-link",
+                          })
+                          .text("Ön İzleme")
+                      )
+                  )
+              )
+
+              .append(
+                $("<div>")
+                  .addClass("product-desc")
+                  .attr({ id: products[object][key].id })
+                  .append(
+                    $("<a>")
+                      .addClass("product-name")
+                      .attr({
+                        href: "product-detail.html",
+                        id: "product-link",
+                      })
+                      .text(products[object][key].title)
+                  )
+                  .append(
+                    $("<span>")
+                      .addClass("product-price")
+                      .text(
+                        ~~products[object][key].priceData.discountedPrice + " ₺"
+                      )
+                  )
+              )
+          );
+        }
+      }
+
+      if ($(".quick-popup").length > 0) {
+        $(".quick-popup").magnificPopup({
+          type: "iframe",
+        });
+      }
+    })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });

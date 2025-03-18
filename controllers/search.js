@@ -11,11 +11,6 @@ const bagData = require("../db/bagshop");
 const jewelryData = require("../db/jewelryshop");
 const _ = require("underscore");
 
-const getAllproducts = (req, res) => {
-  res.status(200).json({ allData }); //send json object with success true and  array
-
-  //GET
-};
 const getByQuery = (req, res) => {
   let search = req.query.search;
 
@@ -94,6 +89,5 @@ const getByQuery = (req, res) => {
 };
 
 module.exports = {
-  getAllproducts,
   getByQuery,
 }; // export and object with functions

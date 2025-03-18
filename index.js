@@ -16,6 +16,7 @@ const brandshop = require("./routes/brandshop");
 const pricefilter = require("./routes/pricefilter");
 const sizefilter = require("./routes/sizefilter");
 const productdetail = require("./routes/productdetail");
+const search = require("./routes/search");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
@@ -42,6 +43,7 @@ app.use("/api/v1/brandshop", brandshop);
 app.use("/api/v1/database", database);
 app.use("/api/v1/pricefilter", pricefilter);
 app.use("/api/v1/sizefilter", sizefilter);
+app.use("/api/v1/search", search);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
