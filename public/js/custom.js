@@ -1443,11 +1443,8 @@ const getProductsGrid = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
-      products = response.data;
-      console.log(products);
-      var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -1537,11 +1534,8 @@ const getProductsGridByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
-      products = response.data;
-      console.log(products);
-      var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -1635,11 +1629,8 @@ const getProductsList = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
-      products = response.data;
-      console.log(products);
-      var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -1767,11 +1758,8 @@ const getProductsListByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
-      products = response.data;
-      console.log(products);
-      var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -1908,7 +1896,7 @@ const getProductsByCategoryGrid = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2001,7 +1989,7 @@ const getProductsByCategoryGridByVariation = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2095,7 +2083,7 @@ const getProductsByCategoryList = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2228,7 +2216,7 @@ const getProductsByCategoryListByVariation = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2362,7 +2350,7 @@ const getFeaturedShoes = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
       for (let object in products) {
@@ -2448,7 +2436,7 @@ const getFeaturedBags = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2535,7 +2523,7 @@ const getFeaturedAccessories = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2626,7 +2614,7 @@ const getBestSellerProducts = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
       for (let object in products) {
@@ -2702,7 +2690,7 @@ const getOpportunityProducts = async () => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
       for (let object in products) {
@@ -2808,7 +2796,7 @@ const getPriceGrid = async (url) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -2903,7 +2891,7 @@ const getPriceList = async (url) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3039,7 +3027,7 @@ const getPriceFilterGrid = async (url, price) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3131,7 +3119,7 @@ const getPriceFilterList = async (url, price) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3267,7 +3255,7 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3359,7 +3347,7 @@ const getSizeFilterList = async (categoryId, sizeId) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3491,7 +3479,7 @@ const getSearchedProductsGrid = async (searchData) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
@@ -3579,14 +3567,14 @@ const getSearchedProductsList = async (searchData) => {
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
       products = response.data;
       console.log(products);
       var len = products.data.length;
       if (len === 0) {
-        $("#product").append("hello world").addClass("hello");
+        $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
       }
 
