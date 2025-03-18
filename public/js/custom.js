@@ -1443,6 +1443,7 @@ const getProductsGrid = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -1533,6 +1534,7 @@ const getProductsGridByVariation = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -1627,6 +1629,7 @@ const getProductsList = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -1755,6 +1758,7 @@ const getProductsListByVariation = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -1891,6 +1895,7 @@ const getProductsByCategoryGrid = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -1983,6 +1988,7 @@ const getProductsByCategoryGridByVariation = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2076,6 +2082,7 @@ const getProductsByCategoryList = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2208,6 +2215,7 @@ const getProductsByCategoryListByVariation = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2341,6 +2349,7 @@ const getFeaturedShoes = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2426,6 +2435,7 @@ const getFeaturedBags = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2512,6 +2522,7 @@ const getFeaturedAccessories = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2602,6 +2613,7 @@ const getBestSellerProducts = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2677,6 +2689,7 @@ const getOpportunityProducts = async () => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2782,6 +2795,7 @@ const getPriceGrid = async (url) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -2876,6 +2890,7 @@ const getPriceList = async (url) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3011,6 +3026,7 @@ const getPriceFilterGrid = async (url, price) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3102,6 +3118,7 @@ const getPriceFilterList = async (url, price) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3237,6 +3254,7 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3328,6 +3346,7 @@ const getSizeFilterList = async (categoryId, sizeId) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3459,6 +3478,7 @@ const getSearchedProductsGrid = async (searchData) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
@@ -3546,6 +3566,7 @@ const getSearchedProductsList = async (searchData) => {
       products = response.data;
       console.log(products);
       let len = products.length;
+      console.log(len);
       if ($("#product-count").length > 0) {
         $("#product-count").text(len + " ürün gösteriliyor");
       }
