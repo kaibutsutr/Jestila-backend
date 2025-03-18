@@ -1358,6 +1358,9 @@ const getSimilarProducts = async (categoryId) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1443,7 +1446,10 @@ const getProductsGrid = async () => {
       products = response.data;
       console.log(products);
       if ($("#product-count").length > 0) {
-        $("#product-count").text(products.length + "ürün gösteriliyor");
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
       }
 
       //iterate over objects
@@ -1517,11 +1523,6 @@ const getProductsGrid = async () => {
           type: "iframe",
         });
       }
-      if ($("#product-count").length > 0) {
-        $("#product-count").text(
-          products.length.toString() + "ürün gösteriliyor"
-        );
-      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1536,6 +1537,9 @@ const getProductsGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1626,6 +1630,9 @@ const getProductsList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -1750,6 +1757,9 @@ const getProductsListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -1882,6 +1892,9 @@ const getProductsByCategoryGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1970,6 +1983,9 @@ const getProductsByCategoryGridByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -2059,6 +2075,9 @@ const getProductsByCategoryList = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2187,6 +2206,9 @@ const getProductsByCategoryListByVariation = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2316,6 +2338,9 @@ const getFeaturedShoes = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
       for (let object in products) {
         for (let key in products[object]) {
           $("#shoes").append(
@@ -2397,6 +2422,9 @@ const getFeaturedBags = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2479,6 +2507,9 @@ const getFeaturedAccessories = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2565,6 +2596,9 @@ const getBestSellerProducts = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
       for (let object in products) {
         for (let key in products[object]) {
           //here
@@ -2636,6 +2670,9 @@ const getOpportunityProducts = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
       for (let object in products) {
         for (let key in products[object]) {
           //here
@@ -2737,6 +2774,9 @@ const getPriceGrid = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -2827,6 +2867,9 @@ const getPriceList = async (url) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2958,6 +3001,9 @@ const getPriceFilterGrid = async (url, price) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -3045,6 +3091,9 @@ const getPriceFilterList = async (url, price) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -3176,6 +3225,9 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -3263,6 +3315,9 @@ const getSizeFilterList = async (categoryId, sizeId) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -3390,6 +3445,9 @@ const getSearchedProductsGrid = async (searchData) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -3473,6 +3531,9 @@ const getSearchedProductsList = async (searchData) => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(data.length + " ürün gösteriliyor");
+      }
 
       for (let object in products) {
         for (let key in products[object]) {
