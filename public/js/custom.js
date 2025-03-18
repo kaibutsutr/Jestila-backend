@@ -1443,6 +1443,9 @@ const getProductsGrid = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
+      $("#product-count").text(len);
+
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -1534,6 +1537,7 @@ const getProductsGridByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -1629,6 +1633,7 @@ const getProductsList = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -1758,6 +1763,7 @@ const getProductsListByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -1895,6 +1901,7 @@ const getProductsByCategoryGrid = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -1988,6 +1995,7 @@ const getProductsByCategoryGridByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -2082,6 +2090,7 @@ const getProductsByCategoryList = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -2215,6 +2224,7 @@ const getProductsByCategoryListByVariation = async () => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -2773,6 +2783,7 @@ const getPriceGrid = async (url) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -2868,6 +2879,7 @@ const getPriceList = async (url) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3004,6 +3016,7 @@ const getPriceFilterGrid = async (url, price) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3096,6 +3109,7 @@ const getPriceFilterList = async (url, price) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3232,6 +3246,7 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3324,6 +3339,7 @@ const getSizeFilterList = async (categoryId, sizeId) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3456,6 +3472,7 @@ const getSearchedProductsGrid = async (searchData) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
@@ -3544,6 +3561,7 @@ const getSearchedProductsList = async (searchData) => {
       products = response.data;
       console.log(products);
       var len = products.data.length;
+      $("#product-count").text(len);
       if (len === 0) {
         $("#product").append("Ürün bulunamadı").addClass("hello");
         return;
