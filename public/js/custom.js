@@ -1358,9 +1358,6 @@ const getSimilarProducts = async (categoryId) => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      if ($("#product-count").length > 0) {
-        $("#product-count").text(data.length + " ürün gösteriliyor");
-      }
 
       //iterate over objects
       for (let object in products) {
@@ -1445,9 +1442,6 @@ const getProductsGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      if ($("#product-count").length > 0) {
-        $("#product-count").text(data.length + " ürün gösteriliyor");
-      }
       if ($("#product-count").length > 0) {
         $("#product-count").text(data.length + " ürün gösteriliyor");
       }
