@@ -14,75 +14,18 @@ const _ = require("underscore");
 const getByQuery = (req, res) => {
   let search = req.query.search;
 
-  console.log(sentUrl);
-  if (sentUrl === "womanshop") {
+  console.log(search);
+  if (sentUrl !== undefined) {
     // price is of a string type
-    const result = womanData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
+    var data = _.filter(allData, function (item, index) {
+      return _.contains([search], item.title);
     });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-
-  if (sentUrl === "manshop") {
-    // price is of a string type
-    const result = manData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-  if (sentUrl === "accessoriesshop") {
-    // filter by price first
-    const result = accessoriesData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    // then sort them ascending
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-  if (sentUrl === "bagshop") {
-    // filter by price first
-    const result = bagData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    // then sort them ascending
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-  if (sentUrl === "jewelryshop") {
-    // filter by price first
-    const result = jewelryData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    // then sort them ascending
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
-  if (sentUrl === "brandshop") {
-    // filter by price first
-    const result = allData.filter(
-      (o) => o.priceData.discountedPrice >= minPrice
-    );
-    // then sort them ascending
-    var data = _.sortBy(result, function (o) {
-      return o.priceData.discountedPrice;
-    });
+    // const result = allData.filter(
+    //   (o) => o.title = minPrice
+    // );
+    // var data = _.sortBy(result, function (o) {
+    //   return o.priceData.discountedPrice;
+    // });
     console.log(data);
     res.status(200).json({ data }); //send json object with success true and  array);
   }
