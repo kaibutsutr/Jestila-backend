@@ -1442,6 +1442,9 @@ const getProductsGrid = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
 
       //iterate over objects
       for (let object in products) {
@@ -1514,8 +1517,10 @@ const getProductsGrid = async () => {
           type: "iframe",
         });
       }
-      if ($("#product-count span").length > 0) {
-        $("#product-count span").text(products.length + "ürün gösteriliyor");
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(
+          products.length.toString() + "ürün gösteriliyor"
+        );
       }
     })
     .catch((error) => {
