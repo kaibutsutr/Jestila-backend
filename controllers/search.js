@@ -13,22 +13,32 @@ const _ = require("underscore");
 
 const getByQuery = (req, res) => {
   let search = req.query.search;
+  search = search.toLowerCase();
 
   console.log(search);
-  if (sentUrl !== undefined) {
-    // price is of a string type
-    var data = _.filter(allData, function (item, index) {
-      return _.contains([search], item.title);
-    });
-    // const result = allData.filter(
-    //   (o) => o.title = minPrice
-    // );
-    // var data = _.sortBy(result, function (o) {
-    //   return o.priceData.discountedPrice;
-    // });
-    console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
-  }
+
+  // price is of a string type
+  var questions = [
+    { question: "what is your name" },
+    { question: "How old are you" },
+    { question: "whats is your mothers name" },
+    { question: "where do work/or study" },
+  ];
+
+  var data = _.filter(allData, function (obj) {
+    // `~` with `indexOf` means "contains"
+    // `toLowerCase` to discard case of question string
+    return ~obj.title.toLowerCase().indexOf(search);
+  });
+
+  // const result = allData.filter(
+  //   (o) => o.title = minPrice
+  // );
+  // var data = _.sortBy(result, function (o) {
+  //   return o.priceData.discountedPrice;
+  // });
+  console.log(data);
+  res.status(200).json({ data }); //send json object with success true and  array);
 };
 
 module.exports = {
