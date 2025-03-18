@@ -17,6 +17,21 @@ var sizeFilter,
   priceFilter = 0;
 
 const constants = {
+  KADIN_BOTid: "3f57d8f553b16a26",
+
+  KADIN_ÇİZMEid: "8ade277422888488",
+
+  KADIN_SNEAKERid: "8517412f82fdd349",
+
+  KADIN_LOAFERid: "9c908de2b28b648d",
+
+  KADIN_SPORid: "e20555b6faae9925",
+
+  KADIN_YÜRÜYÜŞid: "b4bd06bcf7bbf0fc",
+
+  KADIN_KOŞUid: "b86c0206b416d901",
+
+  KADIN_SANDALETid: "f55a824c29a7d827",
   KADINAYAKKABIid: "97fa66025e772afe",
   AYAKKABIid: "4d1670e409f3277d",
 
