@@ -15,6 +15,7 @@ var discount = false;
 var sizeFilter,
   colorFilter,
   priceFilter = 0;
+var searchData = "";
 
 const constants = {
   KADINAYAKKABIid: "97fa66025e772afe",
@@ -178,6 +179,13 @@ $(function () {
     page = 3;
 
     getProductsGrid(page);
+  }
+  if (document.location.pathname == "/search-shop.html") {
+    list = false;
+    url = "search";
+    page = 3;
+
+    console.log(searchData);
   }
 
   if (
@@ -1192,7 +1200,14 @@ $(function () {
       type: "iframe",
     });
   }
-  /* ---- Quick Popup JS ---- */
+  /* ---- Search Form ---- */
+
+  $(".search-btn").on("submit", function (e) {
+    //use on if jQuery 1.7+
+    e.preventDefault(); //prevent form from submitting
+    searchData = $(".search-menu").serializeArray();
+    console.log(data); //use the console for debugging, F12 in Chrome, not alerts
+  });
 
   $(document).ready(function () {
     responsive_dropdown();
