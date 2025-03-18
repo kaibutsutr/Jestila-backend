@@ -2348,11 +2348,7 @@ const getFeaturedShoes = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           $("#shoes").append(
@@ -2434,11 +2430,6 @@ const getFeaturedBags = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2521,11 +2512,6 @@ const getFeaturedAccessories = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
 
       for (let object in products) {
         for (let key in products[object]) {
@@ -2612,11 +2598,7 @@ const getBestSellerProducts = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           //here
@@ -2688,11 +2670,7 @@ const getOpportunityProducts = async () => {
     .then((response) => {
       products = response.data;
       console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
+
       for (let object in products) {
         for (let key in products[object]) {
           //here
@@ -3563,13 +3541,6 @@ const getSearchedProductsList = async (searchData) => {
   axios
     .get(`/api/v1/search/?search=${searchData}`)
     .then((response) => {
-      products = response.data;
-      console.log(products);
-      var len = products.data.length;
-      if (len === 0) {
-        $("#product").append("Ürün bulunamadı").addClass("hello");
-        return;
-      }
       products = response.data;
       console.log(products);
       var len = products.data.length;
