@@ -30,7 +30,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
 
   if (sentUrl === "manshop") {
@@ -42,7 +42,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
   if (sentUrl === "accessoriesshop") {
     // filter by price first
@@ -54,7 +54,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
   if (sentUrl === "bagshop") {
     // filter by price first
@@ -66,7 +66,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
   if (sentUrl === "jewelryshop") {
     // filter by price first
@@ -78,7 +78,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
   if (sentUrl === "brandshop") {
     // filter by price first
@@ -90,7 +90,7 @@ const getByQuery = (req, res) => {
       return o.priceData.discountedPrice;
     });
     console.log(data);
-    res.status(200).json({ data }); //send json object with success true and  array);
+    res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
   }
 };
 

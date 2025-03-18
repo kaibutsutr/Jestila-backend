@@ -38,7 +38,7 @@ const getByQuery = (req, res) => {
   //   return o.priceData.discountedPrice;
   // });
   console.log(data);
-  res.status(200).json({ data }); //send json object with success true and  array);
+  res.status(200).json({ data }, { length: data.length }); //send json object with success true and  array);
 };
 
 module.exports = {
