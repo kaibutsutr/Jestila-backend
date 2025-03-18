@@ -15,7 +15,6 @@ var discount = false;
 var sizeFilter,
   colorFilter,
   priceFilter = 0;
-var searchData = "";
 
 const constants = {
   KADINAYAKKABIid: "97fa66025e772afe",
@@ -184,8 +183,10 @@ $(function () {
     list = false;
     url = "search";
     page = 3;
-
-    console.log(searchData);
+    if ("searchData" in localStorage) {
+      var searchData = localStorage.getItem("searchData");
+      console.log(searchData);
+    }
   }
 
   if (
@@ -987,9 +988,11 @@ $(function () {
 
     /* ---- Responsive Search box ---- */
     $(".search-menu .search-btn").on("click", function () {
-      if ($(window).width() < 768) {
-        $(".sidebar-search-wrap").addClass("open");
-      }
+      $(".category-name").on("click", function () {
+        if ($(window).width() < 768) {
+          $(".sidebar-search-wrap").addClass("open");
+        }
+      });
     });
     $(".search-closer").on("click", function () {
       if ($(window).width() < 768) {
@@ -1110,7 +1113,7 @@ $(function () {
 
   /* -------- Countdown Timer ------- */
   if ($(".countdown").length > 0) {
-    var your_date = "2025-03-18 00:00:00";
+    var your_date = "2025-04-18 00:00:00";
     const second = 1000,
       minute = second * 60,
       hour = minute * 60,
@@ -1201,10 +1204,13 @@ $(function () {
     });
   }
   /* ---- Search Form ---- */
-  $("#search-submit").on("submit", () => {
-    $("#search-bar").on("input", (e) => {
-      console.log(e.target.value);
-    });
+
+  $("#search-bar").on("input", (e) => {
+    console.log(e.target.value);
+    var searchData = e.target.value;
+    localStorage.setItem("searchData", searchData);
+
+    //save search data for next page
   });
 
   $(document).ready(function () {
