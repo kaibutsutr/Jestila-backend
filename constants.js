@@ -106,6 +106,9 @@ const constants = {
   UGGid: "7b6d706cfa92ce96",
 
   VANSid: "57f47d53b58a7e90",
+  VANCLEEFid: "dbe91c3511f11d99",
+  VALENTINOid: "466fc1028fcc08cd",
+  Longchampid: "a1a6603e780d443f",
 
   S36id: "6e39a3314808ede5",
   S37id: "6b8d6b3793d5d475",
