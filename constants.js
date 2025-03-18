@@ -127,5 +127,21 @@ const constants = {
   ORANGEid: "bd4f95906d776060",
   YELLOWid: "edf8b1b1cf0b7dcc",
   NEUTRALid: "18d197319dfbd6a6",
+
+  KADIN_BOTid: "3f57d8f553b16a26",
+
+  KADIN_ÇİZMEid: "8ade277422888488",
+
+  KADIN_SNEAKERid: "8517412f82fdd349",
+
+  KADIN_LOAFERid: "9c908de2b28b648d",
+
+  KADIN_SPORid: "e20555b6faae9925",
+
+  KADIN_YÜRÜYÜŞid: "b4bd06bcf7bbf0fc",
+
+  KADIN_KOŞUid: "b86c0206b416d901",
+
+  KADIN_SANDALETid: "f55a824c29a7d827",
 };
 module.exports = constants;
