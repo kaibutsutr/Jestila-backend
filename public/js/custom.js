@@ -1340,6 +1340,9 @@ const getOneProduct = async (productId) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
 
       getSimilarProducts(product.data.categories[0].id);
     })
@@ -1429,6 +1432,9 @@ const getSimilarProducts = async (categoryId) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -1513,6 +1519,12 @@ const getProductsGrid = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -1603,6 +1615,9 @@ const getProductsGridByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -1728,6 +1743,9 @@ const getProductsList = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
 
@@ -1857,6 +1875,9 @@ const getProductsListByVariation = async () => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -1949,6 +1970,9 @@ const getProductsByCategoryGrid = async () => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -2036,6 +2060,9 @@ const getProductsByCategoryGridByVariation = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -2164,6 +2191,9 @@ const getProductsByCategoryList = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
 
@@ -2294,6 +2324,9 @@ const getProductsByCategoryListByVariation = async () => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -2377,6 +2410,9 @@ const getFeaturedShoes = async () => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -2459,6 +2495,9 @@ const getFeaturedBags = async () => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -2540,6 +2579,9 @@ const getFeaturedAccessories = async () => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
 
@@ -2714,6 +2756,9 @@ const getProductOfTheWeek = async (productId) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -2803,6 +2848,9 @@ const getPriceGrid = async (url) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -2934,6 +2982,9 @@ const getPriceList = async (url) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -3024,6 +3075,9 @@ const getPriceFilterGrid = async (url, price) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -3152,6 +3206,9 @@ const getPriceFilterList = async (url, price) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -3242,6 +3299,9 @@ const getSizeFilterGrid = async (categoryId, sizeId) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -3370,6 +3430,9 @@ const getSizeFilterList = async (categoryId, sizeId) => {
           type: "iframe",
         });
       }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
+      }
     })
 
     .catch((error) => {
@@ -3453,6 +3516,9 @@ const getSearchedProductsGrid = async (searchData) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
     .catch((error) => {
@@ -3575,6 +3641,9 @@ const getSearchedProductsList = async (searchData) => {
         $(".quick-popup").magnificPopup({
           type: "iframe",
         });
+      }
+      if ($("#product-count").length > 0) {
+        $("#product-count").text(products.length + "ürün gösteriliyor");
       }
     })
 
